@@ -48,7 +48,7 @@ The hardware selection can be based on 3 tiers to accommodate different cost, sc
 The Cyberinfrastructure (CI) Layer forms the digital powerhouse of a Clear Skies deployment.  
 It establishes the **core network and compute services** that allow every community site — from Camp Site to Regional Site — to operate independently of outside cloud resources.
 
-The CI Layer is implemented as a **Software-Defined Data Center (SDDC)**: a cluster of virtualized servers that pool compute, storage, and networking into one resilient platform.  
+The CI Layer is implemented as a **Software-Defined Data Center (SDDC)**[@SoftwaredefinedDataCenter2025]: a cluster of virtualized servers that pool compute, storage, and networking into one resilient platform.  
 This approach provides enterprise-grade reliability using open-source tools and commodity hardware, enabling small teams to manage complex infrastructure with minimal overhead.
 
 ### Networking & Segmentation

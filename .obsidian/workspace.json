@@ -13,22 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "chapters/02_StategicArchitecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "a07e0354b8a3695d",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "title": "02_StategicArchitecture"
             }
           }
         ]
@@ -270,6 +260,11 @@
   },
   "active": "9b7d82bae6536833",
   "lastOpenFiles": [
+    "chapters/01_Introduction.md",
+    "chapters/00_ExecutiveSummary.md",
+    "lib/diag/ClearSkies-Overview-notitle.excalidraw.md",
+    "lib/diag/ClearSkies-Overview-notitle.excalidraw.png",
+    "lib/diag/ClearSkies-Overview.excalidraw.md",
     "README.md",
     "Untitled.md",
     "conf/markdown.yaml",
@@ -289,8 +284,6 @@
     "lib/fonts/webfonts/JetBrainsMono-SemiBold.woff2",
     "lib/fonts/webfonts/JetBrainsMono-Regular.woff2",
     "lib/fonts/webfonts/JetBrainsMono-MediumItalic.woff2",
-    "chapters/01_Introduction.md",
-    "chapters/00_ExecutiveSummary.md",
     "build/lib/img/UAFLogo_A_blue.png",
     "build/lib/img/UAFLogo_A_black.png",
     "build/lib/img/UAF.png",
@@ -299,10 +292,7 @@
     "build/lib/img/Revolving_circles.480x480.png",
     "build/lib/img/Pinna's_illusory_intertwining_effect_480x480.gif",
     "build/lib/img/ACEPLogo.png",
-    "build/lib/img/ACEP.png",
     "chapters/Citations.md",
-    "lib/diag/ClearSkies-Overview-notitle.excalidraw.md",
-    "lib/diag/ClearSkies-Overview.excalidraw.md",
     "chapters/00_Introduction.md",
     "LICENSE.md",
     "chapters/02_Chapter2.md",

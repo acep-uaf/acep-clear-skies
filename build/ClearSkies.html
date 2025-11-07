@@ -13,6 +13,25 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
   <link rel="stylesheet" href="conf/style.css" />
 </head>
@@ -149,6 +168,77 @@ and creates a foundation for innovation that reflects Alaska’s values of
 implemented in scalable layers, from physical infrastructure to regional
 collaboration.</p>
 <h2 id="problem-statement">Problem Statement</h2>
+<p>Alaska has the worlds highest concentration of island-ed micro-grids
+in the world. The remote communities are not connected by roads or
+transmission lines. Most generate power primarily with diesel, and the
+fuel is expensive, especially if the community is not on a the coast or
+river systems where fuel can be barged in. For those remote communities
+fuel must be flown in.</p>
+<p>Internet access in these communities is also a constrained resource.
+Some coastal communities have access to high speed fiber optic
+connections, while others have been limited to expensive geosynchronous
+satellite communications. Though in 2 of the last 3 years, sea ice has
+cut burred cables resulting several month service outages. Low earth
+orbit (LEO)<span class="citation" data-cites="LowEarthOrbit2025">(<a
+href="#ref-LowEarthOrbit2025" role="doc-biblioref"><span>“Low
+<span>Earth</span> Orbit”</span> 2025</a>)</span> satellite systems have
+be come available in recent years, however also carries the unaddressed
+risk of Kessler syndrome<span class="citation"
+data-cites="KesslerSyndrome2025">(<a href="#ref-KesslerSyndrome2025"
+role="doc-biblioref"><span>“Kessler Syndrome”</span> 2025</a>)</span>,
+where a cascading collision of satellites starts a chain reaction
+leaving the entire LEO orbital space unusable for potentially
+centuries.</p>
+<p>Rural Alaskan micro-grid communities range between less than a
+hundred to over 3000 people. The energy utilities in these communities
+are commonly operated by a handful of individuals. Staffing rural
+utilities is a challenging balance between keeping energy costs low and
+attracting skilled workers.</p>
+<p>For much of the United States, the Federal Energy Regulatory
+Commission (FERC)<span class="citation" data-cites="HomePageFederal">(<a
+href="#ref-HomePageFederal" role="doc-biblioref"><span>“Home
+<span>Page</span> <span>Federal Energy Regulatory
+Commission</span>”</span> n.d.</a>)</span> is the regulator agency that
+governs energy utilities in the U.S.   FERC mandates that energy
+utilities in the United States to follow the North American Electric
+Reliability Corporation (NERC)<span class="citation"
+data-cites="NERC">(<a href="#ref-NERC"
+role="doc-biblioref"><span>“<span>NERC</span>”</span> n.d.</a>)</span>
+Critical Infrastructure Protection (CIP)<span class="citation"
+data-cites="ReliabilityStandards">(<a href="#ref-ReliabilityStandards"
+role="doc-biblioref"><span>“Reliability <span>Standards</span>”</span>
+n.d.</a>)</span> standards in regards to cybersecurity compliance for
+energy utilities Operational Technology networks. However compliance
+criteria are based largely on transmission capabilities. Because no
+utility in Alaska is connected to the lower 48 power grid, Alaska
+utilities have been effectively exempt from cybersecurity regulation.
+Recently the Railbelt Reliability Council (RRC)<span class="citation"
+data-cites="AlaskaRailbeltReliability2025">(<a
+href="#ref-AlaskaRailbeltReliability2025"
+role="doc-biblioref"><span>“Alaska <span>Railbelt Reliability
+Council</span>”</span> 2025</a>)</span> has drafted a set of modified
+CIP standards<span class="citation"
+data-cites="CIPCriticalInfrastructure2025">(<a
+href="#ref-CIPCriticalInfrastructure2025"
+role="doc-biblioref"><span>“(<span>CIP</span>) <span>Critical
+Infrastructure Protection</span>”</span> 2025</a>)</span> for the State
+of Alaska which are based on the NERC CIP standards but tuned to
+accommodate Alaskan specific criteria. Once adopted by the Regulatory
+Commission of Alaska (RCA)<span class="citation"
+data-cites="RegulatoryCommissionAlaska">(<a
+href="#ref-RegulatoryCommissionAlaska"
+role="doc-biblioref"><span>“Regulatory <span>Commission</span> of
+<span>Alaska</span>”</span> n.d.</a>)</span> the RRC CIP standards are
+expected to become a regulator compliance requirement for those Alaskan
+power producer connected to the Railbelt energy grid.</p>
+<p>While the RRC CIP standards address the comprehensive scope of risks
+for critical energy infrastructure, rural islanded Alaskan microgrids
+will remain largely exempt from compliance because they do not meet the
+transmission criteria. Additionally meeting cybersecurity standards
+would represent a significant cost to rural communities already
+struggling with the cost of energy. Not only would these communities
+need to pay for expensive cybersecurity expertise, but would likely mean
+expensive upgrades to existing network equipment.</p>
 <h1 id="strategic-architecture">Strategic Architecture</h1>
 <p>Clear Skies is built on a simple principle: <strong>local-first by
 design.</strong><br />
@@ -206,7 +296,11 @@ It establishes the <strong>core network and compute services</strong>
 that allow every community site — from Camp Site to Regional Site — to
 operate independently of outside cloud resources.</p>
 <p>The CI Layer is implemented as a <strong>Software-Defined Data Center
-(SDDC)</strong>: a cluster of virtualized servers that pool compute,
+(SDDC)</strong><span class="citation"
+data-cites="SoftwaredefinedDataCenter2025">(<a
+href="#ref-SoftwaredefinedDataCenter2025"
+role="doc-biblioref"><span>“Software-Defined Data Center”</span>
+2025</a>)</span>: a cluster of virtualized servers that pool compute,
 storage, and networking into one resilient platform.<br />
 This approach provides enterprise-grade reliability using open-source
 tools and commodity hardware, enabling small teams to manage complex
@@ -647,6 +741,55 @@ every connection.</td>
 </tr>
 </tbody>
 </table>
-<h1 id="citations">Citations</h1>
+<h1 class="unnumbered" id="citations">Citations</h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="doc-bibliography">
+<div id="ref-AlaskaRailbeltReliability2025" class="csl-entry"
+role="doc-biblioentry">
+<span>“Alaska <span>Railbelt Reliability Council</span>.”</span> 2025.
+<em>RRC Local</em>. https://www.akrrc.org/.
+</div>
+<div id="ref-CIPCriticalInfrastructure2025" class="csl-entry"
+role="doc-biblioentry">
+<span>“(<span>CIP</span>) <span>Critical Infrastructure
+Protection</span>.”</span> 2025. <em>RRC Local</em>.
+https://www.akrrc.org/matters/category/cip-critical-infrastructure-protection.
+</div>
+<div id="ref-HomePageFederal" class="csl-entry" role="doc-biblioentry">
+<span>“Home <span>Page</span> <span>Federal Energy Regulatory
+Commission</span>.”</span> n.d. https://www.ferc.gov/. Accessed November
+7, 2025.
+</div>
+<div id="ref-KesslerSyndrome2025" class="csl-entry"
+role="doc-biblioentry">
+<span>“Kessler Syndrome.”</span> 2025. <em>Wikipedia</em>, October.
+</div>
+<div id="ref-LowEarthOrbit2025" class="csl-entry"
+role="doc-biblioentry">
+<span>“Low <span>Earth</span> Orbit.”</span> 2025. <em>Wikipedia</em>,
+October.
+</div>
+<div id="ref-NERC" class="csl-entry" role="doc-biblioentry">
+<span>“<span>NERC</span>.”</span> n.d.
+https://www.nerc.com/Pages/default.aspx. Accessed November 7, 2025.
+</div>
+<div id="ref-RegulatoryCommissionAlaska" class="csl-entry"
+role="doc-biblioentry">
+<span>“Regulatory <span>Commission</span> of
+<span>Alaska</span>.”</span> n.d.
+https://rca.alaska.gov/RCAWeb/home.aspx. Accessed November 7, 2025.
+</div>
+<div id="ref-ReliabilityStandards" class="csl-entry"
+role="doc-biblioentry">
+<span>“Reliability <span>Standards</span>.”</span> n.d.
+https://www.nerc.com/pa/Stand/Pages/ReliabilityStandards.aspx. Accessed
+November 7, 2025.
+</div>
+<div id="ref-SoftwaredefinedDataCenter2025" class="csl-entry"
+role="doc-biblioentry">
+<span>“Software-Defined Data Center.”</span> 2025. <em>Wikipedia</em>,
+September.
+</div>
+</div>
 </body>
 </html>

@@ -34,6 +34,63 @@ collaboration.
 
 ## Problem Statement
 
+Alaska has the worlds highest concentration of island-ed micro-grids in
+the world. The remote communities are not connected by roads or
+transmission lines. Most generate power primarily with diesel, and the
+fuel is expensive, especially if the community is not on a the coast or
+river systems where fuel can be barged in. For those remote communities
+fuel must be flown in.
+
+Internet access in these communities is also a constrained resource.
+Some coastal communities have access to high speed fiber optic
+connections, while others have been limited to expensive geosynchronous
+satellite communications. Though in 2 of the last 3 years, sea ice has
+cut burred cables resulting several month service outages. Low earth
+orbit (LEO)([“Low Earth Orbit” 2025](#ref-LowEarthOrbit2025)) satellite
+systems have be come available in recent years, however also carries the
+unaddressed risk of Kessler syndrome([“Kessler Syndrome”
+2025](#ref-KesslerSyndrome2025)), where a cascading collision of
+satellites starts a chain reaction leaving the entire LEO orbital space
+unusable for potentially centuries.
+
+Rural Alaskan micro-grid communities range between less than a hundred
+to over 3000 people. The energy utilities in these communities are
+commonly operated by a handful of individuals. Staffing rural utilities
+is a challenging balance between keeping energy costs low and attracting
+skilled workers.
+
+For much of the United States, the Federal Energy Regulatory Commission
+(FERC)([“Home Page Federal Energy Regulatory Commission”
+n.d.](#ref-HomePageFederal)) is the regulator agency that governs energy
+utilities in the U.S.   FERC mandates that energy utilities in the
+United States to follow the North American Electric Reliability
+Corporation (NERC)([“NERC” n.d.](#ref-NERC)) Critical Infrastructure
+Protection (CIP)([“Reliability Standards”
+n.d.](#ref-ReliabilityStandards)) standards in regards to cybersecurity
+compliance for energy utilities Operational Technology networks. However
+compliance criteria are based largely on transmission capabilities.
+Because no utility in Alaska is connected to the lower 48 power grid,
+Alaska utilities have been effectively exempt from cybersecurity
+regulation. Recently the Railbelt Reliability Council (RRC)([“Alaska
+Railbelt Reliability Council” 2025](#ref-AlaskaRailbeltReliability2025))
+has drafted a set of modified CIP standards([“(CIP) Critical
+Infrastructure Protection” 2025](#ref-CIPCriticalInfrastructure2025))
+for the State of Alaska which are based on the NERC CIP standards but
+tuned to accommodate Alaskan specific criteria. Once adopted by the
+Regulatory Commission of Alaska (RCA)([“Regulatory Commission of Alaska”
+n.d.](#ref-RegulatoryCommissionAlaska)) the RRC CIP standards are
+expected to become a regulator compliance requirement for those Alaskan
+power producer connected to the Railbelt energy grid.
+
+While the RRC CIP standards address the comprehensive scope of risks for
+critical energy infrastructure, rural islanded Alaskan microgrids will
+remain largely exempt from compliance because they do not meet the
+transmission criteria. Additionally meeting cybersecurity standards
+would represent a significant cost to rural communities already
+struggling with the cost of energy. Not only would these communities
+need to pay for expensive cybersecurity expertise, but would likely mean
+expensive upgrades to existing network equipment.
+
 # Strategic Architecture
 
 Clear Skies is built on a simple principle: **local-first by design.**  
@@ -97,8 +154,10 @@ every community site — from Camp Site to Regional Site — to operate
 independently of outside cloud resources.
 
 The CI Layer is implemented as a **Software-Defined Data Center
-(SDDC)**: a cluster of virtualized servers that pool compute, storage,
-and networking into one resilient platform.  
+(SDDC)**([“Software-Defined Data Center”
+2025](#ref-SoftwaredefinedDataCenter2025)): a cluster of virtualized
+servers that pool compute, storage, and networking into one resilient
+platform.  
 This approach provides enterprise-grade reliability using open-source
 tools and commodity hardware, enabling small teams to manage complex
 infrastructure with minimal overhead.
@@ -365,3 +424,68 @@ cluster - Multi-site replication and Tailscale/Headscale federation
 | **ZTNA**                  | Zero Trust Network Access                | Security framework that assumes no implicit trust and enforces strict identity-based access controls for every connection.           |
 
 # Citations
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-AlaskaRailbeltReliability2025" class="csl-entry">
+
+“Alaska Railbelt Reliability Council.” 2025. *RRC Local*.
+https://www.akrrc.org/.
+
+</div>
+
+<div id="ref-CIPCriticalInfrastructure2025" class="csl-entry">
+
+“(CIP) Critical Infrastructure Protection.” 2025. *RRC Local*.
+https://www.akrrc.org/matters/category/cip-critical-infrastructure-protection.
+
+</div>
+
+<div id="ref-HomePageFederal" class="csl-entry">
+
+“Home Page Federal Energy Regulatory Commission.” n.d.
+https://www.ferc.gov/. Accessed November 7, 2025.
+
+</div>
+
+<div id="ref-KesslerSyndrome2025" class="csl-entry">
+
+“Kessler Syndrome.” 2025. *Wikipedia*, October.
+
+</div>
+
+<div id="ref-LowEarthOrbit2025" class="csl-entry">
+
+“Low Earth Orbit.” 2025. *Wikipedia*, October.
+
+</div>
+
+<div id="ref-NERC" class="csl-entry">
+
+“NERC.” n.d. https://www.nerc.com/Pages/default.aspx. Accessed November
+7, 2025.
+
+</div>
+
+<div id="ref-RegulatoryCommissionAlaska" class="csl-entry">
+
+“Regulatory Commission of Alaska.” n.d.
+https://rca.alaska.gov/RCAWeb/home.aspx. Accessed November 7, 2025.
+
+</div>
+
+<div id="ref-ReliabilityStandards" class="csl-entry">
+
+“Reliability Standards.” n.d.
+https://www.nerc.com/pa/Stand/Pages/ReliabilityStandards.aspx. Accessed
+November 7, 2025.
+
+</div>
+
+<div id="ref-SoftwaredefinedDataCenter2025" class="csl-entry">
+
+“Software-Defined Data Center.” 2025. *Wikipedia*, September.
+
+</div>
+
+</div>
