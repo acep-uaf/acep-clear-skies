@@ -5,7 +5,9 @@ Every system — from the smallest sensor to the community data center — opera
 
 Clear Skies adopts a layered approach to build increasingly complex modular capabilities on top of a resilient cyberinfrastructure foundation.
 
-![[ClearSkies-Overview-notitle.excalidraw.png]]
+
+![Clear Skies Overview](lib/diag/ClearSkies-Overview-notitle.excalidraw.png)
+
 ## Layer 0 - Hardware (HW)
 
 The hardware selection can be based on 3 tiers to accommodate different cost, scalability, and resiliency needs.
@@ -41,7 +43,6 @@ The hardware selection can be based on 3 tiers to accommodate different cost, sc
 - Full Resiliency - Zero Single Points of Failure
 - Scales to 1000's of People
 
- --- 
 ## Layer 1 - Cyberinfrastructure (CI)
 
 The Cyberinfrastructure (CI) Layer forms the digital powerhouse of a Clear Skies deployment.  
@@ -50,31 +51,36 @@ It establishes the **core network and compute services** that allow every commun
 The CI Layer is implemented as a **Software-Defined Data Center (SDDC)**: a cluster of virtualized servers that pool compute, storage, and networking into one resilient platform.  
 This approach provides enterprise-grade reliability using open-source tools and commodity hardware, enabling small teams to manage complex infrastructure with minimal overhead.
 
-#### Networking & Segmentation
+### Networking & Segmentation
 - VLAN-aware switching and software-defined routing using **OPNsense** or similar open firewalls.
 - Segregated networks for Management, Operational Technology (OT), Data, and DMZ zones.
 - Local DNS, DHCP, and NTP ensuring that critical systems function offline.
-#### Identity & Trust
+
+### Identity & Trust
 - **Keycloak** provides single sign-on and multi-factor authentication. 
 - **Smallstep CA** or similar certificate authority issues short-lived internal certificates, enabling encrypted, trusted communication between devices and services.
-#### Storage & Resiliency
+
+### Storage & Resiliency
 - **Ceph** or **ZFS-based** distributed storage replicates data across all nodes.
 - Snapshots and versioned backups protect against corruption or accidental deletion.  
 - Air-gap or offline backup options for disaster recovery.   
-#### Monitoring & Automation
+
+### Monitoring & Automation
 - **Prometheus + Grafana** for metrics, alerting, and visibility. 
 - **Ansible** or **Chef** for configuration management and repeatable deployments.
 - Logs aggregated locally via **Elastic / Wazuh / Loki** stacks.
-#### Security & Perimeter
+
+### Security & Perimeter
 - Dual-node firewall pairs provide high-availability failover.
 - Intrusion detection (Zeek/Suricata) can run as virtual appliances inside the same SDDC.
 - Role-based access control and network segmentation enforce the “least privilege” model.
-#### Data Backup & Synchronization
+
+### Data Backup & Synchronization
 - Automated local backups using **Restic**, **Borg**, or similar tools
 -  Optional cross-site replication between Village and Regional Sites when connectivity permits.   
 - All data remains encrypted and community-owned.
 
- --- 
+ 
 ## Layer 2 - Local Services (LOC)
 
 Layer 2 builds upon the Cyberinfrastructure (CI) foundation to deliver the mission-specific functions that keep a community operating, informed, and connected.   These following modular service areas are locally hosted—able to run entirely within the community network—and can be added, removed, or upgraded without disrupting the lower layers.
@@ -97,6 +103,7 @@ Each category reflects a practical application of the local-first philosophy: ke
 - LoRaWAN, Modbus TCP, and MQTT telemetry from sensors across the community.
 - Local brokers and dashboards (Node-RED, Grafana) for low-bandwidth visualization.
 - Edge analytics and rule-based automation without cloud dependence.
+
 ### Emergency Communications
 
 **Purpose:** ensure situational awareness and coordination during disasters or outages.
@@ -104,6 +111,7 @@ Each category reflects a practical application of the local-first philosophy: ke
 - Local voice, text, and alerting systems that function when commercial networks fail.
 - Interoperable with radios, satellite links, or FirstNet gateways when available.
 - Capable of community-wide paging, siren control, or automated messaging through existing IoT endpoints.
+
 ### Local Community Communications
 
 **Purpose:** strengthen community cohesion and digital inclusion through local, private communication spaces.
@@ -121,7 +129,6 @@ Each category reflects a practical application of the local-first philosophy: ke
 
 Layer 2 turns Clear Skies from infrastructure into impact — providing the tools that make a self-reliant community not only operationally resilient but also informed, connected, and empowered.
 
- --- 
 
 ## Layer 3 -  Community Connections (COMM)
 

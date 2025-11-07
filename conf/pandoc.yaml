@@ -3,7 +3,7 @@ input-files:
   - chapters/00_ExecutiveSummary.md
   - chapters/01_Introduction.md
   - chapters/02_StategicArchitecture.md
-  # - chapters/03_Design.md
+  - chapters/03_TechnologySelection.md
   - chapters/Terminology.md
   - chapters/Citations.md
 
@@ -30,6 +30,7 @@ variables:
 resource-path:
   - .
   - lib/img
+  - lib/diag
 
 citeproc: true
 bibliography: lib/citations.bib

@@ -68,18 +68,62 @@ Alaskan Microgrid Cyberinfrastructure</h1>
 </ul></li>
 <li><a href="#strategic-architecture">Strategic Architecture</a>
 <ul>
+<li><a href="#layer-0---hardware-hw">Layer 0 - Hardware (HW)</a>
+<ul>
 <li><a href="#tier-1---camp-site">Tier 1 - Camp Site</a></li>
 <li><a href="#tier-2---village-site">Tier 2 - Village Site</a></li>
 <li><a href="#tier-3---regional-site">Tier 3 - Regional Site</a></li>
+</ul></li>
+<li><a href="#layer-1---cyberinfrastructure-ci">Layer 1 -
+Cyberinfrastructure (CI)</a>
+<ul>
+<li><a href="#networking-segmentation">Networking &amp;
+Segmentation</a></li>
+<li><a href="#identity-trust">Identity &amp; Trust</a></li>
+<li><a href="#storage-resiliency">Storage &amp; Resiliency</a></li>
+<li><a href="#monitoring-automation">Monitoring &amp;
+Automation</a></li>
+<li><a href="#security-perimeter">Security &amp; Perimeter</a></li>
+<li><a href="#data-backup-synchronization">Data Backup &amp;
+Synchronization</a></li>
+</ul></li>
+<li><a href="#layer-2---local-services-loc">Layer 2 - Local Services
+(LOC)</a>
+<ul>
+<li><a href="#operational-technology-ot-scada-ics">Operational
+Technology (OT) / SCADA / ICS</a></li>
+<li><a href="#emergency-communications">Emergency
+Communications</a></li>
+<li><a href="#local-community-communications">Local Community
+Communications</a></li>
+<li><a href="#additional-service-categories-expandable">Additional
+Service Categories (Expandable)</a></li>
+<li><a href="#outcome">Outcome</a></li>
+</ul></li>
 <li><a href="#layer-3---community-connections-comm">Layer 3 - Community
 Connections (COMM)</a>
 <ul>
 <li><a href="#collaborative-applications">Collaborative
 Applications</a></li>
-<li><a href="#outcome">Outcome</a></li>
+<li><a href="#outcome-1">Outcome</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#terminology">Terminology</a></li>
+<li><a href="#technology-selection">Technology Selection</a>
+<ul>
+<li><a href="#layer-0-hardware-foundations">Layer 0 — Hardware
+Foundations</a>
+<ul>
+<li><a href="#tier-1-camp-site">Tier 1 — Camp Site</a></li>
+<li><a href="#tier-2-village-site">Tier 2 — Village Site</a></li>
+<li><a href="#tier-3-regional-site">Tier 3 — Regional Site</a></li>
+</ul></li>
+<li><a href="#layer-1-cyberinfrastructure-ci">Layer 1 —
+Cyberinfrastructure (CI)</a></li>
+<li><a href="#layer-2-local-services">Layer 2 — Local Services</a></li>
+<li><a href="#layer-3-community-connections">Layer 3 — Community
+Connections</a></li>
+</ul></li>
+<li><a href="#terminology">## Terminology</a></li>
 <li><a href="#citations">Citations</a></li>
 </ul>
 </nav>
@@ -115,8 +159,12 @@ Internet connectivity is lost.</p>
 <p>Clear Skies adopts a layered approach to build increasingly complex
 modular capabilities on top of a resilient cyberinfrastructure
 foundation.</p>
-<p>[[ClearSkies-Overview-notitle.excalidraw.png]] ## Layer 0 - Hardware
-(HW)</p>
+<figure>
+<img src="lib/diag/ClearSkies-Overview-notitle.excalidraw.png"
+alt="Clear Skies Overview" />
+<figcaption aria-hidden="true">Clear Skies Overview</figcaption>
+</figure>
+<h2 id="layer-0---hardware-hw">Layer 0 - Hardware (HW)</h2>
 <p>The hardware selection can be based on 3 tiers to accommodate
 different cost, scalability, and resiliency needs.</p>
 <h3 id="tier-1---camp-site">Tier 1 - Camp Site</h3>
@@ -150,98 +198,145 @@ hub supporting advanced services and federation.</p>
 <li>Full Resiliency - Zero Single Points of Failure</li>
 <li>Scales to 1000’s of People</li>
 </ul>
-<table style="width:7%;">
-<colgroup>
-<col style="width: 6%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th># Layer 1 - Cyberinfrastructure (CI)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td># Layer 2 - Local Services (LOC)</td>
-</tr>
-<tr class="even">
-<td>ayer 2 builds upon the Cyberinfrastructure (CI) foundation to
+<h2 id="layer-1---cyberinfrastructure-ci">Layer 1 - Cyberinfrastructure
+(CI)</h2>
+<p>The Cyberinfrastructure (CI) Layer forms the digital powerhouse of a
+Clear Skies deployment.<br />
+It establishes the <strong>core network and compute services</strong>
+that allow every community site — from Camp Site to Regional Site — to
+operate independently of outside cloud resources.</p>
+<p>The CI Layer is implemented as a <strong>Software-Defined Data Center
+(SDDC)</strong>: a cluster of virtualized servers that pool compute,
+storage, and networking into one resilient platform.<br />
+This approach provides enterprise-grade reliability using open-source
+tools and commodity hardware, enabling small teams to manage complex
+infrastructure with minimal overhead.</p>
+<h3 id="networking-segmentation">Networking &amp; Segmentation</h3>
+<ul>
+<li>VLAN-aware switching and software-defined routing using
+<strong>OPNsense</strong> or similar open firewalls.</li>
+<li>Segregated networks for Management, Operational Technology (OT),
+Data, and DMZ zones.</li>
+<li>Local DNS, DHCP, and NTP ensuring that critical systems function
+offline.</li>
+</ul>
+<h3 id="identity-trust">Identity &amp; Trust</h3>
+<ul>
+<li><strong>Keycloak</strong> provides single sign-on and multi-factor
+authentication.</li>
+<li><strong>Smallstep CA</strong> or similar certificate authority
+issues short-lived internal certificates, enabling encrypted, trusted
+communication between devices and services.</li>
+</ul>
+<h3 id="storage-resiliency">Storage &amp; Resiliency</h3>
+<ul>
+<li><strong>Ceph</strong> or <strong>ZFS-based</strong> distributed
+storage replicates data across all nodes.</li>
+<li>Snapshots and versioned backups protect against corruption or
+accidental deletion.<br />
+</li>
+<li>Air-gap or offline backup options for disaster recovery.</li>
+</ul>
+<h3 id="monitoring-automation">Monitoring &amp; Automation</h3>
+<ul>
+<li><strong>Prometheus + Grafana</strong> for metrics, alerting, and
+visibility.</li>
+<li><strong>Ansible</strong> or <strong>Chef</strong> for configuration
+management and repeatable deployments.</li>
+<li>Logs aggregated locally via <strong>Elastic / Wazuh / Loki</strong>
+stacks.</li>
+</ul>
+<h3 id="security-perimeter">Security &amp; Perimeter</h3>
+<ul>
+<li>Dual-node firewall pairs provide high-availability failover.</li>
+<li>Intrusion detection (Zeek/Suricata) can run as virtual appliances
+inside the same SDDC.</li>
+<li>Role-based access control and network segmentation enforce the
+“least privilege” model.</li>
+</ul>
+<h3 id="data-backup-synchronization">Data Backup &amp;
+Synchronization</h3>
+<ul>
+<li>Automated local backups using <strong>Restic</strong>,
+<strong>Borg</strong>, or similar tools</li>
+<li>Optional cross-site replication between Village and Regional Sites
+when connectivity permits.<br />
+</li>
+<li>All data remains encrypted and community-owned.</li>
+</ul>
+<h2 id="layer-2---local-services-loc">Layer 2 - Local Services
+(LOC)</h2>
+<p>Layer 2 builds upon the Cyberinfrastructure (CI) foundation to
 deliver the mission-specific functions that keep a community operating,
 informed, and connected. These following modular service areas are
 locally hosted—able to run entirely within the community network—and can
-be added, removed, or upgraded without disrupting the lower layers.</td>
-</tr>
-<tr class="odd">
-<td>ach category reflects a practical application of the local-first
+be added, removed, or upgraded without disrupting the lower layers.</p>
+<p>Each category reflects a practical application of the local-first
 philosophy: keeping critical data, control, and communication inside the
 community while remaining interoperable with regional and research
-partners.</td>
-</tr>
-<tr class="even">
-<td>## Operational Technology (OT) / SCADA / ICS</td>
-</tr>
-<tr class="odd">
-<td>*Purpose:** maintain safe, efficient, and observable microgrid
-operations under all conditions.</td>
-</tr>
-<tr class="even">
-<td>Supervisory control and monitoring for generation, distribution, and
-storage systems. Secure, segmented access for operators, engineers, and
-vendors. Local data historians for real-time visibility even during WAN
-outages. Integration with open-source or vendor SCADA platforms (e.g.,
-Rapid SCADA, Ignition Edge, OpenPLC).</td>
-</tr>
-<tr class="odd">
-<td>### Industrial Internet of Things (IIoT) Networks</td>
-</tr>
-<tr class="even">
-<td>*Purpose:** gather and use data from across the community—power,
-heat, water, environment—to inform decisions locally.</td>
-</tr>
-<tr class="odd">
-<td>LoRaWAN, Modbus TCP, and MQTT telemetry from sensors across the
-community. Local brokers and dashboards (Node-RED, Grafana) for
-low-bandwidth visualization. Edge analytics and rule-based automation
-without cloud dependence. ## Emergency Communications</td>
-</tr>
-<tr class="even">
-<td>*Purpose:** ensure situational awareness and coordination during
-disasters or outages.</td>
-</tr>
-<tr class="odd">
-<td>Local voice, text, and alerting systems that function when
-commercial networks fail. Interoperable with radios, satellite links, or
-FirstNet gateways when available. Capable of community-wide paging,
-siren control, or automated messaging through existing IoT endpoints. ##
-Local Community Communications</td>
-</tr>
-<tr class="even">
-<td>*Purpose:** strengthen community cohesion and digital inclusion
-through local, private communication spaces.</td>
-</tr>
-<tr class="odd">
-<td>Locally hosted chat, video, and bulletin-board tools (Matrix, Jitsi,
-etc). Intranet portals for schools, clinics, and tribal councils.
-Content caching and offline web access for education and information
-sharing.</td>
-</tr>
-<tr class="even">
-<td>## Additional Service Categories (Expandable) <strong>Cybersecurity
-Operations:</strong> IDS/IPS, log correlation, vulnerability scanning,
-and SOC visualization. <strong>Education &amp; Research
-Sandboxes:</strong> student training, network simulation, or
-data-science environments. <strong>Local Data Services:</strong> GIS,
-asset management, or archival storage tied to community projects.</td>
-</tr>
-<tr class="odd">
-<td>## Outcome</td>
-</tr>
-<tr class="even">
-<td>ayer 2 turns Clear Skies from infrastructure into impact — providing
+partners.</p>
+<h3 id="operational-technology-ot-scada-ics">Operational Technology (OT)
+/ SCADA / ICS</h3>
+<p><strong>Purpose:</strong> maintain safe, efficient, and observable
+microgrid operations under all conditions.</p>
+<ul>
+<li>Supervisory control and monitoring for generation, distribution, and
+storage systems.</li>
+<li>Secure, segmented access for operators, engineers, and vendors.</li>
+<li>Local data historians for real-time visibility even during WAN
+outages.</li>
+<li>Integration with open-source or vendor SCADA platforms (e.g., Rapid
+SCADA, Ignition Edge, OpenPLC).</li>
+</ul>
+<h4 id="industrial-internet-of-things-iiot-networks">Industrial Internet
+of Things (IIoT) Networks</h4>
+<p><strong>Purpose:</strong> gather and use data from across the
+community—power, heat, water, environment—to inform decisions
+locally.</p>
+<ul>
+<li>LoRaWAN, Modbus TCP, and MQTT telemetry from sensors across the
+community.</li>
+<li>Local brokers and dashboards (Node-RED, Grafana) for low-bandwidth
+visualization.</li>
+<li>Edge analytics and rule-based automation without cloud
+dependence.</li>
+</ul>
+<h3 id="emergency-communications">Emergency Communications</h3>
+<p><strong>Purpose:</strong> ensure situational awareness and
+coordination during disasters or outages.</p>
+<ul>
+<li>Local voice, text, and alerting systems that function when
+commercial networks fail.</li>
+<li>Interoperable with radios, satellite links, or FirstNet gateways
+when available.</li>
+<li>Capable of community-wide paging, siren control, or automated
+messaging through existing IoT endpoints.</li>
+</ul>
+<h3 id="local-community-communications">Local Community
+Communications</h3>
+<p><strong>Purpose:</strong> strengthen community cohesion and digital
+inclusion through local, private communication spaces.</p>
+<ul>
+<li>Locally hosted chat, video, and bulletin-board tools (Matrix, Jitsi,
+etc).</li>
+<li>Intranet portals for schools, clinics, and tribal councils.</li>
+<li>Content caching and offline web access for education and information
+sharing.</li>
+</ul>
+<h3 id="additional-service-categories-expandable">Additional Service
+Categories (Expandable)</h3>
+<ul>
+<li><strong>Cybersecurity Operations:</strong> IDS/IPS, log correlation,
+vulnerability scanning, and SOC visualization.</li>
+<li><strong>Education &amp; Research Sandboxes:</strong> student
+training, network simulation, or data-science environments.</li>
+<li><strong>Local Data Services:</strong> GIS, asset management, or
+archival storage tied to community projects.</li>
+</ul>
+<h3 id="outcome">Outcome</h3>
+<p>Layer 2 turns Clear Skies from infrastructure into impact — providing
 the tools that make a self-reliant community not only operationally
-resilient but also informed, connected, and empowered.</td>
-</tr>
-</tbody>
-</table>
+resilient but also informed, connected, and empowered.</p>
 <h2 id="layer-3---community-connections-comm">Layer 3 - Community
 Connections (COMM)</h2>
 <p>Layer 3 extends Clear Skies beyond individual communities.<br />
@@ -272,13 +367,286 @@ or cooperative utilities.</li>
 islands — each self-reliant, yet capable of cooperating across Alaska’s
 vast geography through secure, transparent, and low-bandwidth
 bridges.</p>
-<h3 id="outcome">Outcome</h3>
+<h3 id="outcome-1">Outcome</h3>
 <p>Layer 3 transforms Clear Skies from isolated local systems into a
 <strong>distributed ecosystem of collaboration</strong>.<br />
 Communities retain full control of their data and infrastructure while
 participating in a resilient, Alaska-wide digital commons built on
 trust, openness, and shared stewardship.</p>
-<h1 id="terminology">Terminology</h1>
+<h1 id="technology-selection">Technology Selection</h1>
+<p><em>Design and Implementation Blueprint for the Clear Skies
+Architecture</em></p>
+<p>This section details the specific technologies, configurations, and
+open-source components recommended for each layer and tier of the Clear
+Skies architecture.<br />
+Selections emphasize <strong>resilience</strong>, <strong>local
+autonomy</strong>, and <strong>open interoperability</strong> across all
+deployment scales.</p>
+<hr />
+<h2 id="layer-0-hardware-foundations">Layer 0 — Hardware
+Foundations</h2>
+<h3 id="tier-1-camp-site">Tier 1 — Camp Site</h3>
+<p><em>Portable / Training-Scale Deployment</em> - Example hardware
+platforms (NUC, MiniPC, low-power servers) - Typical storage
+configuration (ZFS mirror, 1 GbE) - Lightweight Proxmox or single-node
+SDDC - Local UPS / Power considerations</p>
+<h3 id="tier-2-village-site">Tier 2 — Village Site</h3>
+<p><em>Community-Scale Deployment</em> - Cluster of 3 ×
+MiniPC/Protectli-class nodes - Ceph or ZFS-replicated storage - Dual
+OPNsense firewall HA pair - Local PoE switch with VLAN segmentation -
+External backup (USB or second site)</p>
+<h3 id="tier-3-regional-site">Tier 3 — Regional Site</h3>
+<p><em>Federated Multi-Community Hub</em> - Enterprise-grade rackmount
+servers (ECC RAM, redundant PSU) - 10 GbE backplane networking -
+Dedicated Ceph cluster - Multi-site replication and Tailscale/Headscale
+federation</p>
+<hr />
+<h2 id="layer-1-cyberinfrastructure-ci">Layer 1 — Cyberinfrastructure
+(CI)</h2>
+<ul>
+<li>Virtualization Platform: <strong>Proxmox VE / KVM</strong></li>
+<li>Networking Stack: <strong>OPNsense</strong>, <strong>FRR</strong>,
+VLAN trunking</li>
+<li>Storage: <strong>Ceph</strong>, <strong>ZFS</strong>,
+<strong>Restic/Borg</strong></li>
+<li>Identity: <strong>Keycloak</strong>, <strong>Smallstep
+CA</strong></li>
+<li>Monitoring: <strong>Prometheus</strong>, <strong>Grafana</strong>,
+<strong>Loki</strong>, <strong>Wazuh</strong></li>
+<li>Configuration: <strong>Ansible</strong> or
+<strong>Chef</strong></li>
+</ul>
+<hr />
+<h2 id="layer-2-local-services">Layer 2 — Local Services</h2>
+<ul>
+<li>OT/SCADA: <strong>Rapid SCADA</strong>, <strong>OpenPLC</strong>,
+<strong>Ignition Edge</strong></li>
+<li>IIoT: <strong>Mosquitto (MQTT)</strong>, <strong>Node-RED</strong>,
+<strong>Grafana</strong>, <strong>LoRaWAN</strong></li>
+<li>Comms: <strong>Matrix (Synapse)</strong>, <strong>Jitsi</strong>,
+<strong>Rocket.Chat</strong></li>
+<li>Cybersecurity: <strong>Zeek</strong>, <strong>Suricata</strong>,
+<strong>Wazuh</strong>, <strong>Elastic</strong></li>
+<li>Education / Research: <strong>JupyterHub</strong>, <strong>Docker /
+LXC Sandboxes</strong></li>
+<li>Data: <strong>PostgreSQL</strong>, <strong>GeoServer</strong>,
+<strong>Nextcloud</strong></li>
+</ul>
+<hr />
+<h2 id="layer-3-community-connections">Layer 3 — Community
+Connections</h2>
+<ul>
+<li>Secure Networking: <strong>Tailscale / Headscale (ZTNA
+Mesh)</strong></li>
+<li>Federation: <strong>Keycloak Federation</strong>, <strong>Smallstep
+cross-trust</strong></li>
+<li>Data Sync: <strong>Syncthing</strong>, <strong>rsync</strong>,
+<strong>MinIO Gateway</strong></li>
+<li>Shared Visualization: <strong>Grafana Federation</strong>,
+<strong>Kibana Dashboards</strong></li>
+<li>Optional: Integration with <strong>FirstNet</strong>,
+<strong>Starlink</strong>, or terrestrial backhaul for redundancy</li>
+</ul>
+<h1 id="terminology">## Terminology</h1>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 20%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Acronym</th>
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>AC</strong></td>
+<td style="text-align: left;">Alternating Current</td>
+<td style="text-align: left;">~60 Hz 120 Volt power with an oscillating
+voltage.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>ACEP</strong></td>
+<td style="text-align: left;">Alaska Center for Energy and Power</td>
+<td style="text-align: left;">University of Alaska Fairbanks research
+center focused on applied energy systems and innovation in rural and
+microgrid environments.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>CA</strong></td>
+<td style="text-align: left;">Certificate Authority</td>
+<td style="text-align: left;">Service that issues and manages digital
+certificates used to authenticate and encrypt communications.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Ceph</strong></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Open-source distributed storage system
+providing block, object, and file storage across clustered nodes.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>CI</strong></td>
+<td style="text-align: left;">Cyberinfrastructure</td>
+<td style="text-align: left;">The foundational compute, storage, and
+network systems enabling digital services to operate locally and
+independently.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>DC</strong></td>
+<td style="text-align: left;">Direct Current</td>
+<td style="text-align: left;">Contant Voltage Power Systems such as
+provided by batteries.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>DMZ</strong></td>
+<td style="text-align: left;">Demilitarized Zone</td>
+<td style="text-align: left;">Network segment that isolates
+external-facing systems from internal critical infrastructure.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>DNS</strong></td>
+<td style="text-align: left;">Domain Name System</td>
+<td style="text-align: left;">Converts human-readable hostnames into IP
+addresses.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>DHCP</strong></td>
+<td style="text-align: left;">Dynamic Host Configuration Protocol</td>
+<td style="text-align: left;">Automatically assigns IP addresses to
+devices on a network.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>HW</strong></td>
+<td style="text-align: left;">Hardware</td>
+<td style="text-align: left;">Physical computing, storage, and network
+devices forming the foundation of the infrastructure.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>ICS</strong></td>
+<td style="text-align: left;">Industrial Control System</td>
+<td style="text-align: left;">Hardware and software used to monitor and
+control industrial processes such as generation and distribution.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>IIoT</strong></td>
+<td style="text-align: left;">Industrial Internet of Things</td>
+<td style="text-align: left;">Networked sensors and devices that collect
+and exchange data for monitoring and automation in industrial
+settings.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>LAN</strong></td>
+<td style="text-align: left;">Local Area Network</td>
+<td style="text-align: left;">Internal network connecting devices within
+a limited geographic area such as a facility or village.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>LLM</strong></td>
+<td style="text-align: left;">Large Language Model</td>
+<td style="text-align: left;">AI model trained on vast text corpora to
+generate and analyze natural language. Used locally for automation and
+data analysis.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>LOC</strong></td>
+<td style="text-align: left;">Local Services Layer</td>
+<td style="text-align: left;">Layer 2 in the Clear Skies architecture
+providing operational, communication, and data services within the
+community.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>MQTT</strong></td>
+<td style="text-align: left;">Message Queuing Telemetry Transport</td>
+<td style="text-align: left;">Lightweight publish/subscribe messaging
+protocol optimized for low-bandwidth IIoT networks.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NTP</strong></td>
+<td style="text-align: left;">Network Time Protocol</td>
+<td style="text-align: left;">Synchronizes system clocks across devices
+on a network.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>OPNsense</strong></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Open-source firewall and routing platform
+providing VLAN segmentation, VPNs, and intrusion detection.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>OT</strong></td>
+<td style="text-align: left;">Operational Technology</td>
+<td style="text-align: left;">Systems that monitor and control physical
+devices, processes, and infrastructure.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>PLC</strong></td>
+<td style="text-align: left;">Programmable Logic Controller</td>
+<td style="text-align: left;">Industrial computer used to automate
+electromechanical processes.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Proxmox VE</strong></td>
+<td style="text-align: left;">Virtual Environment</td>
+<td style="text-align: left;">Open-source virtualization environment
+used to create Software-Defined Data Centers (SDDC).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>PSU</strong></td>
+<td style="text-align: left;">Power Supply Unit</td>
+<td style="text-align: left;">A hot swapable power supply in a rack
+mount server or other equipment.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>SCADA</strong></td>
+<td style="text-align: left;">Supervisory Control and Data
+Acquisition</td>
+<td style="text-align: left;">System for remote monitoring and control
+of industrial and utility operations.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>SDDC</strong></td>
+<td style="text-align: left;">Software-Defined Data Center</td>
+<td style="text-align: left;">Virtualized data center architecture where
+compute, storage, and networking are abstracted from hardware.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>SDN</strong></td>
+<td style="text-align: left;">Software-Defined Networking</td>
+<td style="text-align: left;">Network architecture enabling centralized,
+programmable control of traffic and segmentation.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>SOC</strong></td>
+<td style="text-align: left;">Security Operations Center</td>
+<td style="text-align: left;">Centralized facility or function for
+monitoring, detecting, and responding to cybersecurity threats.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Tailscale /
+Headscale</strong></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Zero-trust networking tools that establish
+secure, peer-to-peer mesh connectivity across sites.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>UPS</strong></td>
+<td style="text-align: left;">Uninterruptable Power Supply</td>
+<td style="text-align: left;">A batter backup DC to AC inverter system
+to provide AC power during intermittent short duration power
+outages.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>ZTNA</strong></td>
+<td style="text-align: left;">Zero Trust Network Access</td>
+<td style="text-align: left;">Security framework that assumes no
+implicit trust and enforces strict identity-based access controls for
+every connection.</td>
+</tr>
+</tbody>
+</table>
 <h1 id="citations">Citations</h1>
 </body>
 </html>

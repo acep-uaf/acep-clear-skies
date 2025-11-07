@@ -14,6 +14,7 @@ epub:
 html:
 	@mkdir -p build/lib/img build/lib/mathjax build/conf
 	cp -r lib/img build/lib/
+	cp -r lib/diag build/lib/
 	cp -r lib/mathjax build/lib/
 	cp conf/style.css build/conf/
 	$(PANDOC) --defaults=$(BASE) --defaults=conf/html.yaml
@@ -21,6 +22,10 @@ html:
 latex:
 	@mkdir -p build
 	pandoc --defaults=$(BASE) --defaults=conf/latex.yaml
+
+markdown:
+	@mkdir -p build
+	$(PANDOC) --defaults=$(BASE) -t gfm -o build/ClearSkies.md
 
 clean:
 	rm -rf build
