@@ -1,8 +1,3 @@
----
-bibliography:
-- lib/citations.bib
-link-citations: true
----
 # Clear Skies
 
 A Reference Architecture for Resilient Alaskan Microgrid
