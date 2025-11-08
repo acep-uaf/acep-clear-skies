@@ -332,8 +332,6 @@ Skies architecture.
 Selections emphasize **resilience**, **local autonomy**, and **open
 interoperability** across all deployment scales.
 
-------------------------------------------------------------------------
-
 ## Layer 0 — Hardware Foundations
 
 ### Tier 1 — Camp Site
@@ -389,7 +387,7 @@ cluster - Multi-site replication and Tailscale/Headscale federation
 -   Optional: Integration with **FirstNet**, **Starlink**, or
     terrestrial backhaul for redundancy
 
-# \## Terminology
+# Terminology
 
 | Acronym                   | Term                                     | Description                                                                                                                          |
 |:--------------------------|:-----------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|

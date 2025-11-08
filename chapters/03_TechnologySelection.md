@@ -25,6 +25,10 @@ Selections emphasize **resilience**, **local autonomy**, and **open interoperabi
 - Local PoE switch with VLAN segmentation
 - External backup (USB or second site)
 
+
+
+![Zero Single Point of Failure SDDC](lib/diag/SDDC.excalidraw.png)
+
 ### Tier 3 — Regional Site
 *Federated Multi-Community Hub*
 - Enterprise-grade rackmount servers (ECC RAM, redundant PSU)
@@ -51,6 +55,11 @@ Selections emphasize **resilience**, **local autonomy**, and **open interoperabi
 - Cybersecurity: **Zeek**, **Suricata**, **Wazuh**, **Elastic**
 - Education / Research: **JupyterHub**, **Docker / LXC Sandboxes**
 - Data: **PostgreSQL**, **GeoServer**, **Nextcloud**
+
+
+### Industrial Internet of Thing (IIoT)
+
+![IIoT](lib/diag/IIoT_Architecture.excalidraw.png)
 
 ---
 

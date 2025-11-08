@@ -58,6 +58,7 @@
     <p><strong>License</strong>: CC BY-ND 4.0</p>
     <p><strong>Version</strong>: 0.0.1</p>
     <p><strong>Date</strong>: 2025-11-07</p>
+    <p><strong>State</strong>: DRAFTING</p>
   </div>
 
   <hr style="margin:4em 0;">
@@ -138,11 +139,15 @@ Foundations</a>
 </ul></li>
 <li><a href="#layer-1-cyberinfrastructure-ci">Layer 1 —
 Cyberinfrastructure (CI)</a></li>
-<li><a href="#layer-2-local-services">Layer 2 — Local Services</a></li>
+<li><a href="#layer-2-local-services">Layer 2 — Local Services</a>
+<ul>
+<li><a href="#industrial-internet-of-thing-iiot">Industrial Internet of
+Thing (IIoT)</a></li>
+</ul></li>
 <li><a href="#layer-3-community-connections">Layer 3 — Community
 Connections</a></li>
 </ul></li>
-<li><a href="#terminology">## Terminology</a></li>
+<li><a href="#terminology">Terminology</a></li>
 <li><a href="#citations">Citations</a></li>
 </ul>
 </nav>
@@ -251,8 +256,9 @@ modular capabilities on top of a resilient cyberinfrastructure
 foundation.</p>
 <figure>
 <img src="lib/diag/ClearSkies-Overview-notitle.excalidraw.png"
-alt="Clear Skies Overview" />
-<figcaption aria-hidden="true">Clear Skies Overview</figcaption>
+alt="Clear Skies Reference Architecture" />
+<figcaption aria-hidden="true">Clear Skies Reference
+Architecture</figcaption>
 </figure>
 <h2 id="layer-0---hardware-hw">Layer 0 - Hardware (HW)</h2>
 <p>The hardware selection can be based on 3 tiers to accommodate
@@ -489,6 +495,12 @@ SDDC - Local UPS / Power considerations</p>
 MiniPC/Protectli-class nodes - Ceph or ZFS-replicated storage - Dual
 OPNsense firewall HA pair - Local PoE switch with VLAN segmentation -
 External backup (USB or second site)</p>
+<figure>
+<img src="lib/diag/SDDC.excalidraw.png"
+alt="Zero Single Point of Failure SDDC" />
+<figcaption aria-hidden="true">Zero Single Point of Failure
+SDDC</figcaption>
+</figure>
 <h3 id="tier-3-regional-site">Tier 3 — Regional Site</h3>
 <p><em>Federated Multi-Community Hub</em> - Enterprise-grade rackmount
 servers (ECC RAM, redundant PSU) - 10 GbE backplane networking -
@@ -526,6 +538,12 @@ LXC Sandboxes</strong></li>
 <li>Data: <strong>PostgreSQL</strong>, <strong>GeoServer</strong>,
 <strong>Nextcloud</strong></li>
 </ul>
+<h3 id="industrial-internet-of-thing-iiot">Industrial Internet of Thing
+(IIoT)</h3>
+<figure>
+<img src="lib/diag/IIoT_Architecture.excalidraw.png" alt="IIoT" />
+<figcaption aria-hidden="true">IIoT</figcaption>
+</figure>
 <hr />
 <h2 id="layer-3-community-connections">Layer 3 — Community
 Connections</h2>
@@ -541,7 +559,7 @@ cross-trust</strong></li>
 <li>Optional: Integration with <strong>FirstNet</strong>,
 <strong>Starlink</strong>, or terrestrial backhaul for redundancy</li>
 </ul>
-<h1 id="terminology">## Terminology</h1>
+<h1 id="terminology">Terminology</h1>
 <table>
 <colgroup>
 <col style="width: 12%" />

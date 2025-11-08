@@ -6,7 +6,7 @@ Every system — from the smallest sensor to the community data center — opera
 Clear Skies adopts a layered approach to build increasingly complex modular capabilities on top of a resilient cyberinfrastructure foundation.
 
 
-![Clear Skies Overview](lib/diag/ClearSkies-Overview-notitle.excalidraw.png)
+![Clear Skies Reference Architecture](lib/diag/ClearSkies-Overview-notitle.excalidraw.png)
 
 ## Layer 0 - Hardware (HW)
 
