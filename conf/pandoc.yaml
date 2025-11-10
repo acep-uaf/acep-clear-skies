@@ -25,6 +25,8 @@ variables:
   numbersections: true       # ✅ correct key (not number-sections)
   colorlinks: true           # nice PDF hyperlinks
   linkcolor: blue
+  graphics: true
+  float: false
   # suppress-chapter: true
 
 resource-path:

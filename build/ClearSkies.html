@@ -62,7 +62,7 @@
     <p><strong>License</strong>: CC BY-ND 4.0</p>
     <p><strong>Version</strong>: 0.0.2</p>
     <p><strong>Date</strong>: 2025-11-10</p>
-    <p><strong>State</strong>: DRAFTING</p>
+    <p><strong>State</strong>: PRE-DRAFT</p>
     <p><strong>Source</strong>: https://github.com/acep-uaf/acep-clear-skies</p>
   </div>
 
@@ -534,16 +534,34 @@ deployment scales.</p>
 <hr />
 <h2 id="layer-0-hardware-foundations">Layer 0 — Hardware
 Foundations</h2>
+<p>All 3 tiers of hardware deployment can be built in a shipable rack
+mount container for easy setup and portability if desired.</p>
+<figure>
+<img src="lib/img/portable_rack_2.jpg" alt="Portable Rack" />
+<figcaption aria-hidden="true">Portable Rack</figcaption>
+</figure>
 <h3 id="tier-1-camp-site">Tier 1 — Camp Site</h3>
-<p><em>Portable / Training-Scale Deployment</em> - Example hardware
-platforms (NUC, MiniPC, low-power servers) - Typical storage
-configuration (ZFS mirror, 1 GbE) - Lightweight Proxmox or single-node
-SDDC - Local UPS / Power considerations</p>
+<p><em>Portable / Training-Scale Deployment</em></p>
+<ul>
+<li>Example hardware platforms (NUC, MiniPC, low-power servers)</li>
+<li>Typical storage configuration (ZFS mirror, 1 GbE)</li>
+<li>Lightweight Proxmox or single-node SDDC</li>
+<li>Local UPS / Power considerations</li>
+</ul>
+<figure>
+<img src="lib/diag/Images/VP6600_front_1600x1600.jpg" width="400"
+alt="Protectli-VP6600" />
+<figcaption aria-hidden="true">Protectli-VP6600</figcaption>
+</figure>
 <h3 id="tier-2-village-site">Tier 2 — Village Site</h3>
-<p><em>Community-Scale Deployment</em> - Cluster of 3 ×
-MiniPC/Protectli-class nodes - Ceph or ZFS-replicated storage - Dual
-OPNsense firewall HA pair - Local PoE switch with VLAN segmentation -
-External backup (USB or second site)</p>
+<p><em>Community-Scale Deployment</em></p>
+<ul>
+<li>Cluster of 3 × MiniPC/Protectli-class nodes</li>
+<li>Ceph or ZFS-replicated storage</li>
+<li>Dual OPNsense firewall HA pair</li>
+<li>Local PoE switch with VLAN segmentation</li>
+<li>External backup (USB or second site)</li>
+</ul>
 <figure>
 <img src="lib/diag/SDDC.excalidraw.png"
 alt="Zero Single Point of Failure SDDC" />
@@ -551,10 +569,13 @@ alt="Zero Single Point of Failure SDDC" />
 SDDC</figcaption>
 </figure>
 <h3 id="tier-3-regional-site">Tier 3 — Regional Site</h3>
-<p><em>Federated Multi-Community Hub</em> - Enterprise-grade rackmount
-servers (ECC RAM, redundant PSU) - 10 GbE backplane networking -
-Dedicated Ceph cluster - Multi-site replication and Tailscale/Headscale
-federation</p>
+<p><em>Federated Multi-Community Hub</em></p>
+<ul>
+<li>Enterprise-grade rackmount servers (ECC RAM, redundant PSU)</li>
+<li>10 GbE backplane networking</li>
+<li>Dedicated Ceph cluster</li>
+<li>Multi-site replication and Tailscale/Headscale federation</li>
+</ul>
 <hr />
 <h2 id="layer-1-cyberinfrastructure-ci">Layer 1 — Cyberinfrastructure
 (CI)</h2>

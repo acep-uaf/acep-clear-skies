@@ -10,15 +10,30 @@ Selections emphasize **resilience**, **local autonomy**, and **open interoperabi
 
 ## Layer 0 — Hardware Foundations
 
+All 3 tiers of hardware deployment can be built in a shipable rack mount container for easy setup and portability if desired.
+
+
+
+![Portable Rack](lib/img/portable_rack_2.jpg)
+
+
+
+
 ### Tier 1 — Camp Site
+
 *Portable / Training-Scale Deployment*
+
 - Example hardware platforms (NUC, MiniPC, low-power servers)
 - Typical storage configuration (ZFS mirror, 1 GbE)
 - Lightweight Proxmox or single-node SDDC
 - Local UPS / Power considerations
 
+![Protectli-VP6600](lib/diag/Images/VP6600_front_1600x1600.jpg){ width=400px }
+
 ### Tier 2 — Village Site
+
 *Community-Scale Deployment*
+
 - Cluster of 3 × MiniPC/Protectli-class nodes
 - Ceph or ZFS-replicated storage
 - Dual OPNsense firewall HA pair
@@ -30,7 +45,9 @@ Selections emphasize **resilience**, **local autonomy**, and **open interoperabi
 ![Zero Single Point of Failure SDDC](lib/diag/SDDC.excalidraw.png)
 
 ### Tier 3 — Regional Site
+
 *Federated Multi-Community Hub*
+
 - Enterprise-grade rackmount servers (ECC RAM, redundant PSU)
 - 10 GbE backplane networking
 - Dedicated Ceph cluster
