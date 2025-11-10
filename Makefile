@@ -1,14 +1,16 @@
 PANDOC = pandoc
 BASE = conf/pandoc.yaml
 
-all: build/pdf build/epub build/html
+all: pdf epub html latex markdown
 
 pdf:
 	@mkdir -p build
+	@scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.tex conf/frontmatter.tex
 	$(PANDOC) --defaults=$(BASE) --defaults=conf/pdf.yaml
 
 epub:
 	@mkdir -p build/media
+	# @scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.html conf/frontmatter.html
 	$(PANDOC) --defaults=$(BASE) --defaults=conf/epub.yaml
 
 html:
@@ -17,14 +19,17 @@ html:
 	cp -r lib/diag build/lib/
 	cp -r lib/mathjax build/lib/
 	cp conf/style.css build/conf/
+	@scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.html conf/frontmatter.html
 	$(PANDOC) --defaults=$(BASE) --defaults=conf/html.yaml
 
 latex:
 	@mkdir -p build
-	pandoc --defaults=$(BASE) --defaults=conf/latex.yaml
+	# @scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.tex conf/frontmatter.tex
+	$(PANDOC) --defaults=$(BASE) --defaults=conf/latex.yaml
 
 markdown:
 	@mkdir -p build
+	# @scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.tex conf/frontmatter.tex
 	$(PANDOC) --defaults=$(BASE) -t gfm -o build/ClearSkies.md
 
 clean:

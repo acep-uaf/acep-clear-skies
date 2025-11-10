@@ -10,13 +10,12 @@ input-files:
 from: markdown+yaml_metadata_block+raw_tex
 standalone: true
 
-
 metadata:
   date: ""            # <-- forces maketitle to exist, but blank
   link-citations: true
 
 variables:
-  documentclass: book
+  documentclass: article
   fontsize: 12pt
   geometry:
     - margin=1in
@@ -26,6 +25,7 @@ variables:
   numbersections: true       # ✅ correct key (not number-sections)
   colorlinks: true           # nice PDF hyperlinks
   linkcolor: blue
+  # suppress-chapter: true
 
 resource-path:
   - .

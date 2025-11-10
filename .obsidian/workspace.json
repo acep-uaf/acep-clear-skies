@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "chapters/02_StategicArchitecture.md",
+                "file": "chapters/00_ExecutiveSummary.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02_StategicArchitecture"
+              "title": "00_ExecutiveSummary"
             }
           }
         ]
@@ -260,7 +260,21 @@
   },
   "active": "a921d7a2ad32327b",
   "lastOpenFiles": [
+    "conf/sed5uilB9",
+    "scripts/tmp/frontmatter.tmp",
+    "conf/sed2ud1fo",
+    "scripts/tmp",
+    "conf/sedj1fR7h",
+    "conf/sed52Ob0k",
+    "conf/sedS3sEqP",
+    "conf/sedOy6obu",
+    "scripts/build-frontmatter.sh",
+    "scripts",
+    "templates/frontmatter.tex",
+    "templates/frontmatter_epub.md",
     "chapters/01_Introduction.md",
+    "chapters/00_ExecutiveSummary.md",
+    "chapters/02_StategicArchitecture.md",
     "chapters/03_TechnologySelection.md",
     "lib/diag/IIoT Architecture.excalidraw.md",
     "build/lib/diag/IIoT_Architecture.excalidraw.png",
@@ -275,35 +289,22 @@
     "build/lib/diag/Images/ACEP.png",
     "build/lib/diag/Images/uaflogoBlue.png",
     "build/lib/diag/Images/TLP-GREEN-ACEP.png",
-    "build/lib/diag/Images/OIP-4070867321.eydXgs-tfRsVffQjpfy3zQAAAA",
-    "build/lib/diag/Images/Untitled.base",
-    "build/lib/diag/Images/Untitled 1.base",
     "build/lib/diag/Images/Untitled 2.md",
-    "build/lib/diag/Images",
     "build/lib/diag/SDDC Diagram.excalidraw.md",
     "lib/diag.md",
-    "chapters/02_StategicArchitecture.md",
     "lib/diag/SDDC.excalidraw.md",
     "lib/diag/SDDC Diagram.excalidraw.md",
     "lib/diag/ClearSkies-Overview.excalidraw.md",
-    "lib/diag/Images/OIP-4070867321.eydXgs-tfRsVffQjpfy3zQAAAA",
-    "lib/diag/Images/Untitled.base",
-    "lib/diag/Images/Untitled 1.base",
     "lib/diag/Images/Untitled 2.md",
-    "lib/diag/Images",
     "chapters/Citations.md",
-    "chapters/00_ExecutiveSummary.md",
     "build/ClearSkies.md",
     "chapters/Terminology.md",
     "lib/diag/ClearSkies-Overview-notitle.excalidraw.md",
     "README.md",
     "Untitled.md",
-    "conf/markdown.yaml",
     "build/lib/diag/ClearSkies-Overview.excalidraw.md",
     "build/lib/diag/ClearSkies-Overview-notitle.excalidraw.md",
-    "build/lib/diag",
     "chapters/00_Introduction.md",
-    "LICENSE.md",
-    "chapters/02_Chapter2.md"
+    "LICENSE.md"
   ]
 }
