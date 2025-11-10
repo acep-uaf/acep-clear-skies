@@ -1,6 +1,7 @@
 # Executive Summary
 
 Alaska has the world’s highest concentration of islanded microgrids—small, self-contained power systems that sustain hundreds of remote communities unconnected to any central grid.  
+
 These systems are lifelines, but they face growing pressure: rising fuel and logistics costs, limited technical capacity, fragile Internet connectivity, and increasing exposure to cyber threats as digital controls expand into every corner of local infrastructure.
 
 **Clear Skies** proposes a new path forward — a _local-first, cloud-free cyberinfrastructure model_ designed specifically for Alaska’s rural and tribal energy communities.  
