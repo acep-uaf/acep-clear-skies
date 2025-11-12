@@ -28,6 +28,7 @@ variables:
   linkcolor: blue
   graphics: true
   float: false
+  figure-latex-placement: H
   # suppress-chapter: true
 
 resource-path:

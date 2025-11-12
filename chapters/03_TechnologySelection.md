@@ -13,7 +13,6 @@ Selections emphasize **resilience**, **local autonomy**, and **open interoperabi
 All 3 tiers of hardware deployment can be built in a shipable rack mount container for easy setup and portability if desired.
 
 
-
 ![Portable Rack](lib/img/portable_rack_2.jpg)
 
 
@@ -44,6 +43,7 @@ All 3 tiers of hardware deployment can be built in a shipable rack mount contain
 
 ![Zero Single Point of Failure SDDC](lib/diag/SDDC.excalidraw.png)
 
+
 ### Tier 3 — Regional Site
 
 *Federated Multi-Community Hub*
@@ -52,6 +52,7 @@ All 3 tiers of hardware deployment can be built in a shipable rack mount contain
 - 10 GbE backplane networking
 - Dedicated Ceph cluster
 - Multi-site replication and Tailscale/Headscale federation
+
 
 ---
 
@@ -62,6 +63,7 @@ All 3 tiers of hardware deployment can be built in a shipable rack mount contain
 - Identity: **Keycloak**, **Smallstep CA**
 - Monitoring: **Prometheus**, **Grafana**, **Loki**, **Wazuh**
 - Configuration: **Ansible** or **Chef**
+
 
 ---
 
@@ -77,6 +79,7 @@ All 3 tiers of hardware deployment can be built in a shipable rack mount contain
 ### Industrial Internet of Thing (IIoT)
 
 ![IIoT](lib/diag/IIoT_Architecture.excalidraw.png)
+
 
 ---
 

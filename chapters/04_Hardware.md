@@ -7,6 +7,8 @@
 
 ## Proxmox VE Server Hardware Requirements
 
+::: {.table-scriptsize}
+\scriptsize
 | Category                | Bare Minimum (Lab/Test)                     | Standalone (Production Edge)                   | Hyperconverged Node (Zero-SPoF Cluster)                           |
 | ----------------------- | ------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------- |
 | **CPU**                 | 1× Dual-Core 64-bit (Intel/AMD, VT-x/AMD-V) | 1× Quad-Core 64-bit (i5/i7, Xeon-E, Ryzen 5/7) | 1× 6–12 Core (Xeon-D, Xeon-Silver, Ryzen 9, EPYC)                 |
@@ -24,19 +26,23 @@
 | **Approx Power Draw**   | 25–40 W                                     | 50–90 W                                        | 80–200 W (depending on drives/NICs)                               |
 | **Example Platform**    | Intel NUC, Protectli VP6600                 | Minisforum MS-01, Protectli VP6630             | Supermicro E300, Xeon-D, or 3× Proxmox mini-cluster               |
 | **Notes**               | Not for production                          | Great for edge compute or small SDDC           | Use 3 nodes + Ceph + replication; no single failure halts cluster |
+:::
 
 # Server Comparison
 
+::: {.table-scriptsize}
+\scriptsize
 | Product | CPU (Make + Cores) | RAM (GB) | OS Disk | VM Disk(s) | 1–2 Gb NICs | 10 Gb NICs | Rack (U) | Power (W max) | Price (USD) |
 |:--|:--|:--:|:--|:--|:--:|:--:|:--:|:--:|:--:|
-| Protectli VP6630 | Intel Core i3 (6-Port Model) (4 C) | 96 | NVMe SSD 4 TB | SATA SSD x1 1 TB | 6 | 2 | 1U | 40 | 1651 |
-| Protectli VP6650 | Intel Core i5 (6-Port Model) (4 C) | 96 | NVMe SSD 4 TB | SATA SSD x1 1 TB | 6 | 2 | 1U | 45 | 1811 |
+| Protectli VP6630 | Intel Core i3 (6-Port Model) (4 C) | 96 | NVMe SSD 4 TB | SATA SSD x1 1 TB | 6 | 2 | 1U | 40 | $1651 |
+| Protectli VP6650 | Intel Core i5 (6-Port Model) (4 C) | 96 | NVMe SSD 4 TB | SATA SSD x1 1 TB | 6 | 2 | 1U | 45 | $1811 |
 | ProLiant DL145 Gen11 | AMD EPYC 8004 series (Zen4c) (– C) | – | – | – | 0 | 0 | 2U | – | – |
-| Qotom Q30921SE S13 | Intel Celeron 4305U or Core (8th–10th Gen) (2 C) | 32 | M.2 SSD 0 TB | SATA SSD/HDD x1 0 TB | 6 | 2 | – | 30 | 489 |
-| MINISFORUM MS-S1 Max | AMD Ryzen AI Max+ 395 (16 C) | 128 | NVMe SSD 2 TB | – | 0 | 2 | 2U | 130 | 2503.9 |
+| Qotom Q30921SE S13 | Intel Celeron 4305U or Core (8th–10th Gen) (2 C) | 32 | M.2 SSD 0 TB | SATA SSD/HDD x1 0 TB | 6 | 2 | – | 30 | $489 |
+| MINISFORUM MS-S1 Max | AMD Ryzen AI Max+ 395 (16 C) | 128 | NVMe SSD 2 TB | – | 0 | 2 | 2U | 130 | $2503.9 |
 | PowerEdge R6615 | AMD EPYC 9004 series (– C) | – | – | – | 2 | 0 | 1U | – | – |
 | ProLiant DL235 Gen11 | AMD EPYC 9004 (– C) | – | – | – | 0 | 0 | 1U | – | – |
-| Lancelot 1199-SR | Intel Xeon E-2478 (8 C) | 128 | NVMe SSD 1 TB | SAS HDD x4 16 TB | 2 | 4 | 1U | 250 | 5199 |
+| Lancelot 1199-SR | Intel Xeon E-2478 (8 C) | 128 | NVMe SSD 1 TB | SAS HDD x4 16 TB | 2 | 4 | 1U | 250 | $5199 |
+:::
 
  --- 
 
