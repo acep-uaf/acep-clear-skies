@@ -1,0 +1,60 @@
+{
+  "product": "Lancelot 1199-SR",
+  "make": "ASLab",
+  "model": "1199-SR",
+  "url": "https://www.aslab.com/products/rackmount/customize/lancelot1199sr.cgi",
+  "category": "server",
+  "tier": "enterprise",
+  "price_usd": 5199,
+  "quote": { "quote_number": "2511107260-W", "quote_date": "2025-11-10" },
+  "warranty": "3-Year Limited Warranty (parts and labor)",
+  "comments": "Rackmount Ceph/Proxmox node with ECC DDR5, IPMI, and redundant PSU.",
+  "specs": {
+    "cpu": {
+      "model": "Intel Xeon E-2478",
+      "architecture": "x86_64",
+      "socket": "",
+      "cores": 8,
+      "threads": 16,
+      "tdp_w": 80
+    },
+    "memory": {
+      "capacity_gb": 128,
+      "slots": 4,
+      "type": "DDR5-4800 ECC RDIMM",
+      "ecc": true
+    },
+    "storage": [
+      { "type": "NVMe SSD", "count": 1, "capacity_each_tb": 1, "interface": "PCIe 4.0", "model": "Samsung 990 Pro" },
+      { "type": "SAS HDD", "count": 4, "capacity_each_tb": 16, "interface": "SAS3 12Gb/s", "model": "Toshiba MG09SCA16TE" }
+    ],
+    "network": [
+      { "type": "RJ45", "speed_gbps": 1, "count": 2, "chipset": "Intel I210AT" },
+      { "type": "RJ45", "speed_gbps": 10, "count": 4, "chipset": "Intel X710-T4" }
+    ],
+    "expansion": {
+      "pcie_slots": 2,
+      "m2_slots": 0,
+      "usb_ports": { "usb2": 0, "usb3": 0, "usb4": 0 },
+      "serial_ports": 1
+    },
+    "power": {
+      "input_type": "AC 100–240V",
+      "redundant": true,
+      "psu_count": 2,
+      "psu_rating_w": 450,
+      "efficiency": "Platinum",
+      "draw_w": { "idle": 95, "max": 250 }
+    },
+    "thermal": { "cooling": "Active front-rear airflow", "operating_temp_c": "10–35" },
+    "chassis": {
+      "form_factor": "Rackmount Server",
+      "rack_units": "1U",
+      "material": "Steel",
+      "dimensions_in": { "l": 25.6, "w": 17.2, "h": 1.7 },
+      "weight_kg": null
+    },
+    "management": { "bmc": true, "ipmi": true, "bios": "UEFI with BMC (AST2600)", "tpm": "2.0 header" },
+    "os_support": ["Proxmox VE", "Ubuntu 24.04 LTS", "Ceph"]
+  }
+}

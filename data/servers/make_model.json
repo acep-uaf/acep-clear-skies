@@ -1,0 +1,95 @@
+{
+    "product": "Product Name",                 // Marketing name or SKU
+    "make": "Manufacturer Name",               // e.g. Dell, Protectli, HPE, Minisforum
+    "model": "Model Identifier",               // e.g. R6615, VP6630, DL325 Gen11
+    "url": "https://example.com/product-page", // Direct vendor link
+    "category": "server",                      // e.g. server, switch, firewall, router
+    "tier": "edge",                            // edge | midrange | enterprise | industrial
+    "price_usd": null,                         // numeric or null
+    "quote": {
+      "quote_number": "1234567890",
+      "quote_date": "2022-01-01",
+    },
+    "warranty": "Standard Warranty Description",
+    "comments": "Freeform notes or status (e.g. Backordered, Recommended, EOL)",
+    "specs": {
+      "cpu": {
+        "model": "",
+        "architecture": "x86_64",
+        "socket": "",
+        "cores": 0,
+        "threads": 0,
+        "tdp_w": 0
+      },
+      "memory": {
+        "capacity_gb": 0,
+        "slots": 0,
+        "type": "",
+        "ecc": false
+      },
+      "storage": [
+        {
+          "type": "NVMe",
+          "count": 0,
+          "capacity_each_tb": 0,
+          "interface": "PCIe 4.0 x4",
+          "model": ""
+        }
+      ],
+      "network": [
+        {
+          "type": "RJ45",
+          "speed_gbps": 1,
+          "count": 0,
+          "chipset": ""
+        }
+      ],
+      "expansion": {
+        "pcie_slots": 0,
+        "m2_slots": 0,
+        "usb_ports": {
+          "usb2": 0,
+          "usb3": 0,
+          "usb4": 0
+        },
+        "serial_ports": 0
+      },
+      "power": {
+        "input_type": "",
+        "redundant": false,
+        "psu_count": 1,
+        "psu_rating_w": null,
+        "efficiency": "",
+        "draw_w": {
+          "idle": 0,
+          "max": 0
+        }
+      },
+      "thermal": {
+        "cooling": "",
+        "operating_temp_c": ""
+      },
+      "chassis": {
+        "form_factor": "",
+        "rack_units": "",
+        "material": "",
+        "dimensions_in": {
+          "l": 0,
+          "w": 0,
+          "h": 0
+        },
+        "weight_kg": 0
+      },
+      "management": {
+        "bmc": false,
+        "ipmi": false,
+        "bios": "",
+        "tpm": ""
+      },
+      "os_support": [
+        "Proxmox VE",
+        "Ubuntu 24.04 LTS"
+      ]
+    }
+  }
+  

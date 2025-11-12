@@ -1,0 +1,55 @@
+{
+  "product": "Qotom Q30921SE S13",
+  "make": "Qotom",
+  "model": "Q30921SE S13",
+  "url": "https://www.qotom.net/mini-pc/q30900se-s13-series.html",
+  "category": "server",
+  "tier": "industrial",
+  "price_usd": 489,
+  "quote": { "quote_number": "", "quote_date": "" },
+  "warranty": "1-Year Limited Warranty",
+  "comments": "Industrial fanless firewall/edge mini-PC with dual 10G SFP+.",
+  "specs": {
+    "cpu": {
+      "model": "Intel Celeron 4305U or Core (8th–10th Gen)",
+      "architecture": "x86_64",
+      "socket": "",
+      "cores": 2,
+      "threads": 2,
+      "tdp_w": 15
+    },
+    "memory": { "capacity_gb": 32, "slots": 1, "type": "DDR4 SO-DIMM 2133/2400MHz", "ecc": false },
+    "storage": [
+      { "type": "M.2 SSD", "count": 1, "capacity_each_tb": 0, "interface": "PCIe 3.0 x1", "model": "" },
+      { "type": "SATA SSD/HDD", "count": 1, "capacity_each_tb": 0, "interface": "SATA III", "model": "" }
+    ],
+    "network": [
+      { "type": "RJ45", "speed_gbps": 2.5, "count": 6, "chipset": "Intel I225-V/I226-V" },
+      { "type": "SFP+", "speed_gbps": 10, "count": 2, "chipset": "Intel JL82599ES" }
+    ],
+    "expansion": {
+      "pcie_slots": 0,
+      "m2_slots": 3,
+      "usb_ports": { "usb2": 1, "usb3": 3, "usb4": 0 },
+      "serial_ports": 1
+    },
+    "power": {
+      "input_type": "DC 12V Jack",
+      "redundant": false,
+      "psu_count": 1,
+      "psu_rating_w": null,
+      "efficiency": "",
+      "draw_w": { "idle": 10, "max": 30 }
+    },
+    "thermal": { "cooling": "Fanless", "operating_temp_c": "0–50" },
+    "chassis": {
+      "form_factor": "Mini Fanless",
+      "rack_units": "",
+      "material": "Aluminum",
+      "dimensions_in": { "l": 7.7, "w": 4.8, "h": 1.9 },
+      "weight_kg": 1.26
+    },
+    "management": { "bmc": false, "ipmi": false, "bios": "UEFI", "tpm": "" },
+    "os_support": ["OPNsense", "Proxmox VE", "Ubuntu 24.04 LTS"]
+  }
+}

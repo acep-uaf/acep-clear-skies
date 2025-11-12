@@ -1,0 +1,53 @@
+{
+  "product": "MINISFORUM MS-S1 Max",
+  "make": "Minisforum",
+  "model": "MS-S1 Max",
+  "url": "https://store.minisforum.com/products/minisforum-ms-s1-max-mini-pc",
+  "category": "server",
+  "tier": "midrange",
+  "price_usd": 2503.9,
+  "quote": { "quote_number": "", "quote_date": "" },
+  "warranty": "2-Year Limited Warranty",
+  "comments": "Ryzen AI Max+ workstation-class mini with dual 10GbE and PCIe x16 expansion.",
+  "specs": {
+    "cpu": {
+      "model": "AMD Ryzen AI Max+ 395",
+      "architecture": "x86_64",
+      "socket": "",
+      "cores": 16,
+      "threads": 32,
+      "tdp_w": 130
+    },
+    "memory": { "capacity_gb": 128, "slots": 0, "type": "LPDDR5x-8000", "ecc": false },
+    "storage": [
+      { "type": "NVMe SSD", "count": 2, "capacity_each_tb": 2, "interface": "PCIe 4.0", "model": "" }
+    ],
+    "network": [
+      { "type": "RJ45", "speed_gbps": 10, "count": 2, "chipset": "Realtek RTL8127" }
+    ],
+    "expansion": {
+      "pcie_slots": 1,
+      "m2_slots": 2,
+      "usb_ports": { "usb2": 2, "usb3": 4, "usb4": 4 },
+      "serial_ports": 0
+    },
+    "power": {
+      "input_type": "DC 12V/26.6A (320W adapter)",
+      "redundant": false,
+      "psu_count": 1,
+      "psu_rating_w": 320,
+      "efficiency": "",
+      "draw_w": { "idle": 35, "max": 130 }
+    },
+    "thermal": { "cooling": "Dual turbine fans + heat pipes", "operating_temp_c": "0–50" },
+    "chassis": {
+      "form_factor": "Mini Server / 2U Rackmountable",
+      "rack_units": "2U",
+      "material": "Aluminum Alloy",
+      "dimensions_in": { "l": 8.7, "w": 8.1, "h": 3.0 },
+      "weight_kg": 2.8
+    },
+    "management": { "bmc": false, "ipmi": false, "bios": "UEFI Secure Boot", "tpm": "Firmware TPM 2.0" },
+    "os_support": ["Windows 11 Pro", "Ubuntu 24.04 LTS", "Proxmox VE"]
+  }
+}

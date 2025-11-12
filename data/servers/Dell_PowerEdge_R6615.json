@@ -1,0 +1,44 @@
+{
+  "product": "PowerEdge R6615",
+  "make": "Dell",
+  "model": "R6615",
+  "url": "https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615",
+  "category": "server",
+  "tier": "enterprise",
+  "price_usd": null,
+  "quote": { "quote_number": "", "quote_date": "" },
+  "warranty": "3-Year ProSupport",
+  "comments": "AMD EPYC 9004 1U high-density virtualization node.",
+  "specs": {
+    "cpu": {
+      "model": "AMD EPYC 9004 series",
+      "architecture": "x86_64",
+      "socket": "SP5",
+      "cores": null,
+      "threads": null,
+      "tdp_w": null
+    },
+    "memory": { "capacity_gb": null, "slots": 12, "type": "DDR5 4800 ECC RDIMM", "ecc": true },
+    "storage": [],
+    "network": [{ "type": "RJ45", "speed_gbps": 1, "count": 2, "chipset": "Broadcom" }],
+    "expansion": { "pcie_slots": 3, "m2_slots": 2, "usb_ports": { "usb2": 2, "usb3": 2, "usb4": 0 }, "serial_ports": 1 },
+    "power": {
+      "input_type": "AC 100–240V",
+      "redundant": true,
+      "psu_count": 2,
+      "psu_rating_w": 1800,
+      "efficiency": "Titanium",
+      "draw_w": { "idle": null, "max": null }
+    },
+    "thermal": { "cooling": "Active", "operating_temp_c": "10–35" },
+    "chassis": {
+      "form_factor": "Rackmount",
+      "rack_units": "1U",
+      "material": "Steel",
+      "dimensions_in": { "l": 28.0, "w": 17.1, "h": 1.7 },
+      "weight_kg": null
+    },
+    "management": { "bmc": true, "ipmi": true, "bios": "UEFI / iDRAC9", "tpm": "2.0" },
+    "os_support": ["Proxmox VE", "Ubuntu 24.04 LTS", "RHEL 9"]
+  }
+}

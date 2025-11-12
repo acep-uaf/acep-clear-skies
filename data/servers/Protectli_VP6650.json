@@ -1,0 +1,75 @@
+{
+  "product": "Protectli VP6650",
+  "make": "Protectli",
+  "model": "VP6650",
+  "url": "https://protectli.com/product/vp6650/",
+  "category": "server",
+  "tier": "edge",
+  "price_usd": 1811,
+  "quote": {
+    "quote_number": "",
+    "quote_date": ""
+  },
+  "warranty": "2-Year Standard Warranty",
+  "comments": "Higher-performance fanless variant with Intel Core i5 CPU.",
+  "specs": {
+    "cpu": {
+      "model": "Intel Core i5 (6-Port Model)",
+      "architecture": "x86_64",
+      "socket": "",
+      "cores": 4,
+      "threads": 8,
+      "tdp_w": 65
+    },
+    "memory": {
+      "capacity_gb": 96,
+      "slots": 2,
+      "type": "2x48GB DDR5-5600 SO-DIMM",
+      "ecc": false
+    },
+    "storage": [
+      {
+        "type": "NVMe SSD",
+        "count": 1,
+        "capacity_each_tb": 4,
+        "interface": "PCIe 4.0 x4",
+        "model": "Kingston NV3-4000G"
+      },
+      {
+        "type": "SATA SSD",
+        "count": 1,
+        "capacity_each_tb": 1,
+        "interface": "SATA III",
+        "model": "Samsung 870 EVO"
+      }
+    ],
+    "network": [
+      { "type": "RJ45", "speed_gbps": 2.5, "count": 6, "chipset": "Intel i226-V" },
+      { "type": "SFP+", "speed_gbps": 10, "count": 2, "chipset": "Protectli 10G Base-T SFP+" }
+    ],
+    "expansion": {
+      "pcie_slots": 0,
+      "m2_slots": 2,
+      "usb_ports": { "usb2": 0, "usb3": 0, "usb4": 0 },
+      "serial_ports": 0
+    },
+    "power": {
+      "input_type": "DC 19.5V (IEC Type B)",
+      "redundant": false,
+      "psu_count": 1,
+      "psu_rating_w": null,
+      "efficiency": "",
+      "draw_w": { "idle": 15, "max": 45 }
+    },
+    "thermal": { "cooling": "Fanless", "operating_temp_c": "0–50" },
+    "chassis": {
+      "form_factor": "Mini (VP6600 Series)",
+      "rack_units": "1U",
+      "material": "Aluminum",
+      "dimensions_in": { "l": 7.5, "w": 7.0, "h": 3.0 },
+      "weight_kg": null
+    },
+    "management": { "bmc": false, "ipmi": false, "bios": "coreboot", "tpm": "None" },
+    "os_support": ["Proxmox VE", "OPNsense", "Ubuntu 24.04 LTS"]
+  }
+}

@@ -9,6 +9,7 @@ include-before-body:
 
 metadata:
   title: "Clear Skies - A Reference Architecture for Resilient Alaskan Microgrid Cyberinfrastructure"
+  title-block: false
 
 # This enables EPUB TOC
 toc: true

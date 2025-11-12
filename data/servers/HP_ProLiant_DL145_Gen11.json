@@ -1,0 +1,44 @@
+{
+  "product": "ProLiant DL145 Gen11",
+  "make": "HPE",
+  "model": "DL145 Gen11",
+  "url": "https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl100-servers/proliant-dl145-gen11/p/1014845266",
+  "category": "server",
+  "tier": "industrial",
+  "price_usd": null,
+  "quote": { "quote_number": "", "quote_date": "" },
+  "warranty": "3-Year Standard Warranty",
+  "comments": "2U ruggedized AMD EPYC 8004 edge-ready platform.",
+  "specs": {
+    "cpu": {
+      "model": "AMD EPYC 8004 series (Zen4c)",
+      "architecture": "x86_64",
+      "socket": "SP6",
+      "cores": null,
+      "threads": null,
+      "tdp_w": null
+    },
+    "memory": { "capacity_gb": null, "slots": 8, "type": "DDR5 ECC RDIMM", "ecc": true },
+    "storage": [],
+    "network": [],
+    "expansion": { "pcie_slots": 2, "m2_slots": 2, "usb_ports": { "usb2": 0, "usb3": 2, "usb4": 0 }, "serial_ports": 1 },
+    "power": {
+      "input_type": "AC 100–240V",
+      "redundant": true,
+      "psu_count": 2,
+      "psu_rating_w": null,
+      "efficiency": "Platinum",
+      "draw_w": { "idle": null, "max": null }
+    },
+    "thermal": { "cooling": "Active", "operating_temp_c": "-5–55" },
+    "chassis": {
+      "form_factor": "Rackmount",
+      "rack_units": "2U",
+      "material": "Steel",
+      "dimensions_in": { "l": 28.0, "w": 17.5, "h": 3.4 },
+      "weight_kg": null
+    },
+    "management": { "bmc": true, "ipmi": true, "bios": "UEFI / iLO 6", "tpm": "2.0" },
+    "os_support": ["Proxmox VE", "Ubuntu 24.04 LTS", "RHEL 9"]
+  }
+}
