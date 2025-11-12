@@ -4,8 +4,8 @@ A Reference Architecture for Resilient Alaskan Microgrid
 Cyberinfrastructure
 
 - [ClearSkies-PDF](build/ClearSkies.pdf)
+- [ClearSkies-MD](build/ClearSkies.md)
 - [ClearSkies-HTML](build/ClearSkies.html)
-
 ### Vision Statement
 
 **Clear Skies** is a locally grown initiative to build
