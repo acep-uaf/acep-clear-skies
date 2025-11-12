@@ -20,7 +20,7 @@ and creates a foundation for innovation that reflects Alaska’s values of
 **independence, stewardship**, and **cooperation**.
 
 The following reference architecture outlines how Clear Skies can be
-implemented in scalable layers, from physical infrastructure to regional
-collaboration.
+implemented in modular layers, from physical infrastructure to regional
+collaboration services.
 
 ![Clear Skies Architecture](lib/diag/ClearSkies-Overview-notitle.excalidraw.png)
