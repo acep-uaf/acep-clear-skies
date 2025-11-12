@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "build/ClearSkies.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "ClearSkies"
             }
           }
         ],
@@ -289,6 +289,12 @@
   },
   "active": "ee00b10235193dd0",
   "lastOpenFiles": [
+    "conf/frontmatter-md.html",
+    "templates/frontmatter-md.html",
+    "chapters/00_ExecutiveSummary.md",
+    "build/ClearSkies.md",
+    "build/ClearSkies.pdf",
+    "README.md",
     "chapters/04_Hardware.md",
     "conf/sed9XtapP",
     "build/lib/img/UAF-ACEP.png",
@@ -301,7 +307,6 @@
     "build/lib/img/HP_ProLiant_DL235_Gen11.webp",
     "lib/img/HP_ProLiant_DL235_Gen11.jpg",
     "lib/img/HP_ProLiant_DL235_Gen11.webp",
-    "chapters/00_ExecutiveSummary.md",
     "chapters/03_TechnologySelection.md",
     "build/lib/diag/ClearSkies-NSF-Cyberphysical.excalidraw.md",
     "lib/img/Unconfirmed 555262.crdownload",
@@ -312,10 +317,7 @@
     "lib/img/Unconfirmed 78439.crdownload",
     "lib/img/Unconfirmed 257460.crdownload",
     "lib/md/server_comparison.md",
-    "lib/img/Unconfirmed 833079.crdownload",
-    "scripts/gen_server_comparison.py",
     "chapters/02_StategicArchitecture.md",
-    "README.md",
     "build/lib/diag/ClearSkies-Overview.excalidraw.md",
     "build/lib/diag/ClearSkies-Overview-notitle.excalidraw.md",
     "templates/frontmatter_epub.md",
@@ -331,7 +333,6 @@
     "lib/diag/ClearSkies-Overview.excalidraw.md",
     "lib/diag/Images/Untitled 2.md",
     "chapters/Citations.md",
-    "build/ClearSkies.md",
     "chapters/Terminology.md",
     "lib/diag/ClearSkies-Overview-notitle.excalidraw.md"
   ]

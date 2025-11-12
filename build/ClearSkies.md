@@ -2,9 +2,109 @@
 bibliography:
 - lib/citations.bib
 link-citations: true
+title: Clear Skies - A Reference Architecture for Resilient Alaskan
+  Microgrid Cyberinfrastructure
+title-block: false
 ---
 
+<div class="frontmatter">
 
+  <!-- Title Page -->
+  <h1 style="margin-top:3em; font-size:2.4em; text-align:center;">Clear Skies</h1>
+  <h2 style="text-align:center; font-weight:normal;">A Reference Architecture for Resilient Alaskan Microgrid Cyberinfrastructure</h2>
+
+  <div style="text-align:center; margin:2em 0;">
+    <img src="lib/img/UAF-ACEP.png" alt="Cover illustration" style="max-width:350px;">
+  </div>
+
+  <hr style="margin:3em 0;">
+  
+
+  <!-- Metadata Page (PDF analog) -->
+  <div style="text-align:left; margin-top:5em;">
+  <!-- Metadata Page (PDF analog) -->
+    <table style="margin-top:5em; width:100%; border-collapse:collapse;">
+      <tbody>
+        <tr><td style="width:30%; font-weight:bold;">Title</td><td>Clear Skies</td></tr>
+        <tr><td style="font-weight:bold;">Subtitle</td><td>A Reference Architecture for Resilient Alaskan Microgrid Cyberinfrastructure</td></tr>
+        <tr><td style="font-weight:bold;">Affiliation</td><td>Alaska Center for Energy and Power</td></tr>
+        <tr><td style="font-weight:bold;">Institution</td><td>University of Alaska Fairbanks</td></tr>
+        <tr><td style="font-weight:bold;">Author</td><td>John Haverlack</td></tr>
+        <tr><td style="font-weight:bold;">Copyright</td><td>© 2025 Alaska Center for Energy and Power</td></tr>
+        <tr><td style="font-weight:bold;">License</td><td>CC BY-ND 4.0</td></tr>
+        <tr><td style="font-weight:bold;">Version</td><td>0.0.2</td></tr>
+        <tr><td style="font-weight:bold;">Date</td><td>2025-11-11</td></tr>
+        <tr><td style="font-weight:bold;">State</td><td>PRE-DRAFT</td></tr>
+        <tr><td style="font-weight:bold;">Source</td><td>https://github.com/acep-uaf/acep-clear-skies</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <hr style="margin:4em 0;">
+
+</div>
+
+
+-   [Executive Summary](#executive-summary)
+-   [Introduction](#introduction)
+    -   [Vision Statement](#vision-statement)
+    -   [Problem Statement](#problem-statement)
+-   [Strategic Architecture](#strategic-architecture)
+    -   [Layer 0 - Hardware (HW)](#layer-0---hardware-hw)
+        -   [Tier 1 - Camp Site](#tier-1---camp-site)
+        -   [Tier 2 - Village Site](#tier-2---village-site)
+        -   [Tier 3 - Regional Site](#tier-3---regional-site)
+    -   [Layer 1 - Cyberinfrastructure
+        (CI)](#layer-1---cyberinfrastructure-ci)
+        -   [Networking & Segmentation](#networking-segmentation)
+        -   [Identity & Trust](#identity-trust)
+        -   [Storage & Resiliency](#storage-resiliency)
+        -   [Monitoring & Automation](#monitoring-automation)
+        -   [Security & Perimeter](#security-perimeter)
+        -   [Data Backup &
+            Synchronization](#data-backup-synchronization)
+    -   [Layer 2 - Local Services (LOC)](#layer-2---local-services-loc)
+        -   [Operational Technology (OT) / SCADA /
+            ICS](#operational-technology-ot-scada-ics)
+        -   [Emergency Communications](#emergency-communications)
+        -   [Local Community
+            Communications](#local-community-communications)
+        -   [Additional Service Categories
+            (Expandable)](#additional-service-categories-expandable)
+        -   [Outcome](#outcome)
+    -   [Layer 3 - Community Connections
+        (COMM)](#layer-3---community-connections-comm)
+        -   [Collaborative Applications](#collaborative-applications)
+        -   [Outcome](#outcome-1)
+-   [Technology Selection](#technology-selection)
+    -   [Layer 0 — Hardware Foundations](#layer-0-hardware-foundations)
+        -   [Tier 1 — Camp Site](#tier-1-camp-site)
+        -   [Tier 2 — Village Site](#tier-2-village-site)
+        -   [Tier 3 — Regional Site](#tier-3-regional-site)
+    -   [Layer 1 — Cyberinfrastructure
+        (CI)](#layer-1-cyberinfrastructure-ci)
+    -   [Layer 2 — Local Services](#layer-2-local-services)
+        -   [Industrial Internet of Thing
+            (IIoT)](#industrial-internet-of-thing-iiot)
+    -   [Layer 3 — Community
+        Connections](#layer-3-community-connections)
+-   [Hardware Specifications](#hardware-specifications)
+-   [SDDC Servers](#sddc-servers)
+    -   [Proxmox VE Server Hardware
+        Requirements](#proxmox-ve-server-hardware-requirements)
+-   [Server Comparison](#server-comparison)
+    -   [Protectli VP6630](#protectli-vp6630)
+    -   [Protectli VP6650](#protectli-vp6650)
+    -   [Qotom Q30921SE S13](#qotom-q30921se-s13)
+    -   [MINISFORUM MS-S1 Max](#minisforum-ms-s1-max)
+    -   [PowerEdge R6615](#poweredge-r6615)
+    -   [ProLiant DL145 Gen11](#proliant-dl145-gen11)
+    -   [ProLiant DL235 Gen11](#proliant-dl235-gen11)
+    -   [Lancelot 1199-SR](#lancelot-1199-sr)
+-   [Switches](#switches)
+-   [Terminology](#terminology)
+-   [Citations](#citations)
 
 # Executive Summary
 
@@ -463,10 +563,16 @@ alt="Protectli-VP6600" />
 
 # Hardware Specifications
 
-> \[!danger\] Vendor Agnostic As it is a stated goal of the Clear Skies
-> architecture to remain vendor agnostic the following vendor product
-> highlights are for comparison purposes only and not recommendations or
-> promotions an any specific vendor or products.
+<div class="callout-danger">
+
+**Vendor Agnostic**
+
+As it is a stated goal of the Clear Skies architecture to remain vendor
+agnostic the following vendor product highlights are for comparison
+purposes only and not recommendations or promotions an any specific
+vendor or products.
+
+</div>
 
 # SDDC Servers
 

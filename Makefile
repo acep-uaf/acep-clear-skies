@@ -10,7 +10,7 @@ pdf:
 
 epub:
 	@mkdir -p build/media
-	# @scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.html conf/frontmatter.html
+	@scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.html conf/frontmatter.html
 	$(PANDOC) --defaults=$(BASE) --defaults=conf/epub.yaml
 
 html:
@@ -24,13 +24,13 @@ html:
 
 latex:
 	@mkdir -p build
-	# @scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.tex conf/frontmatter.tex
+	@scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.tex conf/frontmatter.tex
 	$(PANDOC) --defaults=$(BASE) --defaults=conf/latex.yaml
 
 markdown:
 	@mkdir -p build
-	# @scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter.tex conf/frontmatter.tex
-	$(PANDOC) --defaults=$(BASE) -t gfm -o build/ClearSkies.md
+	@scripts/build-frontmatter.sh conf/metadata.yaml templates/frontmatter-md.html conf/frontmatter-md.html
+	$(PANDOC) --defaults=$(BASE) --defaults=conf/markdown.yaml
 
 clean:
 	rm -rf build
