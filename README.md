@@ -23,4 +23,4 @@ The following reference architecture outlines how Clear Skies can be
 implemented in scalable layers, from physical infrastructure to regional
 collaboration.
 
-![[lib/diag/ClearSkies-Overview-notitle.excalidraw.png]]
+![Clear Skies Architecture](lib/diag/ClearSkies-Overview-notitle.excalidraw.png)
