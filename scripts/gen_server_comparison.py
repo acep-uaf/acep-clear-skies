@@ -47,7 +47,8 @@ def load_servers():
             continue
         try:
             with f.open() as fh:
-                servers.append(json.load(fh))
+                data = json.load(fh)
+                servers.append((f.stem, data))
         except Exception as e:
             print(f"⚠️  Skipping {f.name}: {e}")
     return servers
@@ -58,7 +59,7 @@ def make_summary_table(servers):
         "|:--|:--|:--:|:--|:--|:--:|:--:|:--:|:--:|:--:|\n"
     )
     rows = []
-    for s in servers:
+    for _, s in servers:
         sp = s.get("specs", {})
         cpu = sp.get("cpu", {})
         mem = sp.get("memory", {})
@@ -86,7 +87,7 @@ def make_summary_table(servers):
         rows.append(row)
     return "# Server Comparison\n\n" + header + "\n".join(rows) + "\n"
 
-def make_detail_section(server):
+def make_detail_section(filename_stem, server):
     """Generate detailed per-product markdown."""
     s = server
     sp = s.get("specs", {})
@@ -99,11 +100,11 @@ def make_detail_section(server):
     osdisk, vmdisk = get_storage_summary(sp.get("storage"))
     gbit, ten = get_nic_counts(sp.get("network"))
 
-    img_name = s.get("model","").replace(" ","_") + ".jpg"
+    img_name = f"{filename_stem}.jpg"
 
     lines = []
     lines.append(f"## {safe(s.get('product'))}\n")
-    lines.append(f"![{s.get('product')}](/lib/img/{img_name})\n")
+    lines.append(f"![{s.get('product')}](lib/img/{img_name})\n")
     lines.append(f"[Product Page]({safe(s.get('url'))})\n")
     lines.append("\n**Specifications**\n")
     lines.append("| Spec | Value |")
@@ -131,11 +132,11 @@ def main():
         return
 
     order = {"edge":0, "industrial":1, "midrange":2, "enterprise":3}
-    servers.sort(key=lambda s: (order.get(s.get("tier",""),99), s.get("price_usd") or 0))
+    servers.sort(key=lambda x: (order.get(x[1].get("tier",""),99), x[1].get("price_usd") or 0))
 
     md_parts = [make_summary_table(servers)]
-    for s in servers:
-        md_parts.append(make_detail_section(s))
+    for fname, s in servers:
+        md_parts.append(make_detail_section(fname, s))
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("\n".join(md_parts))

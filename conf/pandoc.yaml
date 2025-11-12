@@ -4,6 +4,7 @@ input-files:
   - chapters/01_Introduction.md
   - chapters/02_StategicArchitecture.md
   - chapters/03_TechnologySelection.md
+  - chapters/04_Hardware.md
   - chapters/Terminology.md
   - chapters/Citations.md
 

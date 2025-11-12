@@ -13,7 +13,7 @@
 
 ## Protectli VP6630
 
-![Protectli VP6630](/lib/img/VP6630.jpg)
+![Protectli VP6630](/lib/img/Protectli_VP6630.jpg)
 
 [Product Page](https://protectli.com/product/vp6630/)
 
@@ -40,7 +40,7 @@
 
 ## Protectli VP6650
 
-![Protectli VP6650](/lib/img/VP6650.jpg)
+![Protectli VP6650](/lib/img/Protectli_VP6650.jpg)
 
 [Product Page](https://protectli.com/product/vp6650/)
 
@@ -67,7 +67,7 @@
 
 ## ProLiant DL145 Gen11
 
-![ProLiant DL145 Gen11](/lib/img/DL145_Gen11.jpg)
+![ProLiant DL145 Gen11](/lib/img/HP_ProLiant_DL145_Gen11.jpg)
 
 [Product Page](https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl100-servers/proliant-dl145-gen11/p/1014845266)
 
@@ -94,7 +94,7 @@
 
 ## Qotom Q30921SE S13
 
-![Qotom Q30921SE S13](/lib/img/Q30921SE_S13.jpg)
+![Qotom Q30921SE S13](/lib/img/Qotom_Q30921SE-S13.jpg)
 
 [Product Page](https://www.qotom.net/mini-pc/q30900se-s13-series.html)
 
@@ -121,7 +121,7 @@
 
 ## MINISFORUM MS-S1 Max
 
-![MINISFORUM MS-S1 Max](/lib/img/MS-S1_Max.jpg)
+![MINISFORUM MS-S1 Max](/lib/img/Minisforum_MS-S1-Max.jpg)
 
 [Product Page](https://store.minisforum.com/products/minisforum-ms-s1-max-mini-pc)
 
@@ -148,7 +148,7 @@
 
 ## PowerEdge R6615
 
-![PowerEdge R6615](/lib/img/R6615.jpg)
+![PowerEdge R6615](/lib/img/Dell_PowerEdge_R6615.jpg)
 
 [Product Page](https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615)
 
@@ -175,7 +175,7 @@
 
 ## ProLiant DL235 Gen11
 
-![ProLiant DL235 Gen11](/lib/img/DL235_Gen11.jpg)
+![ProLiant DL235 Gen11](/lib/img/HP_ProLiant_DL235_Gen11.jpg)
 
 [Product Page](https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl300-servers/proliant-dl325-server/hpe-proliant-dl325-gen11/p/1014689141)
 
@@ -202,7 +202,7 @@
 
 ## Lancelot 1199-SR
 
-![Lancelot 1199-SR](/lib/img/1199-SR.jpg)
+![Lancelot 1199-SR](/lib/img/ASL_Lancelot_1199SR.jpg)
 
 [Product Page](https://www.aslab.com/products/rackmount/customize/lancelot1199sr.cgi)
 

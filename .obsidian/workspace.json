@@ -36,32 +36,6 @@
             }
           },
           {
-            "id": "dfe0fd06d69f349d",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "build/lib/diag/ClearSkies-NSF-Cyberphysical.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "ClearSkies-NSF-Cyberphysical.excalidraw"
-            }
-          },
-          {
-            "id": "0c0962c4d81d377a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "lib/md/server_comparison.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "server_comparison"
-            }
-          },
-          {
             "id": "ee00b10235193dd0",
             "type": "leaf",
             "state": {
@@ -76,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -313,38 +287,38 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "0c0962c4d81d377a",
+  "active": "ee00b10235193dd0",
   "lastOpenFiles": [
-    "lib/img/ASL_1191-SR.jpg",
-    "lib/img/Unconfirmed 833079.crdownload",
+    "build/lib/img/HP_ProLiant_DL145_Gen11.webp",
+    "build/lib/img/Minisforum_MS-S1-Max.webp",
+    "build/lib/img/Dell_PowerEdge_R6615.avif",
+    "build/lib/img/HP_ProLiant_DL235_Gen11.webp",
+    "lib/img/HP_ProLiant_DL235_Gen11.jpg",
+    "lib/img/HP_ProLiant_DL235_Gen11.webp",
+    "lib/img/Dell_PowerEdge_R6615.jpg",
+    "lib/img/Dell_PowerEdge_R6615.avif",
+    "lib/img/Minisforum_MS-S1-Max.jpg",
+    "lib/img/Minisforum_MS-S1-Max.webp",
+    "lib/img/HP_ProLiant_DL145_Gen11.jpg",
+    "chapters/00_ExecutiveSummary.md",
+    "chapters/03_TechnologySelection.md",
+    "build/lib/diag/ClearSkies-NSF-Cyberphysical.excalidraw.md",
     "chapters/04_Hardware.md",
+    "lib/img/Unconfirmed 555262.crdownload",
+    "lib/img/Unconfirmed 518326.crdownload",
+    "lib/img/Unconfirmed 82664.crdownload",
+    "lib/img/Unconfirmed 276713.crdownload",
+    "lib/img/Unconfirmed 277678.crdownload",
+    "lib/img/Unconfirmed 78439.crdownload",
+    "lib/img/Unconfirmed 257460.crdownload",
     "lib/md/server_comparison.md",
+    "lib/img/Unconfirmed 833079.crdownload",
     "scripts/gen_server_comparison.py",
     "data/servers/HP_ProLiant_DL145_Gen11.json",
-    "data/servers/HP_ProLiant_DL235_Gen11.json",
-    "data/servers/Dell_PowerEdge_R6615.json",
-    "data/servers/ASL_Lancelot_1199SR.json",
-    "data/servers/Qotom_Q30921SE-S13.json",
-    "data/servers/Minisforum_MS-S1-Max.json",
-    "data/servers/Protectli_VP6650.json",
-    "data/servers/Protectli_VP6630.json",
-    "chapters/03_TechnologySelection.md",
     "chapters/02_StategicArchitecture.md",
     "README.md",
-    "build/lib/diag/ClearSkies-NSF-Cyberphysical.excalidraw.md",
-    "build/lib/diag/ClearSkies-NSF-Cyberphysical.excalidraw.png",
     "build/lib/diag/ClearSkies-Overview.excalidraw.md",
     "build/lib/diag/ClearSkies-Overview-notitle.excalidraw.md",
-    "build/lib/diag/ClearSkies-Overview-notitle.excalidraw.png",
-    "build/lib/img/portable_rack_2.jpg",
-    "build/lib/img/portable_rack_1.jpg",
-    "build/lib/img/portable_rack_3.jpg",
-    "chapters/00_ExecutiveSummary.md",
-    "lib/img/portable_rack_3.jpg",
-    "lib/img/portable_rack_2.jpg",
-    "lib/img/portable_rack_1.jpg",
-    "lib/img/portable_rack.jpg",
-    "lib/img/71QSxRg9lmL._AC_SL1500_.jpg",
     "templates/frontmatter_epub.md",
     "chapters/01_Introduction.md",
     "lib/diag/IIoT Architecture.excalidraw.md",

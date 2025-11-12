@@ -38,9 +38,11 @@
 | ProLiant DL235 Gen11 | AMD EPYC 9004 (– C) | – | – | – | 0 | 0 | 1U | – | – |
 | Lancelot 1199-SR | Intel Xeon E-2478 (8 C) | 128 | NVMe SSD 1 TB | SAS HDD x4 16 TB | 2 | 4 | 1U | 250 | 5199 |
 
+ --- 
+
 ## Protectli VP6630
 
-![Protectli VP6630](/lib/img/VP6630.jpg)
+![Protectli VP6630](lib/img/Protectli_VP6630.jpg)
 
 [Product Page](https://protectli.com/product/vp6630/)
 
@@ -63,11 +65,11 @@
 | Supported OS | Proxmox VE, OPNsense, Ubuntu 24.04 LTS |
 | Price (USD) | 1651 |
 
----
+ --- 
 
 ## Protectli VP6650
 
-![Protectli VP6650](/lib/img/VP6650.jpg)
+![Protectli VP6650](lib/img/Protectli_VP6650.jpg)
 
 [Product Page](https://protectli.com/product/vp6650/)
 
@@ -90,38 +92,12 @@
 | Supported OS | Proxmox VE, OPNsense, Ubuntu 24.04 LTS |
 | Price (USD) | 1811 |
 
----
+ --- 
 
-## ProLiant DL145 Gen11
-
-![ProLiant DL145 Gen11](/lib/img/DL145_Gen11.jpg)
-
-[Product Page](https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl100-servers/proliant-dl145-gen11/p/1014845266)
-
-
-**Specifications**
-
-| Spec | Value |
-|:--|:--|
-| CPU | AMD EPYC 8004 series (Zen4c) (– cores, – threads) |
-| Memory | – GB DDR5 ECC RDIMM |
-| OS Disk | – |
-| VM Disk(s) | – |
-| 1–2 Gb NICs | 0 |
-| 10 Gb NICs | 0 |
-| Rack Units | 2U |
-| Dimensions (in) | {'l': 28.0, 'w': 17.5, 'h': 3.4} |
-| Power Draw (W) | Idle – / Max – |
-| Power Input | AC 100–240V |
-| Management | BMC: True, BIOS: UEFI / iLO 6 |
-| Supported OS | Proxmox VE, Ubuntu 24.04 LTS, RHEL 9 |
-| Price (USD) | – |
-
----
 
 ## Qotom Q30921SE S13
 
-![Qotom Q30921SE S13](/lib/img/Q30921SE_S13.jpg)
+![Qotom Q30921SE S13](lib/img/Qotom_Q30921SE-S13.jpg)
 
 [Product Page](https://www.qotom.net/mini-pc/q30900se-s13-series.html)
 
@@ -144,11 +120,11 @@
 | Supported OS | OPNsense, Proxmox VE, Ubuntu 24.04 LTS |
 | Price (USD) | 489 |
 
----
+ --- 
 
 ## MINISFORUM MS-S1 Max
 
-![MINISFORUM MS-S1 Max](/lib/img/MS-S1_Max.jpg)
+![MINISFORUM MS-S1 Max](lib/img/Minisforum_MS-S1-Max.jpg)
 
 [Product Page](https://store.minisforum.com/products/minisforum-ms-s1-max-mini-pc)
 
@@ -171,11 +147,11 @@
 | Supported OS | Windows 11 Pro, Ubuntu 24.04 LTS, Proxmox VE |
 | Price (USD) | 2503.9 |
 
----
+ --- 
 
 ## PowerEdge R6615
 
-![PowerEdge R6615](/lib/img/R6615.jpg)
+![PowerEdge R6615](lib/img/Dell_PowerEdge_R6615.jpg)
 
 [Product Page](https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615)
 
@@ -198,11 +174,38 @@
 | Supported OS | Proxmox VE, Ubuntu 24.04 LTS, RHEL 9 |
 | Price (USD) | – |
 
----
+ --- 
+
+## ProLiant DL145 Gen11
+
+![ProLiant DL145 Gen11](lib/img/HP_ProLiant_DL145_Gen11.jpg)
+
+[Product Page](https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl100-servers/proliant-dl145-gen11/p/1014845266)
+
+
+**Specifications**
+
+| Spec | Value |
+|:--|:--|
+| CPU | AMD EPYC 8004 series (Zen4c) (– cores, – threads) |
+| Memory | – GB DDR5 ECC RDIMM |
+| OS Disk | – |
+| VM Disk(s) | – |
+| 1–2 Gb NICs | 0 |
+| 10 Gb NICs | 0 |
+| Rack Units | 2U |
+| Dimensions (in) | {'l': 28.0, 'w': 17.5, 'h': 3.4} |
+| Power Draw (W) | Idle – / Max – |
+| Power Input | AC 100–240V |
+| Management | BMC: True, BIOS: UEFI / iLO 6 |
+| Supported OS | Proxmox VE, Ubuntu 24.04 LTS, RHEL 9 |
+| Price (USD) | – |
+
+ --- 
 
 ## ProLiant DL235 Gen11
 
-![ProLiant DL235 Gen11](/lib/img/DL235_Gen11.jpg)
+![ProLiant DL235 Gen11](lib/img/HP_ProLiant_DL235_Gen11.jpg)
 
 [Product Page](https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl300-servers/proliant-dl325-server/hpe-proliant-dl325-gen11/p/1014689141)
 
@@ -225,11 +228,11 @@
 | Supported OS | Proxmox VE, Ubuntu 24.04 LTS, RHEL 9 |
 | Price (USD) | – |
 
----
+ --- 
 
 ## Lancelot 1199-SR
 
-![Lancelot 1199-SR](/lib/img/1199-SR.jpg)
+![Lancelot 1199-SR](lib/img/ASL_Lancelot_1199SR.jpg)
 
 [Product Page](https://www.aslab.com/products/rackmount/customize/lancelot1199sr.cgi)
 
@@ -252,7 +255,8 @@
 | Supported OS | Proxmox VE, Ubuntu 24.04 LTS, Ceph |
 | Price (USD) | 5199 |
 
----
+ --- 
+
 
 
 # Switches
