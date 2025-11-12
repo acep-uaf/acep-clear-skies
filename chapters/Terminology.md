@@ -22,7 +22,7 @@
 | **OPNsense**              | —                                        | Open-source firewall and routing platform providing VLAN segmentation, VPNs, and intrusion detection.                                |
 | **OT**                    | Operational Technology                   | Systems that monitor and control physical devices, processes, and infrastructure.                                                    |
 | **PLC**                   | Programmable Logic Controller            | Industrial computer used to automate electromechanical processes.                                                                    |
-| **Proxmox VE**            | Virtual Environment                      | Open-source virtualization environment used to create Software-Defined Data Centers (SDDC).                                          |
+| **PVE**                   | ProxMox Virtual Environment              | Open-source virtualization environment used to create Software-Defined Data Centers (SDDC).                                          |
 | **PSU**                   | Power Supply Unit                        | A hot swapable power supply in a rack mount server or other equipment.                                                               |
 | **SCADA**                 | Supervisory Control and Data Acquisition | System for remote monitoring and control of industrial and utility operations.                                                       |
 | **SDDC**                  | Software-Defined Data Center             | Virtualized data center architecture where compute, storage, and networking are abstracted from hardware.                            |

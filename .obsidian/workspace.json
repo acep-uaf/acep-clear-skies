@@ -36,21 +36,7 @@
             }
           },
           {
-            "id": "9b2e75891c360933",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "chapters/02_StategicArchitecture.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "02_StategicArchitecture"
-            }
-          },
-          {
-            "id": "21d364b51cb4679f",
+            "id": "b943a4d96fce821c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -62,9 +48,23 @@
               "icon": "lucide-file",
               "title": "03_TechnologySelection"
             }
+          },
+          {
+            "id": "9b2e75891c360933",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "chapters/04_Hardware.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "04_Hardware"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -303,9 +303,15 @@
   },
   "active": "9b2e75891c360933",
   "lastOpenFiles": [
-    "chapters/01_Introduction.md",
+    "conf/sedG3aT1u",
+    "conf/sednJHn0B",
+    "conf/sed0YFXas",
+    "conf/sedtYUtZs",
     "chapters/03_TechnologySelection.md",
     "chapters/04_Hardware.md",
+    "chapters/02_StategicArchitecture.md",
+    "chapters/Terminology.md",
+    "chapters/01_Introduction.md",
     "conf/sedBxulmN",
     "build/ClearSkies.md",
     "conf/frontmatter-md.html",
@@ -327,11 +333,7 @@
     "build/lib/diag/ClearSkies-NSF-Cyberphysical.excalidraw.md",
     "lib/img/Unconfirmed 555262.crdownload",
     "lib/img/Unconfirmed 518326.crdownload",
-    "lib/img/Unconfirmed 82664.crdownload",
-    "lib/img/Unconfirmed 276713.crdownload",
-    "lib/img/Unconfirmed 277678.crdownload",
     "lib/md/server_comparison.md",
-    "chapters/02_StategicArchitecture.md",
     "build/lib/diag/ClearSkies-Overview.excalidraw.md",
     "build/lib/diag/ClearSkies-Overview-notitle.excalidraw.md",
     "templates/frontmatter_epub.md",
@@ -346,7 +348,6 @@
     "lib/diag/ClearSkies-Overview.excalidraw.md",
     "lib/diag/Images/Untitled 2.md",
     "chapters/Citations.md",
-    "chapters/Terminology.md",
     "lib/diag/ClearSkies-Overview-notitle.excalidraw.md"
   ]
 }

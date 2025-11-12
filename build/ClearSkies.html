@@ -660,6 +660,9 @@ comparison purposes only and not recommendations or promotions an any
 specific vendor or products.</p>
 </div>
 <h1 id="sddc-servers">SDDC Servers</h1>
+<p>The following data compared serveral technical and capacity aspects
+of potential hardware solutions for a Software Defined Data Center
+(SDDC) ProxMox server / PVE node.</p>
 <h2 id="proxmox-ve-server-hardware-requirements">Proxmox VE Server
 Hardware Requirements</h2>
 <div class="table-scriptsize">
@@ -672,17 +675,17 @@ Hardware Requirements</h2>
 </colgroup>
 <thead>
 <tr class="header">
-<th>Category</th>
-<th>Bare Minimum (Lab/Test)</th>
-<th>Standalone (Production Edge)</th>
-<th>Hyperconverged Node (Zero-SPoF Cluster)</th>
+<th><strong>Category</strong></th>
+<th><strong>Bare Minimum</strong> (Lab/Test)</th>
+<th><strong>Standalone</strong> (Edge)</th>
+<th><strong>Hyperconverged Node</strong> (Cluster)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>CPU</strong></td>
-<td>1× Dual-Core 64-bit (Intel/AMD, VT-x/AMD-V)</td>
-<td>1× Quad-Core 64-bit (i5/i7, Xeon-E, Ryzen 5/7)</td>
+<td>1× Dual-Core (Intel/AMD, VT-x/AMD-V)</td>
+<td>1× Quad-Core (i5/i7, Xeon-E, Ryzen 5/7)</td>
 <td>1× 6–12 Core (Xeon-D, Xeon-Silver, Ryzen 9, EPYC)</td>
 </tr>
 <tr class="even">
@@ -694,8 +697,8 @@ Hardware Requirements</h2>
 <tr class="odd">
 <td><strong>RAM</strong></td>
 <td>8 GB minimum (test only)</td>
-<td>32–64 GB ECC preferred</td>
-<td>64–256 GB ECC required</td>
+<td>32–64 GB</td>
+<td>64–256 GB (ECC prefered)</td>
 </tr>
 <tr class="even">
 <td><strong>Boot / OS Disk</strong></td>
@@ -705,39 +708,39 @@ Hardware Requirements</h2>
 </tr>
 <tr class="odd">
 <td><strong>VM/CT Storage</strong></td>
-<td>Single SSD/HDD</td>
-<td>Separate data SSD or ZFS mirror</td>
-<td>NVMe or enterprise SSD pool (ZFS RAID-Z1/RAID-10)</td>
+<td>&gt;~ 250 GB SSD/HDD</td>
+<td>&gt;~ 1 TB Single SSD/NVMe</td>
+<td>2+ &gt;~2 TB NVMe/SSD</td>
 </tr>
 <tr class="even">
 <td><strong>Network Interfaces</strong></td>
-<td>1× 1 GbE</td>
-<td>3× 1 GbE or 2.5 GbE (LAN, WAN, Mgmt)</td>
+<td>2× 1 GbE</td>
+<td>3× 1/2.5 GbE (LAN, WAN, Mgmt)</td>
 <td>4–6× 2.5/10 GbE (Mgmt, Ceph, VM LAN, Public, Storage)</td>
 </tr>
 <tr class="odd">
 <td><strong>Out-of-Band Mgmt</strong></td>
 <td>Optional</td>
-<td>Recommended (IPMI/iKVM)</td>
-<td>Required (IPMI, iDRAC, or similar)</td>
+<td>Optional</td>
+<td>Recommended (IPMI, iDRAC, Etc)</td>
 </tr>
 <tr class="even">
 <td><strong>Power Supply</strong></td>
 <td>Single PSU</td>
-<td>Single high-quality PSU</td>
-<td>Redundant or hot-swappable PSUs</td>
+<td>Single PSU</td>
+<td>Recommended Dual hot-swappable PSUs</td>
 </tr>
 <tr class="odd">
 <td><strong>TPM / Secure Boot</strong></td>
 <td>Optional</td>
 <td>Recommended</td>
-<td>Required for compliance (TPM 2.0)</td>
+<td>Required for Microsoft compliance (TPM 2.0)</td>
 </tr>
 <tr class="even">
 <td><strong>BIOS / Firmware</strong></td>
 <td>Legacy or UEFI</td>
 <td>UEFI (coreboot OK)</td>
-<td>UEFI with PXE/iSCSI boot support</td>
+<td>UEFI</td>
 </tr>
 <tr class="odd">
 <td><strong>Cluster / Ceph Role</strong></td>
@@ -747,7 +750,7 @@ Hardware Requirements</h2>
 </tr>
 <tr class="even">
 <td><strong>Performance Target</strong></td>
-<td>Small lab / dev</td>
+<td>Small lab / field site</td>
 <td>Small-scale production workloads</td>
 <td>Continuous 24×7 ops with fault tolerance</td>
 </tr>
@@ -759,8 +762,8 @@ Hardware Requirements</h2>
 </tr>
 <tr class="even">
 <td><strong>Example Platform</strong></td>
-<td>Intel NUC, Protectli VP6600</td>
-<td>Minisforum MS-01, Protectli VP6630</td>
+<td>Intel NUC, Protectli VP6630</td>
+<td>Minisforum MS-01, Protectli VP6650</td>
 <td>Supermicro E300, Xeon-D, or 3× Proxmox mini-cluster</td>
 </tr>
 <tr class="odd">
@@ -804,45 +807,8 @@ cluster</td>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Protectli VP6630</td>
-<td style="text-align: left;">Intel Core i3 (6-Port Model) (4 C)</td>
-<td style="text-align: center;">96</td>
-<td style="text-align: left;">NVMe SSD 4 TB</td>
-<td style="text-align: left;">SATA SSD x1 1 TB</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1U</td>
-<td style="text-align: center;">40</td>
-<td style="text-align: center;">$1651</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Protectli VP6650</td>
-<td style="text-align: left;">Intel Core i5 (6-Port Model) (4 C)</td>
-<td style="text-align: center;">96</td>
-<td style="text-align: left;">NVMe SSD 4 TB</td>
-<td style="text-align: left;">SATA SSD x1 1 TB</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1U</td>
-<td style="text-align: center;">45</td>
-<td style="text-align: center;">$1811</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ProLiant DL145 Gen11</td>
-<td style="text-align: left;">AMD EPYC 8004 series (Zen4c) (– C)</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2U</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Qotom Q30921SE S13</td>
-<td style="text-align: left;">Intel Celeron 4305U or Core (8th–10th Gen)
-(2 C)</td>
+<td style="text-align: left;">Intel Celeron 4305U (2C)</td>
 <td style="text-align: center;">32</td>
 <td style="text-align: left;">M.2 SSD 0 TB</td>
 <td style="text-align: left;">SATA SSD/HDD x1 0 TB</td>
@@ -852,7 +818,31 @@ cluster</td>
 <td style="text-align: center;">30</td>
 <td style="text-align: center;">$489</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">Protectli VP6630</td>
+<td style="text-align: left;">Intel Core i3 (4C)</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: left;">NVMe SSD 4 TB</td>
+<td style="text-align: left;">SATA SSD x1 1 TB</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1U</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">$1651</td>
+</tr>
 <tr class="odd">
+<td style="text-align: left;">Protectli VP6650</td>
+<td style="text-align: left;">Intel Core i5 (4C)</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: left;">NVMe SSD 4 TB</td>
+<td style="text-align: left;">SATA SSD x1 1 TB</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1U</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">$1811</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">MINISFORUM MS-S1 Max</td>
 <td style="text-align: left;">AMD Ryzen AI Max+ 395 (16 C)</td>
 <td style="text-align: center;">128</td>
@@ -864,33 +854,9 @@ cluster</td>
 <td style="text-align: center;">130</td>
 <td style="text-align: center;">$2503.9</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">PowerEdge R6615</td>
-<td style="text-align: left;">AMD EPYC 9004 series (– C)</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1U</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">ProLiant DL235 Gen11</td>
-<td style="text-align: left;">AMD EPYC 9004 (– C)</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1U</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Lancelot 1199-SR</td>
-<td style="text-align: left;">Intel Xeon E-2478 (8 C)</td>
+<td style="text-align: left;">Intel Xeon E-2478 (8C)</td>
 <td style="text-align: center;">128</td>
 <td style="text-align: left;">NVMe SSD 1 TB</td>
 <td style="text-align: left;">SAS HDD x4 16 TB</td>
@@ -900,10 +866,45 @@ cluster</td>
 <td style="text-align: center;">250</td>
 <td style="text-align: center;">$5199</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">ProLiant DL145 Gen11</td>
+<td style="text-align: left;">AMD EPYC 8004 series (–C)</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: left;">–</td>
+<td style="text-align: left;">–</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2U</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PowerEdge R6615</td>
+<td style="text-align: left;">AMD EPYC 9004 series (–C)</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: left;">–</td>
+<td style="text-align: left;">–</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1U</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ProLiant DL235 Gen11</td>
+<td style="text-align: left;">AMD EPYC 9004 (–C)</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: left;">–</td>
+<td style="text-align: left;">–</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1U</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+</tr>
 </tbody>
 </table>
 </div>
-<hr />
 <h2 id="protectli-vp6630">Protectli VP6630</h2>
 <figure>
 <img src="lib/img/Protectli_VP6630.jpg" alt="Protectli VP6630" />
@@ -976,7 +977,6 @@ LTS</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="protectli-vp6650">Protectli VP6650</h2>
 <figure>
 <img src="lib/img/Protectli_VP6650.jpg" alt="Protectli VP6650" />
@@ -1048,7 +1048,6 @@ LTS</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="qotom-q30921se-s13">Qotom Q30921SE S13</h2>
 <figure>
 <img src="lib/img/Qotom_Q30921SE-S13.jpg" alt="Qotom Q30921SE S13" />
@@ -1126,7 +1125,6 @@ LTS</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="minisforum-ms-s1-max">MINISFORUM MS-S1 Max</h2>
 <figure>
 <img src="lib/img/Minisforum_MS-S1-Max.jpg"
@@ -1201,7 +1199,6 @@ VE</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="poweredge-r6615">PowerEdge R6615</h2>
 <figure>
 <img src="lib/img/Dell_PowerEdge_R6615.jpg" alt="PowerEdge R6615" />
@@ -1274,7 +1271,6 @@ threads)</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="proliant-dl145-gen11">ProLiant DL145 Gen11</h2>
 <figure>
 <img src="lib/img/HP_ProLiant_DL145_Gen11.jpg"
@@ -1348,7 +1344,6 @@ threads)</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="proliant-dl235-gen11">ProLiant DL235 Gen11</h2>
 <figure>
 <img src="lib/img/HP_ProLiant_DL235_Gen11.jpg"
@@ -1421,7 +1416,6 @@ Page</a></p>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="lancelot-1199-sr">Lancelot 1199-SR</h2>
 <figure>
 <img src="lib/img/ASL_Lancelot_1199SR.jpg" alt="Lancelot 1199-SR" />
@@ -1495,7 +1489,6 @@ threads)</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h1 id="switches">Switches</h1>
 <h1 id="terminology">Terminology</h1>
 <table>
@@ -1638,8 +1631,8 @@ devices, processes, and infrastructure.</td>
 electromechanical processes.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Proxmox VE</strong></td>
-<td style="text-align: left;">Virtual Environment</td>
+<td style="text-align: left;"><strong>PVE</strong></td>
+<td style="text-align: left;">ProxMox Virtual Environment</td>
 <td style="text-align: left;">Open-source virtualization environment
 used to create Software-Defined Data Centers (SDDC).</td>
 </tr>
