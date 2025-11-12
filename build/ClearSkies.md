@@ -14,7 +14,7 @@ title-block: false
   <h2 style="text-align:center; font-weight:normal;">A Reference Architecture for Resilient Alaskan Microgrid Cyberinfrastructure</h2>
 
   <div style="text-align:center; margin:2em 0;">
-    <img src="lib/img/UAF-ACEP.png" alt="Cover illustration" style="max-width:350px;">
+    <img src="lib/img/UAF-ACEP.png" alt="Cover illustration" style="max-height:100px;">
   </div>
 
   <hr style="margin:3em 0;">
