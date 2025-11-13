@@ -176,6 +176,8 @@ Series</a></li>
 <li><a href="#lancelot-1898-n12">Lancelot 1898-N12</a></li>
 <li><a href="#proliant-dl325-gen11">ProLiant DL325 Gen11</a></li>
 <li><a href="#poweredge-r6615">PowerEdge R6615</a></li>
+<li><a href="#asrock-jupiter-x600-35w">ASRock Jupiter X600
+(35W)</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#terminology">Terminology</a></li>
@@ -325,12 +327,12 @@ expensive upgrades to existing network equipment.</p>
 <p>Clear Skies is built on a simple principle: <strong>local-first by
 design.</strong><br />
 Every system — from the smallest sensor to the community data center —
-operates independently of the cloud services, ensuring that essential
-services remain available, secure, and under local control even when
-Internet connectivity is lost.</p>
-<p>Clear Skies adopts a layered approach to build increasingly complex
-modular capabilities on top of a resilient cyberinfrastructure
-foundation.</p>
+operates independently of the the Internet and cloud services, ensuring
+that essential services remain available, secure, and under local
+control even when Internet connectivity is lost.</p>
+<p>Clear Skies adopts a strategic <strong>layered</strong> approach to
+build increasingly complex <strong>modular</strong> capabilities on top
+of a resilient cyberinfrastructure foundation.</p>
 <figure>
 <img src="lib/diag/ClearSkies-Overview-notitle.excalidraw.png"
 alt="Clear Skies Reference Architecture" />
@@ -340,6 +342,30 @@ Architecture</figcaption>
 <h2 id="layer-0---hardware-hw">Layer 0 - Hardware (HW)</h2>
 <p>The hardware selection can be based on 3 tiers to accommodate
 different cost, scalability, and resiliency needs.</p>
+<h4 id="pve-node">PVE Node</h4>
+<p>Fundamentally the Software Defined Data Center (SDDC) run on top of a
+hardware layer comprised of multiple ProxMox Virtual Environment (PVE)
+Nodes. PVE Nodes are server with CPU, RAM, Storage, and Networking
+hardware resources.</p>
+<figure>
+<img src="lib/diag/ClearSkies-SDDC-PVE-Node.300x.png"
+alt="SCCD PVE Node" />
+<figcaption aria-hidden="true">SCCD PVE Node</figcaption>
+</figure>
+<h4 id="pve-hyper-converged-cluster">PVE Hyper-Converged Cluster</h4>
+<p>A Hyper-Converged ProxMox Cluster<span class="citation"
+data-cites="DeployHyperConvergedCeph">(<a
+href="#ref-DeployHyperConvergedCeph" role="doc-biblioref"><span>“Deploy
+<span>Hyper-Converged Ceph Cluster</span> - <span>Proxmox
+VE</span>”</span> n.d.</a>)</span> is comprised of fully redundant
+hardware systems in triplicate (or more N+1) nodes abstracting CPU, RAM,
+DISK, and NET hardware from the vitalized systems running on the
+cluster.</p>
+<figure>
+<img src="lib/diag/ClearSkies-SDDC-PVE-Cluster.png"
+alt="SDDC PVE Cluster" />
+<figcaption aria-hidden="true">SDDC PVE Cluster</figcaption>
+</figure>
 <h3 id="tier-1---camp-site">Tier 1 - Camp Site</h3>
 <p><strong>Purpose:</strong> Portable or training-scale deployments for
 small teams and pilot projects.</p>
@@ -928,6 +954,19 @@ E-Key (2230) x1 0 TB</td>
 <td style="text-align: center;">1U</td>
 <td style="text-align: center;">450</td>
 <td style="text-align: center;">$19401.16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ASRock Jupiter X600 (35W)</td>
+<td style="text-align: left;">AMD Ryzen 9000/8000/7000 Series (AM5)
+(–C)</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: left;">M.2 2280 NVMe SSD 0 TB</td>
+<td style="text-align: left;">SATA 2.5-inch HDD/SSD x1 0 TB</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1U (approx.)</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
 </tr>
 </tbody>
 </table>
@@ -1718,6 +1757,86 @@ href="https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615/pe_r6615_tm_vi
 </tr>
 </tbody>
 </table>
+<h3 id="asrock-jupiter-x600-35w">ASRock Jupiter X600 (35W)</h3>
+<figure>
+<img src="lib/img/ASRock_Jupiter-X600.jpg"
+alt="ASRock Jupiter X600 (35W)" />
+<figcaption aria-hidden="true">ASRock Jupiter X600 (35W)</figcaption>
+</figure>
+<p><strong>Specifications</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spec</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CPU</td>
+<td style="text-align: left;">AMD Ryzen 9000/8000/7000 Series (AM5) (–
+cores, – threads)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Memory</td>
+<td style="text-align: left;">96 GB DDR5 SO-DIMM 6400+(OC)MHz</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OS Disk</td>
+<td style="text-align: left;">M.2 2280 NVMe SSD 0 TB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VM Disk(s)</td>
+<td style="text-align: left;">SATA 2.5-inch HDD/SSD x1 0 TB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1–2 Gb NICs</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10 Gb NICs</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rack Units</td>
+<td style="text-align: left;">1U (approx.)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dimensions (in)</td>
+<td style="text-align: left;">{‘l’: 7.05, ‘w’: 7.01, ‘h’: 1.34}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Power Draw (W)</td>
+<td style="text-align: left;">Idle – / Max –</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power Input</td>
+<td style="text-align: left;">DC 19V Adapter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Management</td>
+<td style="text-align: left;">BMC: False, BIOS: UEFI BIOS</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Supported OS</td>
+<td style="text-align: left;">Windows 10 64-bit, Windows 11 64-bit,
+Linux (Ubuntu compatible)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Price (USD)</td>
+<td style="text-align: left;">$–</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://www.asrock.com/nettop/AMD/Jupiter%20X600/index.us.asp">Link</a></td>
+</tr>
+</tbody>
+</table>
 <h1 id="terminology">Terminology</h1>
 <table>
 <colgroup>
@@ -1930,6 +2049,13 @@ role="doc-biblioentry">
 <span>“(<span>CIP</span>) <span>Critical Infrastructure
 Protection</span>.”</span> 2025. <em>RRC Local</em>.
 https://www.akrrc.org/matters/category/cip-critical-infrastructure-protection.
+</div>
+<div id="ref-DeployHyperConvergedCeph" class="csl-entry"
+role="doc-biblioentry">
+<span>“Deploy <span>Hyper-Converged Ceph Cluster</span> - <span>Proxmox
+VE</span>.”</span> n.d.
+https://pve.proxmox.com/wiki/Deploy_Hyper-Converged_Ceph_Cluster.
+Accessed November 13, 2025.
 </div>
 <div id="ref-HomePageFederal" class="csl-entry" role="doc-biblioentry">
 <span>“Home <span>Page</span> <span>Federal Energy Regulatory

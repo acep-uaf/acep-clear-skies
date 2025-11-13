@@ -376,13 +376,13 @@ expensive upgrades to existing network equipment.
 Clear Skies is built on a simple principle: \textbf{local-first by
 design.}\\
 Every system --- from the smallest sensor to the community data center
---- operates independently of the cloud services, ensuring that
-essential services remain available, secure, and under local control
-even when Internet connectivity is lost.
+--- operates independently of the the Internet and cloud services,
+ensuring that essential services remain available, secure, and under
+local control even when Internet connectivity is lost.
 
-Clear Skies adopts a layered approach to build increasingly complex
-modular capabilities on top of a resilient cyberinfrastructure
-foundation.
+Clear Skies adopts a strategic \textbf{layered} approach to build
+increasingly complex \textbf{modular} capabilities on top of a resilient
+cyberinfrastructure foundation.
 
 \begin{figure}
 \centering
@@ -395,6 +395,37 @@ foundation.
 
 The hardware selection can be based on 3 tiers to accommodate different
 cost, scalability, and resiliency needs.
+
+\hypertarget{pve-node}{%
+\paragraph{PVE Node}\label{pve-node}}
+
+Fundamentally the Software Defined Data Center (SDDC) run on top of a
+hardware layer comprised of multiple ProxMox Virtual Environment (PVE)
+Nodes. PVE Nodes are server with CPU, RAM, Storage, and Networking
+hardware resources.
+
+\begin{figure}
+\centering
+\includegraphics{lib/diag/ClearSkies-SDDC-PVE-Node.300x.png}
+\caption{SCCD PVE Node}
+\end{figure}
+
+\hypertarget{pve-hyper-converged-cluster}{%
+\paragraph{PVE Hyper-Converged
+Cluster}\label{pve-hyper-converged-cluster}}
+
+A Hyper-Converged ProxMox
+Cluster(\protect\hyperlink{ref-DeployHyperConvergedCeph}{{``Deploy
+{Hyper-Converged Ceph Cluster} - {Proxmox VE}''} n.d.}) is comprised of
+fully redundant hardware systems in triplicate (or more N+1) nodes
+abstracting CPU, RAM, DISK, and NET hardware from the vitalized systems
+running on the cluster.
+
+\begin{figure}
+\centering
+\includegraphics{lib/diag/ClearSkies-SDDC-PVE-Cluster.png}
+\caption{SDDC PVE Cluster}
+\end{figure}
 
 \hypertarget{tier-1---camp-site}{%
 \subsubsection{Tier 1 - Camp Site}\label{tier-1---camp-site}}
@@ -1038,6 +1069,9 @@ ProLiant DL325 Gen11 & AMD EPYC 9124 (16C) & 128 & SATA SSD 3.84 TB &
 SATA SSD x2 -- TB & 2 & 0 & 1U & 400 & \$16231.82 \\
 PowerEdge R6615 & AMD EPYC 9224 (24C) & 96 & SATA SSD 0.96 TB & SATA SSD
 x4 3.84 TB & 2 & 2 & 1U & 450 & \$19401.16 \\
+ASRock Jupiter X600 (35W) & AMD Ryzen 9000/8000/7000 Series (AM5) (--C)
+& 96 & M.2 2280 NVMe SSD 0 TB & SATA 2.5-inch HDD/SSD x1 0 TB & 2 & 0 &
+1U (approx.) & -- & -- \\
 \bottomrule
 \end{longtable}
 
@@ -1439,6 +1473,48 @@ Product Page &
 \bottomrule
 \end{longtable}
 
+\hypertarget{asrock-jupiter-x600-35w}{%
+\subsubsection{ASRock Jupiter X600
+(35W)}\label{asrock-jupiter-x600-35w}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/ASRock_Jupiter-X600.jpg}
+\caption{ASRock Jupiter X600 (35W)}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Spec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule
+\endhead
+CPU & AMD Ryzen 9000/8000/7000 Series (AM5) (-- cores, -- threads) \\
+Memory & 96 GB DDR5 SO-DIMM 6400+(OC)MHz \\
+OS Disk & M.2 2280 NVMe SSD 0 TB \\
+VM Disk(s) & SATA 2.5-inch HDD/SSD x1 0 TB \\
+1--2 Gb NICs & 2 \\
+10 Gb NICs & 0 \\
+Rack Units & 1U (approx.) \\
+Dimensions (in) & \{`l': 7.05, `w': 7.01, `h': 1.34\} \\
+Power Draw (W) & Idle -- / Max -- \\
+Power Input & DC 19V Adapter \\
+Management & BMC: False, BIOS: UEFI BIOS \\
+Supported OS & Windows 10 64-bit, Windows 11 64-bit, Linux (Ubuntu
+compatible) \\
+Price (USD) & \$-- \\
+Product Page &
+\href{https://www.asrock.com/nettop/AMD/Jupiter\%20X600/index.us.asp}{Link} \\
+\bottomrule
+\end{longtable}
+
 \hypertarget{terminology}{%
 \section{Terminology}\label{terminology}}
 
@@ -1543,6 +1619,11 @@ https://www.akrrc.org/.
 {``({CIP}) {Critical Infrastructure Protection}.''} 2025. \emph{RRC
 Local}.
 https://www.akrrc.org/matters/category/cip-critical-infrastructure-protection.
+
+\leavevmode\vadjust pre{\hypertarget{ref-DeployHyperConvergedCeph}{}}%
+{``Deploy {Hyper-Converged Ceph Cluster} - {Proxmox VE}.''} n.d.
+https://pve.proxmox.com/wiki/Deploy\_Hyper-Converged\_Ceph\_Cluster.
+Accessed November 13, 2025.
 
 \leavevmode\vadjust pre{\hypertarget{ref-HomePageFederal}{}}%
 {``Home {Page} \textbar{} {Federal Energy Regulatory Commission}.''}

@@ -14,6 +14,7 @@
 | Lancelot 1898-N12 | Intel Xeon Silver 4514Y (32C) | 256 | NVMe SSD 1.0 TB | NVMe SSD x2 15.36 TB | 0 | 6 | 1U | 600 | $11727.0 |
 | ProLiant DL325 Gen11 | AMD EPYC 9124 (16C) | 128 | SATA SSD 3.84 TB | SATA SSD x2 – TB | 2 | 0 | 1U | 400 | $16231.82 |
 | PowerEdge R6615 | AMD EPYC 9224 (24C) | 96 | SATA SSD 0.96 TB | SATA SSD x4 3.84 TB | 2 | 2 | 1U | 450 | $19401.16 |
+| ASRock Jupiter X600 (35W) | AMD Ryzen 9000/8000/7000 Series (AM5) (–C) | 96 | M.2 2280 NVMe SSD 0 TB | SATA 2.5-inch HDD/SSD x1 0 TB | 2 | 0 | 1U (approx.) | – | – |
 :::
 \small
 
@@ -287,5 +288,32 @@
 | Supported OS | Proxmox VE, Ubuntu Server 24.04 LTS, Red Hat Enterprise Linux 9, Windows Server 2025 |
 | Price (USD) | $19401.16 |
 | Product Page | [Link](https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615/pe_r6615_tm_vi_vp_sb?configurationid=1759700b-2877-411f-bf22-461cea367d8e) |
+
+
+
+
+### ASRock Jupiter X600 (35W)
+
+![ASRock Jupiter X600 (35W)](lib/img/ASRock_Jupiter-X600.jpg)
+
+
+**Specifications**
+
+| Spec | Value |
+|:--|:--|
+| CPU | AMD Ryzen 9000/8000/7000 Series (AM5) (– cores, – threads) |
+| Memory | 96 GB DDR5 SO-DIMM 6400+(OC)MHz |
+| OS Disk | M.2 2280 NVMe SSD 0 TB |
+| VM Disk(s) | SATA 2.5-inch HDD/SSD x1 0 TB |
+| 1–2 Gb NICs | 2 |
+| 10 Gb NICs | 0 |
+| Rack Units | 1U (approx.) |
+| Dimensions (in) | {'l': 7.05, 'w': 7.01, 'h': 1.34} |
+| Power Draw (W) | Idle – / Max – |
+| Power Input | DC 19V Adapter |
+| Management | BMC: False, BIOS: UEFI BIOS |
+| Supported OS | Windows 10 64-bit, Windows 11 64-bit, Linux (Ubuntu compatible) |
+| Price (USD) | $– |
+| Product Page | [Link](https://www.asrock.com/nettop/AMD/Jupiter%20X600/index.us.asp) |
 
 

@@ -1,16 +1,34 @@
 # Strategic Architecture
 
 Clear Skies is built on a simple principle: **local-first by design.**  
-Every system — from the smallest sensor to the community data center — operates independently of the cloud services, ensuring that essential services remain available, secure, and under local control even when Internet connectivity is lost.
+Every system — from the smallest sensor to the community data center — operates independently of the the Internet and cloud services, ensuring that essential services remain available, secure, and under local control even when Internet connectivity is lost.
 
-Clear Skies adopts a layered approach to build increasingly complex modular capabilities on top of a resilient cyberinfrastructure foundation.
-
+Clear Skies adopts a strategic **layered** approach to build increasingly complex **modular** capabilities on top of a resilient cyberinfrastructure foundation.
 
 ![Clear Skies Reference Architecture](lib/diag/ClearSkies-Overview-notitle.excalidraw.png)
 
 ## Layer 0 - Hardware (HW)
 
 The hardware selection can be based on 3 tiers to accommodate different cost, scalability, and resiliency needs.
+
+#### PVE Node
+
+
+Fundamentally the Software Defined Data Center (SDDC) run on top of a hardware layer comprised of multiple ProxMox Virtual Environment (PVE) Nodes.  PVE Nodes are server with CPU, RAM, Storage, and Networking hardware resources.
+
+
+![SCCD PVE Node](lib/diag/ClearSkies-SDDC-PVE-Node.300x.png)
+
+
+#### PVE Hyper-Converged Cluster
+
+
+A Hyper-Converged ProxMox Cluster[@DeployHyperConvergedCeph] is comprised of fully redundant hardware systems in triplicate (or more N+1) nodes abstracting CPU, RAM, DISK, and NET hardware from the vitalized systems running on the cluster.
+
+
+![SDDC PVE Cluster](lib/diag/ClearSkies-SDDC-PVE-Cluster.png)
+
+
 
 ### Tier 1 - Camp Site
 

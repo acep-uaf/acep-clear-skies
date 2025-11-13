@@ -105,6 +105,7 @@ title-block: false
         -   [Lancelot 1898-N12](#lancelot-1898-n12)
         -   [ProLiant DL325 Gen11](#proliant-dl325-gen11)
         -   [PowerEdge R6615](#poweredge-r6615)
+        -   [ASRock Jupiter X600 (35W)](#asrock-jupiter-x600-35w)
 -   [Terminology](#terminology)
 -   [Citations](#citations)
 
@@ -243,13 +244,13 @@ expensive upgrades to existing network equipment.
 
 Clear Skies is built on a simple principle: **local-first by design.**  
 Every system — from the smallest sensor to the community data center —
-operates independently of the cloud services, ensuring that essential
-services remain available, secure, and under local control even when
-Internet connectivity is lost.
+operates independently of the the Internet and cloud services, ensuring
+that essential services remain available, secure, and under local
+control even when Internet connectivity is lost.
 
-Clear Skies adopts a layered approach to build increasingly complex
-modular capabilities on top of a resilient cyberinfrastructure
-foundation.
+Clear Skies adopts a strategic **layered** approach to build
+increasingly complex **modular** capabilities on top of a resilient
+cyberinfrastructure foundation.
 
 ![Clear Skies Reference
 Architecture](lib/diag/ClearSkies-Overview-notitle.excalidraw.png)
@@ -258,6 +259,25 @@ Architecture](lib/diag/ClearSkies-Overview-notitle.excalidraw.png)
 
 The hardware selection can be based on 3 tiers to accommodate different
 cost, scalability, and resiliency needs.
+
+#### PVE Node
+
+Fundamentally the Software Defined Data Center (SDDC) run on top of a
+hardware layer comprised of multiple ProxMox Virtual Environment (PVE)
+Nodes. PVE Nodes are server with CPU, RAM, Storage, and Networking
+hardware resources.
+
+![SCCD PVE Node](lib/diag/ClearSkies-SDDC-PVE-Node.300x.png)
+
+#### PVE Hyper-Converged Cluster
+
+A Hyper-Converged ProxMox Cluster([“Deploy Hyper-Converged Ceph
+Cluster - Proxmox VE” n.d.](#ref-DeployHyperConvergedCeph)) is comprised
+of fully redundant hardware systems in triplicate (or more N+1) nodes
+abstracting CPU, RAM, DISK, and NET hardware from the vitalized systems
+running on the cluster.
+
+![SDDC PVE Cluster](lib/diag/ClearSkies-SDDC-PVE-Cluster.png)
 
 ### Tier 1 - Camp Site
 
@@ -597,18 +617,19 @@ ProxMox server / PVE node.
 
 <div class="table-scriptsize">
 
-| Product                   | CPU (Make + Cores)            | RAM (GB) | OS Disk                    | VM Disk(s)                                                  | 1–2 Gb NICs | 10 Gb NICs |   Rack (U)   | Power (W max) | Price (USD) |
-|:--------------------------|:------------------------------|:--------:|:---------------------------|:------------------------------------------------------------|:-----------:|:----------:|:------------:|:-------------:|:-----------:|
-| Qotom Q30900GE S13 Series | Intel 8th/10th Gen (2C)       |    32    | 2.5-inch SATA SSD/HDD 0 TB | Mini PCIe mSATA SSD x1 0 TB; M.2 Wi-Fi E-Key (2230) x1 0 TB |      8      |     0      |      1U      |      30       |    $489     |
-| MINIS FORUM MS-A2         | AMD Ryzen 9 9955HX (16C)      |    96    | M.2 2280/U.2 NVMe SSD 2 TB | M.2 2280/22110 NVMe SSD x1 0 TB                             |      2      |     2      | 2U (approx.) |      130      |   $1495.9   |
-| Protectli VP6630          | Intel Core i3 (4C)            |    96    | NVMe SSD 4 TB              | SATA SSD x1 1 TB                                            |      6      |     2      |      1U      |      40       |    $1651    |
-| Protectli VP6650          | Intel Core i5 (4C)            |    96    | NVMe SSD 4 TB              | SATA SSD x1 1 TB                                            |      6      |     2      |      1U      |      45       |    $1811    |
-| MINIS FORUM MS-S1 Max     | AMD Ryzen (16C)               |   128    | NVMe SSD 2 TB              | –                                                           |      0      |     2      |      2U      |      130      |   $2503.9   |
-| Lancelot 1199-SR          | Intel Xeon (8C)               |   128    | NVMe SSD 1 TB              | SAS HDD x4 16 TB                                            |      2      |     4      |      1U      |      250      |    $5199    |
-| ProLiant DL145 Gen11      | AMD EPYC 8124P (16C)          |   128    | SATA SSD 0.96 TB           | SATA SSD x1 3.84 TB                                         |      2      |     0      |      1U      |      350      |  $11250.0   |
-| Lancelot 1898-N12         | Intel Xeon Silver 4514Y (32C) |   256    | NVMe SSD 1.0 TB            | NVMe SSD x2 15.36 TB                                        |      0      |     6      |      1U      |      600      |  $11727.0   |
-| ProLiant DL325 Gen11      | AMD EPYC 9124 (16C)           |   128    | SATA SSD 3.84 TB           | SATA SSD x2 – TB                                            |      2      |     0      |      1U      |      400      |  $16231.82  |
-| PowerEdge R6615           | AMD EPYC 9224 (24C)           |    96    | SATA SSD 0.96 TB           | SATA SSD x4 3.84 TB                                         |      2      |     2      |      1U      |      450      |  $19401.16  |
+| Product                   | CPU (Make + Cores)                         | RAM (GB) | OS Disk                    | VM Disk(s)                                                  | 1–2 Gb NICs | 10 Gb NICs |   Rack (U)   | Power (W max) | Price (USD) |
+|:--------------------------|:-------------------------------------------|:--------:|:---------------------------|:------------------------------------------------------------|:-----------:|:----------:|:------------:|:-------------:|:-----------:|
+| Qotom Q30900GE S13 Series | Intel 8th/10th Gen (2C)                    |    32    | 2.5-inch SATA SSD/HDD 0 TB | Mini PCIe mSATA SSD x1 0 TB; M.2 Wi-Fi E-Key (2230) x1 0 TB |      8      |     0      |      1U      |      30       |    $489     |
+| MINIS FORUM MS-A2         | AMD Ryzen 9 9955HX (16C)                   |    96    | M.2 2280/U.2 NVMe SSD 2 TB | M.2 2280/22110 NVMe SSD x1 0 TB                             |      2      |     2      | 2U (approx.) |      130      |   $1495.9   |
+| Protectli VP6630          | Intel Core i3 (4C)                         |    96    | NVMe SSD 4 TB              | SATA SSD x1 1 TB                                            |      6      |     2      |      1U      |      40       |    $1651    |
+| Protectli VP6650          | Intel Core i5 (4C)                         |    96    | NVMe SSD 4 TB              | SATA SSD x1 1 TB                                            |      6      |     2      |      1U      |      45       |    $1811    |
+| MINIS FORUM MS-S1 Max     | AMD Ryzen (16C)                            |   128    | NVMe SSD 2 TB              | –                                                           |      0      |     2      |      2U      |      130      |   $2503.9   |
+| Lancelot 1199-SR          | Intel Xeon (8C)                            |   128    | NVMe SSD 1 TB              | SAS HDD x4 16 TB                                            |      2      |     4      |      1U      |      250      |    $5199    |
+| ProLiant DL145 Gen11      | AMD EPYC 8124P (16C)                       |   128    | SATA SSD 0.96 TB           | SATA SSD x1 3.84 TB                                         |      2      |     0      |      1U      |      350      |  $11250.0   |
+| Lancelot 1898-N12         | Intel Xeon Silver 4514Y (32C)              |   256    | NVMe SSD 1.0 TB            | NVMe SSD x2 15.36 TB                                        |      0      |     6      |      1U      |      600      |  $11727.0   |
+| ProLiant DL325 Gen11      | AMD EPYC 9124 (16C)                        |   128    | SATA SSD 3.84 TB           | SATA SSD x2 – TB                                            |      2      |     0      |      1U      |      400      |  $16231.82  |
+| PowerEdge R6615           | AMD EPYC 9224 (24C)                        |    96    | SATA SSD 0.96 TB           | SATA SSD x4 3.84 TB                                         |      2      |     2      |      1U      |      450      |  $19401.16  |
+| ASRock Jupiter X600 (35W) | AMD Ryzen 9000/8000/7000 Series (AM5) (–C) |    96    | M.2 2280 NVMe SSD 0 TB     | SATA 2.5-inch HDD/SSD x1 0 TB                               |      2      |     0      | 1U (approx.) |       –       |      –      |
 
 </div>
 
@@ -844,6 +865,29 @@ ProxMox server / PVE node.
 | Price (USD)     | $19401.16                                                                                                                                     |
 | Product Page    | [Link](https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615/pe_r6615_tm_vi_vp_sb?configurationid=1759700b-2877-411f-bf22-461cea367d8e) |
 
+### ASRock Jupiter X600 (35W)
+
+![ASRock Jupiter X600 (35W)](lib/img/ASRock_Jupiter-X600.jpg)
+
+**Specifications**
+
+| Spec            | Value                                                                 |
+|:----------------|:----------------------------------------------------------------------|
+| CPU             | AMD Ryzen 9000/8000/7000 Series (AM5) (– cores, – threads)            |
+| Memory          | 96 GB DDR5 SO-DIMM 6400+(OC)MHz                                       |
+| OS Disk         | M.2 2280 NVMe SSD 0 TB                                                |
+| VM Disk(s)      | SATA 2.5-inch HDD/SSD x1 0 TB                                         |
+| 1–2 Gb NICs     | 2                                                                     |
+| 10 Gb NICs      | 0                                                                     |
+| Rack Units      | 1U (approx.)                                                          |
+| Dimensions (in) | {‘l’: 7.05, ‘w’: 7.01, ‘h’: 1.34}                                     |
+| Power Draw (W)  | Idle – / Max –                                                        |
+| Power Input     | DC 19V Adapter                                                        |
+| Management      | BMC: False, BIOS: UEFI BIOS                                           |
+| Supported OS    | Windows 10 64-bit, Windows 11 64-bit, Linux (Ubuntu compatible)       |
+| Price (USD)     | $–                                                                    |
+| Product Page    | [Link](https://www.asrock.com/nettop/AMD/Jupiter%20X600/index.us.asp) |
+
 # Terminology
 
 | Acronym                 | Term                                     | Description                                                                                                                          |
@@ -893,6 +937,14 @@ https://www.akrrc.org/.
 
 “(CIP) Critical Infrastructure Protection.” 2025. *RRC Local*.
 https://www.akrrc.org/matters/category/cip-critical-infrastructure-protection.
+
+</div>
+
+<div id="ref-DeployHyperConvergedCeph" class="csl-entry">
+
+“Deploy Hyper-Converged Ceph Cluster - Proxmox VE.” n.d.
+https://pve.proxmox.com/wiki/Deploy_Hyper-Converged_Ceph_Cluster.
+Accessed November 13, 2025.
 
 </div>
 

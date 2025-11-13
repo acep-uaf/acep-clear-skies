@@ -1,0 +1,90 @@
+{
+    "product": "ASRock Jupiter X600 (35W)",
+    "make": "ASRock",
+    "model": "Jupiter X600 (35W)",
+    "url": "https://www.asrock.com/nettop/AMD/Jupiter%20X600/index.us.asp",
+    "category": "mini_pc",
+    "tier": "business",
+    "price_usd": null,
+    "quote": { "quote_number": "", "quote_date": "" },
+    "warranty": "1-Year Limited Warranty",
+    "comments": "Compact AM5 mini PC supporting Ryzen 9000/8000/7000 processors (up to 35W TDP) with dual M.2 Gen4 SSD slots, 2.5G LAN, and multiple display outputs for commercial or industrial applications.",
+    "specs": {
+      "cpu": {
+        "model": "AMD Ryzen 9000/8000/7000 Series (AM5)",
+        "architecture": "Zen 4/Zen 5 (varies by CPU)",
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_w": 35
+      },
+      "gpu": {
+        "model": "Integrated Radeon Graphics (depends on CPU)",
+        "type": "Integrated"
+      },
+      "memory": {
+        "capacity_gb": 96,
+        "slots": 2,
+        "type": "DDR5 SO-DIMM 6400+(OC)MHz",
+        "ecc": false
+      },
+      "storage": [
+        { "type": "M.2 2280 NVMe SSD", "count": 2, "capacity_each_tb": 0, "interface": "PCIe 4.0 x4", "model": "" },
+        { "type": "SATA 2.5-inch HDD/SSD", "count": 1, "capacity_each_tb": 0, "interface": "SATA 6Gb/s", "model": "" }
+      ],
+      "network": [
+        { "type": "RJ45", "speed_gbps": 2.5, "count": 1, "chipset": "Realtek RTL8125BG" },
+        { "type": "Wi-Fi", "speed_gbps": 1.2, "count": 1, "chipset": "Intel AC3168/AX210 (optional)" }
+      ],
+      "expansion": {
+        "pcie_slots": 0,
+        "m2_slots": 3,
+        "mini_pcie_slots": 0,
+        "usb_ports": { "usb2": 2, "usb3": 5, "usb4": 1 },
+        "typec_ports": 2,
+        "audio_jack": 2,
+        "serial_ports": 1
+      },
+      "video": {
+        "outputs": [
+          "2 x DisplayPort 1.4 (DP2 co-lay D-Sub)",
+          "1 x HDMI",
+          "1 x USB-C (USB4 for Ryzen 8000G / DP Alt Mode for Ryzen 9000/7000)"
+        ]
+      },
+      "power": {
+        "input_type": "DC 19V Adapter",
+        "redundant": false,
+        "psu_count": 1,
+        "psu_rating_w": 90,
+        "efficiency": "",
+        "draw_w": { "idle": null, "max": null }
+      },
+      "thermal": {
+        "cooling": "Integrated Cooling Solution",
+        "operating_temp_c": "0 – 40"
+      },
+      "chassis": {
+        "form_factor": "Mini PC",
+        "rack_units": "1U (approx.)",
+        "material": "Metal/Plastic Composite",
+        "dimensions_in": { "l": 7.05, "w": 7.01, "h": 1.34 },
+        "dimensions_mm": { "l": 179, "w": 178, "h": 34 },
+        "weight_kg": null
+      },
+      "management": {
+        "bmc": false,
+        "ipmi": false,
+        "bios": "UEFI BIOS",
+        "tpm": true,
+        "watchdog": false
+      },
+      "os_support": [
+        "Windows 10 64-bit",
+        "Windows 11 64-bit",
+        "Linux (Ubuntu compatible)"
+      ]
+    }
+  }
+  
