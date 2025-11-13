@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Clear Skies - A Reference Architecture for Resilient Alaskan Microgrid Cyberinfrastructure</title>
+  <title>Clear Skies</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -61,8 +61,8 @@
         <tr><td style="font-weight:bold;">Author</td><td>John Haverlack</td></tr>
         <tr><td style="font-weight:bold;">Copyright</td><td>© 2025 Alaska Center for Energy and Power</td></tr>
         <tr><td style="font-weight:bold;">License</td><td>CC BY-ND 4.0</td></tr>
-        <tr><td style="font-weight:bold;">Version</td><td>0.0.2</td></tr>
-        <tr><td style="font-weight:bold;">Date</td><td>2025-11-11</td></tr>
+        <tr><td style="font-weight:bold;">Version</td><td>0.0.3</td></tr>
+        <tr><td style="font-weight:bold;">Date</td><td>2025-11-13</td></tr>
         <tr><td style="font-weight:bold;">State</td><td>PRE-DRAFT</td></tr>
         <tr><td style="font-weight:bold;">Source</td><td>https://github.com/acep-uaf/acep-clear-skies</td></tr>
       </tbody>
@@ -83,8 +83,7 @@ window.MathJax = {
 </script>
 <script src="lib/mathjax/tex-mml-chtml.js"></script>
 <header id="title-block-header">
-<h1 class="title">Clear Skies - A Reference Architecture for Resilient
-Alaskan Microgrid Cyberinfrastructure</h1>
+<h1 class="title">Clear Skies</h1>
 </header>
 <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">Contents</h2>
@@ -186,49 +185,51 @@ Series</a></li>
 <h1 id="executive-summary">Executive Summary</h1>
 <p>Alaska has the world’s highest concentration of islanded
 microgrids—small, self-contained power systems that sustain hundreds of
-remote communities unconnected to any central grid.</p>
-<p>These systems are lifelines, but they face growing pressure: rising
-fuel and logistics costs, limited technical capacity, fragile Internet
-connectivity, and increasing exposure to cyber threats as digital
-controls expand into every corner of local infrastructure.</p>
+remote communities unconnected to any central grid. These systems are
+lifelines, but they face growing challenges: rising fuel and logistics
+costs, access to technical talent, fragile Internet connectivity, and
+increasing exposure to cyber threats as digital controls expand into
+every corner of local infrastructure.</p>
 <p><strong>Clear Skies</strong> proposes a new path forward — a
-<em>local-first, cloud-free cyberinfrastructure model</em> designed
-specifically for Alaska’s rural and tribal energy communities.<br />
-By establishing scalable, community-owned data and control systems,
-Clear Skies enables essential digital services—SCADA, communications,
-cybersecurity, and data management—to operate <strong>independently of
-the cloud</strong>, even during extended Internet outages.</p>
-<p>The Clear Skies reference architecture defines a layered approach to
-resilience:</p>
+<em>local-first, Internet independent cyberinfrastructure reference
+architecture</em> designed specifically with resiliency and security in
+mind for Alaska’s rural communities. By establishing scalable,
+community-owned data and control systems, Clear Skies enables essential
+digital services—SCADA, communications, cybersecurity, and data
+management—to operate <strong>independently of Internet
+access</strong>.</p>
+<p>The Clear Skies reference architecture defines a layered and modular
+approach to resilience:</p>
 <ul>
-<li><p><strong>Layer 0 – Hardware Foundations:</strong> three tiers of
+<li><strong>Layer 0 – Hardware Foundations:</strong> three tiers of
 scalable deployment (Camp, Village, Regional) that balance cost,
-capacity, and redundancy using commodity or enterprise
-hardware.</p></li>
-<li><p><strong>Layer 1 – Cyberinfrastructure (CI):</strong> a local
+capacity, and redundancy using commodity or enterprise hardware.</li>
+<li><strong>Layer 1 – Cyberinfrastructure (CI):</strong> a local
 Software-Defined Data Center (SDDC) providing virtualization,
 networking, storage, and identity services built on open-source tools
-such as Proxmox, Ceph, and OPNsense.</p></li>
-<li><p><strong>Layer 2 – Local Services:</strong> modular applications
-for operational technology (OT), industrial IoT, emergency
-communications, and community collaboration—entirely hosted and managed
-within the local network.</p></li>
-<li><p><strong>Layer 3 – Community Connections:</strong> secure,
-zero-trust bridges that enable inter-village collaboration, cross-site
-data sharing, and regional coordination while preserving digital
-sovereignty.</p></li>
+such as Proxmox, Ceph, and OPNsense.</li>
+<li><strong>Layer 2 – Local Services:</strong> modular applications for
+operational technology (OT), industrial IoT, emergency communications,
+and community collaboration—entirely hosted and managed within the local
+network.</li>
+<li><strong>Layer 3 – Community Connections:</strong> secure, zero-trust
+bridges that enable inter-village collaboration, cross-site data
+sharing, and regional coordination while preserving digital
+sovereignty.</li>
 </ul>
 <p>Clear Skies is more than an IT architecture—it is an <strong>enabler
-of digital sovereignty</strong>, extending the principles of local and
-tribal self-determination into the digital domain.<br />
+of digital sovereignty</strong>, extending the principles of local
+self-determination into the digital domain.<br />
 Its modular design allows each community to start small, learn, and
 grow—building capacity, reducing dependency, and cultivating a workforce
 skilled in managing their own resilient, secure digital
 infrastructure.</p>
-<p>In doing so, Clear Skies provides a roadmap for communities not only
-to keep the lights on—but to illuminate their own path toward
-independence, innovation, and long-term sustainability in the digital
-era.</p>
+<p>The Clear Skies reference architecture strategically supports diverse
+use cases—Home Labs, Test Beds, Training Grounds, On-site CI, Community
+CI, Emergency Communications, and Industrial CI—providing a roadmap for
+communities not just to <em>keep the lights on</em>, but to illuminate
+their own path toward independence, innovation, and long-term
+sustainability in the digital era.</p>
 <h1 id="introduction">Introduction</h1>
 <h3 id="vision-statement">Vision Statement</h3>
 <p><strong>Clear Skies</strong> is a locally grown initiative to build

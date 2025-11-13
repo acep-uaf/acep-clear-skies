@@ -49,8 +49,7 @@
               "title": "Terminology"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -287,8 +286,10 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "b943a4d96fce821c",
+  "active": "a921d7a2ad32327b",
   "lastOpenFiles": [
+    "conf/sedCIXKpA",
+    "chapters/Terminology.md",
     "templates/pdf.yaml",
     "templates/markdown.yaml",
     "templates/latex.yaml",
@@ -300,7 +301,6 @@
     "lib/md/server_comparison.md",
     "build/ClearSkies.tex",
     "conf/sedtrT7tu",
-    "conf/sedtri1fw",
     "build/lib/img/ASL_Lancelot_1898-N12.jpg",
     "build/lib/img/ASL_Lancelot_1898-N12.png",
     "lib/img/ASL_Lancelot_1898-N12.jpg",
@@ -317,7 +317,6 @@
     "chapters/01_Introduction.md",
     "chapters/04_Hardware.base.md",
     "chapters/04_Hardware-manualedit.md",
-    "chapters/Terminology.md",
     "build/ClearSkies.md",
     "chapters/00_ExecutiveSummary.md",
     "README.md",

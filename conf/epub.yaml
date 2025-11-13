@@ -5,10 +5,10 @@ output-file: build/ClearSkies.epub
 metadata:
   title: "Clear Skies"
   author: "John Haverlack"
-  date: "2025-11-07"
-  rights: "© 2025 Alaska Center for Energy and Power — CC BY-ND 4.0"
+  date: "2025-11-13"
+  rights: "© 2025 Alaska Center for Energy and Power"
 
-epub-cover-image: lib/img/ACEPLogo.png
+epub-cover-image: lib/img/UAF-ACEP.png
 
 include-before-body:
   - conf/frontmatter_epub.xhtml

@@ -11,5 +11,3 @@ include-in-header:
 
 filters:
   - filters/callouts.lua 
-  
-
