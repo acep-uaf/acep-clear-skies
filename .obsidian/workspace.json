@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lib/md/server_comparison.md",
+                "file": "chapters/Terminology.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "server_comparison"
+              "title": "Terminology"
             }
           }
         ],
@@ -289,6 +289,10 @@
   },
   "active": "b943a4d96fce821c",
   "lastOpenFiles": [
+    "build/ClearSkies.epub",
+    "conf/sed3scmuR",
+    "build/media",
+    "lib/md/server_comparison.md",
     "build/ClearSkies.tex",
     "conf/sedtrT7tu",
     "conf/sedtri1fw",
@@ -301,17 +305,13 @@
     "conf/sedSQRJMU",
     "conf/sed6gNXP0",
     "conf/sedPxTPgj",
-    "conf/sedXjKTLg",
     "build/lib/img/Minisforum_MS-A2.jpg",
     "build/lib/img/Minisforum_MS-A2.webp",
     "lib/img/Minisforum_MS-A2.jpg",
     "lib/img/Minisforum_MS-A2.webp",
-    "lib/img/Unconfirmed 161473.crdownload",
-    "data/servers/Minisforum_MS-A2.json",
     "build/lib/img/Qotom_Q30900se-s13.jpg",
     "lib/img/Qotom_Q30900se-s13.jpg",
     "chapters/03_TechnologySelection.md",
-    "lib/md/server_comparison.md",
     "chapters/04_Hardware.md",
     "chapters/02_StategicArchitecture.md",
     "chapters/01_Introduction.md",
