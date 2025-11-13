@@ -1,0 +1,105 @@
+{
+    "product": "Lancelot 1898-N12",
+    "make": "ASUS",
+    "model": "RS700-E11-RS12U",
+    "url": "https://www.asus.com/Server-Workstation/Servers/1U-2U-Rack-Servers/RS700-E11-RS12U/",
+    "category": "server",
+    "tier": "enterprise",
+    "price_usd": 11727.00,
+    "quote": {
+      "quote_number": "2511137266-W",
+      "quote_date": "2025-11-13"
+    },
+    "warranty": "3-Year Limited Parts and Labor",
+    "comments": "Dual-socket Intel Xeon Silver 4514Y rackmount system with high-performance NVMe storage and redundant 1200W Titanium PSUs. Built for dense virtualization and data-intensive workloads.",
+    "specs": {
+      "cpu": {
+        "model": "Intel Xeon Silver 4514Y",
+        "architecture": "x86_64 (Sapphire Rapids)",
+        "socket": "LGA4677",
+        "cores": 32,
+        "threads": 64,
+        "base_clock_ghz": 2.0,
+        "boost_clock_ghz": 3.4,
+        "tdp_w": 150,
+        "count": 2
+      },
+      "memory": {
+        "capacity_gb": 256,
+        "modules": 8,
+        "slots": 32,
+        "type": "DDR5-4800 ECC Registered",
+        "ecc": true
+      },
+      "storage": [
+        {
+          "type": "NVMe SSD",
+          "count": 2,
+          "capacity_each_tb": 1.0,
+          "interface": "PCIe 4.0 (M.2 2280)",
+          "model": "Samsung 990 Pro MZ-V9P1T0B/AM"
+        },
+        {
+          "type": "NVMe SSD",
+          "count": 2,
+          "capacity_each_tb": 15.36,
+          "interface": "PCIe 4.0 (U.3 2.5 in)",
+          "model": "Kioxia CD8P-R KCD8XPUG15T3"
+        }
+      ],
+      "network": [
+        {
+          "type": "RJ45",
+          "speed_gbps": 10,
+          "count": 2,
+          "chipset": "Intel X710-AT2 (Onboard)"
+        },
+        {
+          "type": "RJ45",
+          "speed_gbps": 10,
+          "count": 4,
+          "chipset": "Intel X710-T4 (PCIe x8)"
+        }
+      ],
+      "expansion": {
+        "pcie_slots": 3,
+        "m2_slots": 2,
+        "usb_ports": { "usb2": 2, "usb3": 4, "usb4": 0 },
+        "serial_ports": 1
+      },
+      "power": {
+        "input_type": "AC 100–240V",
+        "redundant": true,
+        "psu_count": 2,
+        "psu_rating_w": 1200,
+        "efficiency": "Titanium",
+        "draw_w": { "idle": 180, "max": 600 }
+      },
+      "thermal": {
+        "cooling": "Active (Dual CPU Heatsinks + Redundant Fans)",
+        "operating_temp_c": "10–35"
+      },
+      "chassis": {
+        "form_factor": "Rackmount",
+        "rack_units": "1U",
+        "material": "Steel",
+        "dimensions_in": { "l": 28.0, "w": 17.6, "h": 3.4 },
+        "weight_kg": 24.0,
+        "drive_bays": "12 × 2.5 in (Hybrid SAS/SATA/NVMe)"
+      },
+      "management": {
+        "bmc": true,
+        "ipmi": true,
+        "bios": "UEFI / ASPEED AST2600",
+        "bmc_chipset": "ASPEED AST2600",
+        "tpm": "2.0"
+      },
+      "os_support": [
+        "Rocky Linux 8.10",
+        "Red Hat Enterprise Linux 8.10",
+        "Ubuntu 24.04 LTS",
+        "Proxmox VE 8"
+      ]
+    }
+  }
+  

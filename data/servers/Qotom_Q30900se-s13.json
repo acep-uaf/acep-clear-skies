@@ -1,0 +1,81 @@
+{
+    "product": "Qotom Q30900GE S13 Series",
+    "make": "Qotom",
+    "model": "Q30900GE S13",
+    "url": "https://www.qotom.net/product/MiniPC_Q30900SE_S13_Series.html",
+    "category": "server",
+    "tier": "industrial",
+    "price_usd": 489,
+    "quote": { "quote_number": "", "quote_date": "" },
+    "warranty": "1-Year Limited Warranty",
+    "comments": "Fanless industrial mini-PC with eight Intel 2.5 GbE LAN ports, dual display outputs, and flexible storage expansion for firewall or edge compute.",
+    "specs": {
+      "cpu": {
+        "model": "Intel 8th/10th Gen",
+        "architecture": "x86_64",
+        "socket": "BGA",
+        "cores": 2,
+        "threads": 4,
+        "tdp_w": 15
+      },
+      "memory": {
+        "capacity_gb": 32,
+        "slots": 1,
+        "type": "DDR4 SO-DIMM 2133/2400 MHz",
+        "ecc": false
+      },
+      "storage": [
+        { "type": "2.5-inch SATA SSD/HDD", "count": 1, "capacity_each_tb": 0, "interface": "SATA 3.0", "model": "" },
+        { "type": "Mini PCIe mSATA SSD", "count": 1, "capacity_each_tb": 0, "interface": "mSATA", "model": "" },
+        { "type": "M.2 Wi-Fi E-Key (2230)", "count": 1, "capacity_each_tb": 0, "interface": "M.2 E-Key", "model": "" }
+      ],
+      "network": [
+        { "type": "RJ45", "speed_gbps": 2.5, "count": 8, "chipset": "Intel I225-V/I226-V" }
+      ],
+      "expansion": {
+        "pcie_slots": 0,
+        "m2_slots": 1,
+        "mini_pcie_slots": 2,
+        "usb_ports": { "usb2": 0, "usb3": 4, "usb4": 0 },
+        "serial_ports": 1,
+        "gpio": 1,
+        "sim_slots": 1
+      },
+      "power": {
+        "input_type": "DC 12 V Jack (5.5 mm × 2.5 mm)",
+        "redundant": false,
+        "psu_count": 1,
+        "psu_rating_w": 36,
+        "efficiency": "",
+        "draw_w": { "idle": 10, "max": 30 }
+      },
+      "thermal": {
+        "cooling": "Fanless Design",
+        "operating_temp_c": "0 – 50",
+        "nonoperating_temp_c": "-20 – 80",
+        "humidity": "10 – 90%"
+      },
+      "chassis": {
+        "form_factor": "Mini Fanless PC",
+        "rack_units": "1U",
+        "material": "Aluminium Alloy",
+        "dimensions_in": { "l": 7.7, "w": 4.8, "h": 1.9 },
+        "dimensions_mm": { "l": 196, "w": 122, "h": 47 },
+        "weight_kg": 1.26,
+        "mounting": "VESA Mounting Bracket included"
+      },
+      "management": {
+        "bmc": false,
+        "ipmi": false,
+        "bios": "UEFI",
+        "tpm": "",
+        "watchdog": true,
+        "autostart": true
+      },
+      "os_support": [
+        "Windows 10",
+        "Linux (Ubuntu 24.04 LTS, Proxmox VE, OPNsense)"
+      ]
+    }
+  }
+  

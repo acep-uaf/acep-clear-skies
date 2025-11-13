@@ -14,7 +14,7 @@
   "comments": "Higher-performance fanless variant with Intel Core i5 CPU.",
   "specs": {
     "cpu": {
-      "model": "Intel Core i5 (6-Port Model)",
+      "model": "Intel Core i5",
       "architecture": "x86_64",
       "socket": "",
       "cores": 4,

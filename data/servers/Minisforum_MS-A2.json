@@ -1,0 +1,89 @@
+{
+    "product": "MINIS FORUM MS-A2",
+    "make": "MINISFORUM",
+    "model": "MS-A2",
+    "url": "https://store.minisforum.com/products/minisforum-ms-a2?variant=46843404943605",
+    "category": "server",
+    "tier": "enterprise",
+    "price_usd": 1495.90,
+    "quote": { "quote_number": "", "quote_date": "" },
+    "warranty": "1-Year Limited Warranty",
+    "comments": "High-performance mini PC with AMD Ryzen 9 9955HX (Zen 5) CPU, dual 10Gbps SFP+ ports, PCIe x16 expansion, and up to 96GB DDR5 memory for advanced edge computing or hyperconverged nodes.",
+    "specs": {
+      "cpu": {
+        "model": "AMD Ryzen 9 9955HX",
+        "architecture": "Zen 5",
+        "cores": 16,
+        "threads": 32,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": 5.4,
+        "tdp_w": 55
+      },
+      "gpu": {
+        "model": "AMD Radeon 610M",
+        "type": "Integrated"
+      },
+      "memory": {
+        "capacity_gb": 96,
+        "slots": 2,
+        "type": "DDR5 SO-DIMM 5600 MHz",
+        "ecc": false
+      },
+      "storage": [
+        { "type": "M.2 2280/U.2 NVMe SSD", "count": 1, "capacity_each_tb": 2, "interface": "PCIe 4.0 x4", "model": "" },
+        { "type": "M.2 2280/22110 NVMe SSD", "count": 1, "capacity_each_tb": 0, "interface": "PCIe 4.0 x4", "model": "" }
+      ],
+      "network": [
+        { "type": "SFP+", "speed_gbps": 10, "count": 2, "chipset": "Intel X710" },
+        { "type": "RJ45", "speed_gbps": 2.5, "count": 1, "chipset": "Intel I226-V" },
+        { "type": "RJ45", "speed_gbps": 2.5, "count": 1, "chipset": "Realtek RTL8125" }
+      ],
+      "expansion": {
+        "pcie_slots": 1,
+        "m2_slots": 3,
+        "mini_pcie_slots": 0,
+        "usb_ports": { "usb2": 1, "usb3": 4, "usb4": 0 },
+        "typec_ports": 2,
+        "audio_jack": 1,
+        "serial_ports": 0
+      },
+      "video": {
+        "outputs": [
+          "HDMI 2.1 x1 (8K@60Hz)",
+          "USB-C (DP 2.0 Alt Mode) x2 (8K@60Hz / 4K@144Hz)"
+        ]
+      },
+      "power": {
+        "input_type": "DC 19V/12.63A Adapter",
+        "redundant": false,
+        "psu_count": 1,
+        "psu_rating_w": 240,
+        "efficiency": "",
+        "draw_w": { "idle": 35, "max": 130 }
+      },
+      "thermal": {
+        "cooling": "Dual active fans (CPU + SSD)",
+        "operating_temp_c": "0 – 50"
+      },
+      "chassis": {
+        "form_factor": "Mini PC",
+        "rack_units": "2U (approx.)",
+        "material": "Aluminium Alloy",
+        "dimensions_in": { "l": 7.7, "w": 7.4, "h": 1.9 },
+        "dimensions_mm": { "l": 196, "w": 189, "h": 48 },
+        "weight_kg": 1.8
+      },
+      "management": {
+        "bmc": false,
+        "ipmi": false,
+        "bios": "UEFI Secure Boot",
+        "tpm": true,
+        "watchdog": false
+      },
+      "os_support": [
+        "Windows 11",
+        "Linux (Ubuntu 24.04 LTS, Proxmox VE)"
+      ]
+    }
+  }
+  

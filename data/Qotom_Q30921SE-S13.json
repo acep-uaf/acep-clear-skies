@@ -11,7 +11,7 @@
   "comments": "Industrial fanless firewall/edge mini-PC with dual 10G SFP+.",
   "specs": {
     "cpu": {
-      "model": "Intel Celeron 4305U or Core (8th–10th Gen)",
+      "model": "Intel Celeron",
       "architecture": "x86_64",
       "socket": "",
       "cores": 2,

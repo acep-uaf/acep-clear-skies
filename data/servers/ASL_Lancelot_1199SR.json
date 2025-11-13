@@ -11,7 +11,7 @@
   "comments": "Rackmount Ceph/Proxmox node with ECC DDR5, IPMI, and redundant PSU.",
   "specs": {
     "cpu": {
-      "model": "Intel Xeon E-2478",
+      "model": "Intel Xeon",
       "architecture": "x86_64",
       "socket": "",
       "cores": 8,

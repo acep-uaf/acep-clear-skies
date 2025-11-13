@@ -2,43 +2,107 @@
   "product": "PowerEdge R6615",
   "make": "Dell",
   "model": "R6615",
-  "url": "https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615",
+  "url": "https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615/pe_r6615_tm_vi_vp_sb?configurationid=1759700b-2877-411f-bf22-461cea367d8e",
   "category": "server",
   "tier": "enterprise",
-  "price_usd": null,
-  "quote": { "quote_number": "", "quote_date": "" },
-  "warranty": "3-Year ProSupport",
-  "comments": "AMD EPYC 9004 1U high-density virtualization node.",
+  "price_usd": 19401.16,
+  "quote": {
+    "quote_number": "1759700b-2877-411f-bf22-461cea367d8e",
+    "quote_date": "2025-11-06"
+  },
+  "warranty": "3-Year ProSupport and Next Business Day Onsite Service",
+  "comments": "1U rack server optimized for virtualization and compute-dense workloads. Configured with AMD EPYC 9224 CPU (24C/48T), 96 GB DDR5-5600 ECC RAM, 6 × SATA SSDs, Broadcom 25GbE and 1GbE networking, redundant Titanium PSUs, and iDRAC9 Express management.",
   "specs": {
     "cpu": {
-      "model": "AMD EPYC 9004 series",
-      "architecture": "x86_64",
+      "model": "AMD EPYC 9224",
+      "architecture": "Zen 4 (9004 Series)",
       "socket": "SP5",
-      "cores": null,
-      "threads": null,
-      "tdp_w": null
+      "cores": 24,
+      "threads": 48,
+      "base_clock_ghz": 2.5,
+      "boost_clock_ghz": null,
+      "tdp_w": 200
     },
-    "memory": { "capacity_gb": null, "slots": 12, "type": "DDR5 4800 ECC RDIMM", "ecc": true },
-    "storage": [],
-    "network": [{ "type": "RJ45", "speed_gbps": 1, "count": 2, "chipset": "Broadcom" }],
-    "expansion": { "pcie_slots": 3, "m2_slots": 2, "usb_ports": { "usb2": 2, "usb3": 2, "usb4": 0 }, "serial_ports": 1 },
+    "memory": {
+      "capacity_gb": 96,
+      "slots": 12,
+      "type": "DDR5-5600 ECC RDIMM",
+      "ecc": true
+    },
+    "storage": [
+      {
+        "type": "SATA SSD",
+        "count": 2,
+        "capacity_each_tb": 0.96,
+        "interface": "SATA 6 Gbps",
+        "model": "AG Drive Read Intensive 512e 2.5in Hot-Plug"
+      },
+      {
+        "type": "SATA SSD",
+        "count": 4,
+        "capacity_each_tb": 3.84,
+        "interface": "SATA 6 Gbps",
+        "model": "AG Drive Read Intensive 512e 2.5in Hot-Plug"
+      }
+    ],
+    "raid": {
+      "controller": "HBA355i",
+      "configuration": "C1 – No RAID (Mixed Drives Allowed)"
+    },
+    "network": [
+      {
+        "type": "SFP28",
+        "speed_gbps": 25,
+        "count": 2,
+        "chipset": "Broadcom 57414"
+      },
+      {
+        "type": "RJ45",
+        "speed_gbps": 1,
+        "count": 2,
+        "chipset": "Broadcom 5720"
+      }
+    ],
+    "expansion": {
+      "pcie_slots": 3,
+      "m2_slots": 2,
+      "usb_ports": { "usb2": 2, "usb3": 2, "usb4": 0 },
+      "serial_ports": 1,
+      "riser": "Riser Config 1 – 2 × 8 LP + 1 × 16 LP (Gen 5)"
+    },
     "power": {
       "input_type": "AC 100–240V",
       "redundant": true,
       "psu_count": 2,
-      "psu_rating_w": 1800,
+      "psu_rating_w": 700,
       "efficiency": "Titanium",
-      "draw_w": { "idle": null, "max": null }
+      "draw_w": { "idle": 120, "max": 450 }
     },
-    "thermal": { "cooling": "Active", "operating_temp_c": "10–35" },
+    "thermal": {
+      "cooling": "4 × Very High Performance Fans",
+      "operating_temp_c": "10–35"
+    },
     "chassis": {
       "form_factor": "Rackmount",
       "rack_units": "1U",
       "material": "Steel",
       "dimensions_in": { "l": 28.0, "w": 17.1, "h": 1.7 },
-      "weight_kg": null
+      "weight_kg": 17.0,
+      "drive_bays": "Front 10 × 2.5 SAS4/SATA/NVMe (4 Universal)"
     },
-    "management": { "bmc": true, "ipmi": true, "bios": "UEFI / iDRAC9", "tpm": "2.0" },
-    "os_support": ["Proxmox VE", "Ubuntu 24.04 LTS", "RHEL 9"]
+    "management": {
+      "bmc": true,
+      "ipmi": true,
+      "bios": "UEFI / iDRAC9 Express 16G",
+      "idrac_license": "Express (Upgradeable to Enterprise or Datacenter)",
+      "tpm": "2.0 V6",
+      "quick_sync": false
+    },
+    "os_support": [
+      "Proxmox VE",
+      "Ubuntu Server 24.04 LTS",
+      "Red Hat Enterprise Linux 9",
+      "Windows Server 2025"
+    ]
   }
 }

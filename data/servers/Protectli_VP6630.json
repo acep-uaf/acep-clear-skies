@@ -14,7 +14,7 @@
   "comments": "Fanless open-source BIOS mini server ideal for Proxmox or OPNsense edge.",
   "specs": {
     "cpu": {
-      "model": "Intel Core i3 (6-Port Model)",
+      "model": "Intel Core i3",
       "architecture": "x86_64",
       "socket": "",
       "cores": 4,

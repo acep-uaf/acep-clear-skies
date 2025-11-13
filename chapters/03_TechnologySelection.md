@@ -6,7 +6,6 @@ _Design and Implementation Blueprint for the Clear Skies Architecture_
 This section details the specific technologies, configurations, and open-source components recommended for each layer and tier of the Clear Skies architecture.  
 Selections emphasize **resilience**, **local autonomy**, and **open interoperability** across all deployment scales.
 
----
 
 ## Layer 0 — Hardware Foundations
 
@@ -27,7 +26,7 @@ All 3 tiers of hardware deployment can be built in a shipable rack mount contain
 - Lightweight Proxmox or single-node SDDC
 - Local UPS / Power considerations
 
-![Protectli-VP6600](lib/diag/Images/VP6600_front_1600x1600.jpg){ width=400px }
+![Protectli-VP6600](lib/diag/Images/VP6600_front_1600x1600.jpg)
 
 ### Tier 2 — Village Site
 
@@ -54,8 +53,6 @@ All 3 tiers of hardware deployment can be built in a shipable rack mount contain
 - Multi-site replication and Tailscale/Headscale federation
 
 
----
-
 ## Layer 1 — Cyberinfrastructure (CI)
 - Virtualization Platform: **Proxmox VE / KVM**
 - Networking Stack: **OPNsense**, **FRR**, VLAN trunking
@@ -64,8 +61,6 @@ All 3 tiers of hardware deployment can be built in a shipable rack mount contain
 - Monitoring: **Prometheus**, **Grafana**, **Loki**, **Wazuh**
 - Configuration: **Ansible** or **Chef**
 
-
----
 
 ## Layer 2 — Local Services
 - OT/SCADA: **Rapid SCADA**, **OpenPLC**, **Ignition Edge**
@@ -80,8 +75,6 @@ All 3 tiers of hardware deployment can be built in a shipable rack mount contain
 
 ![IIoT](lib/diag/IIoT_Architecture.excalidraw.png)
 
-
----
 
 ## Layer 3 — Community Connections
 - Secure Networking: **Tailscale / Headscale (ZTNA Mesh)**

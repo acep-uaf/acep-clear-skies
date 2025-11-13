@@ -2,43 +2,100 @@
   "product": "ProLiant DL145 Gen11",
   "make": "HPE",
   "model": "DL145 Gen11",
-  "url": "https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl100-servers/proliant-dl145-gen11/p/1014845266",
+  "url": "https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl100-servers/proliant-dl145-server/hpe-proliant-dl145-gen11/p/1014845266",
   "category": "server",
-  "tier": "industrial",
-  "price_usd": null,
-  "quote": { "quote_number": "", "quote_date": "" },
-  "warranty": "3-Year Standard Warranty",
-  "comments": "2U ruggedized AMD EPYC 8004 edge-ready platform.",
+  "tier": "enterprise",
+  "price_usd": 11250.00,
+  "quote": {
+    "quote_number": "05c378a90c2661e",
+    "quote_date": "2025-11-06"
+  },
+  "warranty": "3-Year Foundation Care",
+  "comments": "1U AMD EPYC 8004-series server designed for compact virtualization and edge deployments, with redundant PSUs and iLO Advanced management.",
   "specs": {
     "cpu": {
-      "model": "AMD EPYC 8004 series (Zen4c)",
-      "architecture": "x86_64",
-      "socket": "SP6",
-      "cores": null,
-      "threads": null,
-      "tdp_w": null
+      "model": "AMD EPYC 8124P",
+      "architecture": "Zen 4c (8004 Series)",
+      "socket": "SP5",
+      "cores": 16,
+      "threads": 32,
+      "base_clock_ghz": 2.45,
+      "boost_clock_ghz": null,
+      "tdp_w": 155
     },
-    "memory": { "capacity_gb": null, "slots": 8, "type": "DDR5 ECC RDIMM", "ecc": true },
-    "storage": [],
-    "network": [],
-    "expansion": { "pcie_slots": 2, "m2_slots": 2, "usb_ports": { "usb2": 0, "usb3": 2, "usb4": 0 }, "serial_ports": 1 },
+    "memory": {
+      "capacity_gb": 128,
+      "modules": 4,
+      "slots": 8,
+      "type": "DDR5-4800 ECC Registered (HPE SmartMemory)",
+      "ecc": true
+    },
+    "storage": [
+      {
+        "type": "SATA SSD",
+        "count": 1,
+        "capacity_each_tb": 0.96,
+        "interface": "SATA 6 Gbps",
+        "model": "HPE 960GB SATA 6G Mixed Use SFF BC Multi Vendor SSD"
+      },
+      {
+        "type": "SATA SSD",
+        "count": 1,
+        "capacity_each_tb": 3.84,
+        "interface": "SATA 6 Gbps",
+        "model": "HPE 3.84TB SATA 6G Read Intensive SFF BC Multi Vendor SSD"
+      }
+    ],
+    "raid": {
+      "controller": "HPE MR216i-p",
+      "configuration": "RAID 0/1/10/5 (SATA/SAS, hardware offload)"
+    },
+    "network": [
+      {
+        "type": "RJ45",
+        "speed_gbps": 1,
+        "count": 2,
+        "chipset": "Broadcom 5720"
+      }
+    ],
+    "expansion": {
+      "pcie_slots": 2,
+      "m2_slots": 1,
+      "usb_ports": { "usb2": 0, "usb3": 2, "usb4": 0 },
+      "serial_ports": 1
+    },
     "power": {
       "input_type": "AC 100–240V",
       "redundant": true,
       "psu_count": 2,
-      "psu_rating_w": null,
+      "psu_rating_w": 700,
       "efficiency": "Platinum",
-      "draw_w": { "idle": null, "max": null }
+      "draw_w": { "idle": 95, "max": 350 }
     },
-    "thermal": { "cooling": "Active", "operating_temp_c": "-5–55" },
+    "thermal": {
+      "cooling": "Active Fan System",
+      "operating_temp_c": "10–35"
+    },
     "chassis": {
       "form_factor": "Rackmount",
-      "rack_units": "2U",
+      "rack_units": "1U",
       "material": "Steel",
-      "dimensions_in": { "l": 28.0, "w": 17.5, "h": 3.4 },
-      "weight_kg": null
+      "dimensions_in": { "l": 27.5, "w": 17.5, "h": 1.7 },
+      "weight_kg": 14.0,
+      "drive_bays": "Front 2 × SFF (2.5 in) SATA/SAS"
     },
-    "management": { "bmc": true, "ipmi": true, "bios": "UEFI / iLO 6", "tpm": "2.0" },
-    "os_support": ["Proxmox VE", "Ubuntu 24.04 LTS", "RHEL 9"]
+    "management": {
+      "bmc": true,
+      "ipmi": true,
+      "bios": "UEFI / iLO 6",
+      "ilo_license": "iLO Advanced Electronic License (3yr Support)",
+      "tpm": "2.0"
+    },
+    "os_support": [
+      "Proxmox VE",
+      "Ubuntu 24.04 LTS",
+      "Red Hat Enterprise Linux 9",
+      "Windows Server 2025"
+    ]
   }
 }

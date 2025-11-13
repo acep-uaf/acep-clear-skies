@@ -1,0 +1,1573 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage{etoolbox}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{xparse}
+\tcbuselibrary{breakable}
+
+% --- Disable floating figures globally ---
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][H]{\origfigure[H]}{\endorigfigure}
+
+% --- Colors ---
+\usepackage{xcolor}
+\definecolor{speculativeback}{RGB}{247,232,255}  % #f7e8ff
+\definecolor{speculativeframe}{RGB}{139,43,226}  % #8b2be2
+
+% --- Left-align all Pandoc tables ---
+\usepackage{longtable}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\par\raggedright}{}{}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\makeatother
+
+
+% Helper to show a blank title if empty
+\newcommand{\blanktitle}{\mbox{}}
+
+% =========================================================
+% Concept Boxes
+% =========================================================
+\newtcolorbox{infobox}[1][Information]{%
+  title=\ifstrempty{#1}{\blanktitle}{#1},
+  colback=blue!3!white,
+  colframe=blue!50!black,
+  colbacktitle=blue!10!white,
+  fonttitle=\bfseries,
+  coltitle=black,
+  enhanced, sharp corners, breakable,
+  after=\par\vspace{6pt}
+}
+
+\newtcolorbox{proposedbox}[1][Proposed Concept]{%
+  title=\ifstrempty{#1}{\blanktitle}{#1},
+  colback=blue!5!white,
+  colframe=blue!75!black,
+  colbacktitle=blue!15!white,
+  fonttitle=\bfseries,
+  coltitle=black,
+  enhanced, sharp corners, breakable,
+  after=\par\vspace{6pt}
+}
+
+\newtcolorbox{establishedbox}[1][Established Concept]{%
+  title=\ifstrempty{#1}{\blanktitle}{#1},
+  colback=green!5!white,
+  colframe=green!75!black,
+  colbacktitle=green!15!white,
+  fonttitle=\bfseries,
+  coltitle=black,
+  enhanced, sharp corners, breakable,
+  after=\par\vspace{6pt}
+}
+
+\newtcolorbox{speculativebox}[1][Speculative Concept]{%
+  title=\ifstrempty{#1}{\blanktitle}{#1},
+  colback=speculativeback,
+  colframe=speculativeframe,
+  colbacktitle=speculativeback!80!white, % lighter variant for title bar
+  fonttitle=\bfseries,
+  coltitle=black,
+  enhanced, sharp corners, breakable,
+  after=\par\vspace{6pt}
+}
+
+
+\newtcolorbox{cautionbox}[1][Caution]{%
+  title=\ifstrempty{#1}{\blanktitle}{#1},
+  colback=orange!5!white,
+  colframe=orange!75!black,
+  colbacktitle=orange!15!white,
+  fonttitle=\bfseries,
+  coltitle=black,
+  enhanced, sharp corners, breakable,
+  after=\par\vspace{6pt}
+}
+
+\newtcolorbox{warningbox}[1][Warning]{%
+  title=\ifstrempty{#1}{\blanktitle}{#1},
+  colback=orange!5!white,
+  colframe=orange!75!black,
+  colbacktitle=orange!15!white,
+  fonttitle=\bfseries,
+  coltitle=black,
+  enhanced, sharp corners, breakable,
+  after=\par\vspace{6pt}
+}
+
+\newtcolorbox{dangerbox}[1][Danger]{%
+  title=\ifstrempty{#1}{\blanktitle}{#1},
+  colback=red!5!white,
+  colframe=red!75!black,
+  colbacktitle=red!15!white,
+  fonttitle=\bfseries,
+  coltitle=black,
+  enhanced, sharp corners, breakable,
+  after=\par\vspace{6pt}
+}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+\renewcommand*\contentsname{Contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{executive-summary}{%
+\section{Executive Summary}\label{executive-summary}}
+
+Alaska has the world's highest concentration of islanded
+microgrids---small, self-contained power systems that sustain hundreds
+of remote communities unconnected to any central grid.
+
+These systems are lifelines, but they face growing pressure: rising fuel
+and logistics costs, limited technical capacity, fragile Internet
+connectivity, and increasing exposure to cyber threats as digital
+controls expand into every corner of local infrastructure.
+
+\textbf{Clear Skies} proposes a new path forward --- a
+\emph{local-first, cloud-free cyberinfrastructure model} designed
+specifically for Alaska's rural and tribal energy communities.\\
+By establishing scalable, community-owned data and control systems,
+Clear Skies enables essential digital services---SCADA, communications,
+cybersecurity, and data management---to operate \textbf{independently of
+the cloud}, even during extended Internet outages.
+
+The Clear Skies reference architecture defines a layered approach to
+resilience:
+
+\begin{itemize}
+\item
+  \textbf{Layer 0 -- Hardware Foundations:} three tiers of scalable
+  deployment (Camp, Village, Regional) that balance cost, capacity, and
+  redundancy using commodity or enterprise hardware.
+\item
+  \textbf{Layer 1 -- Cyberinfrastructure (CI):} a local Software-Defined
+  Data Center (SDDC) providing virtualization, networking, storage, and
+  identity services built on open-source tools such as Proxmox, Ceph,
+  and OPNsense.
+\item
+  \textbf{Layer 2 -- Local Services:} modular applications for
+  operational technology (OT), industrial IoT, emergency communications,
+  and community collaboration---entirely hosted and managed within the
+  local network.
+\item
+  \textbf{Layer 3 -- Community Connections:} secure, zero-trust bridges
+  that enable inter-village collaboration, cross-site data sharing, and
+  regional coordination while preserving digital sovereignty.
+\end{itemize}
+
+Clear Skies is more than an IT architecture---it is an \textbf{enabler
+of digital sovereignty}, extending the principles of local and tribal
+self-determination into the digital domain.\\
+Its modular design allows each community to start small, learn, and
+grow---building capacity, reducing dependency, and cultivating a
+workforce skilled in managing their own resilient, secure digital
+infrastructure.
+
+In doing so, Clear Skies provides a roadmap for communities not only to
+keep the lights on---but to illuminate their own path toward
+independence, innovation, and long-term sustainability in the digital
+era.
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\hypertarget{vision-statement}{%
+\subsubsection{Vision Statement}\label{vision-statement}}
+
+\textbf{Clear Skies} is a locally grown initiative to build
+\textbf{community-owned, cloud-free digital infrastructure} across rural
+Alaskan microgrid communities. It empowers villages, tribes, and
+regional utilities to host and secure their own data, communications,
+and operational systems --- right where they live and work without
+reliance on distant cloud services.
+
+By bringing computing power, cybersecurity, and communications back
+under local control, \textbf{Clear Skies} advances \emph{digital
+sovereignty} as as a modern expression of community and tribal
+self-determination.\\
+It strengthens self-reliance, ensures continuity during network outages,
+and creates a foundation for innovation that reflects Alaska's values of
+\textbf{independence, stewardship}, and \textbf{cooperation}.
+
+The following reference architecture outlines how Clear Skies can be
+implemented in scalable layers, from physical infrastructure to regional
+collaboration.
+
+\hypertarget{problem-statement}{%
+\subsection{Problem Statement}\label{problem-statement}}
+
+Alaska has the worlds highest concentration of island-ed micro-grids in
+the world. The remote communities are not connected by roads or
+transmission lines. Most generate power primarily with diesel, and the
+fuel is expensive, especially if the community is not on a the coast or
+river systems where fuel can be barged in. For those remote communities
+fuel must be flown in.
+
+Internet access in these communities is also a constrained resource.
+Some coastal communities have access to high speed fiber optic
+connections, while others have been limited to expensive geosynchronous
+satellite communications. Though in 2 of the last 3 years, sea ice has
+cut burred cables resulting several month service outages. Low earth
+orbit (LEO)(\protect\hyperlink{ref-LowEarthOrbit2025}{{``Low {Earth}
+Orbit''} 2025}) satellite systems have be come available in recent
+years, however also carries the unaddressed risk of Kessler
+syndrome(\protect\hyperlink{ref-KesslerSyndrome2025}{{``Kessler
+Syndrome''} 2025}), where a cascading collision of satellites starts a
+chain reaction leaving the entire LEO orbital space unusable for
+potentially centuries.
+
+Rural Alaskan micro-grid communities range between less than a hundred
+to over 3000 people. The energy utilities in these communities are
+commonly operated by a handful of individuals. Staffing rural utilities
+is a challenging balance between keeping energy costs low and attracting
+skilled workers.
+
+For much of the United States, the Federal Energy Regulatory Commission
+(FERC)(\protect\hyperlink{ref-HomePageFederal}{{``Home {Page} \textbar{}
+{Federal Energy Regulatory Commission}''} n.d.}) is the regulator agency
+that governs energy utilities in the U.S.~ ~FERC mandates that energy
+utilities in the United States to follow the North American Electric
+Reliability Corporation~(NERC)(\protect\hyperlink{ref-NERC}{{``{NERC}''}
+n.d.}) Critical Infrastructure Protection
+(CIP)(\protect\hyperlink{ref-ReliabilityStandards}{{``Reliability
+{Standards}''} n.d.}) standards in regards to cybersecurity compliance
+for energy utilities Operational Technology networks. However compliance
+criteria are based largely on transmission capabilities. Because no
+utility in Alaska is connected to the lower 48 power grid, Alaska
+utilities have been effectively exempt from cybersecurity regulation.
+Recently the Railbelt Reliability~Council
+(RRC)(\protect\hyperlink{ref-AlaskaRailbeltReliability2025}{{``Alaska
+{Railbelt Reliability Council}''} 2025}) has drafted a set of modified
+CIP
+standards(\protect\hyperlink{ref-CIPCriticalInfrastructure2025}{{``({CIP})
+{Critical Infrastructure Protection}''} 2025}) for the State of Alaska
+which are based on the NERC CIP standards but tuned to accommodate
+Alaskan specific criteria. Once adopted by the Regulatory Commission of
+Alaska
+(RCA)(\protect\hyperlink{ref-RegulatoryCommissionAlaska}{{``Regulatory
+{Commission} of {Alaska}''} n.d.}) the RRC CIP standards are expected to
+become a regulator compliance requirement for those Alaskan power
+producer connected to the Railbelt energy grid.
+
+While the RRC CIP standards address the comprehensive scope of risks for
+critical energy infrastructure, rural islanded Alaskan microgrids will
+remain largely exempt from compliance because they do not meet the
+transmission criteria. Additionally meeting cybersecurity standards
+would represent a significant cost to rural communities already
+struggling with the cost of energy. Not only would these communities
+need to pay for expensive cybersecurity expertise, but would likely mean
+expensive upgrades to existing network equipment.
+
+\hypertarget{strategic-architecture}{%
+\section{Strategic Architecture}\label{strategic-architecture}}
+
+Clear Skies is built on a simple principle: \textbf{local-first by
+design.}\\
+Every system --- from the smallest sensor to the community data center
+--- operates independently of the cloud services, ensuring that
+essential services remain available, secure, and under local control
+even when Internet connectivity is lost.
+
+Clear Skies adopts a layered approach to build increasingly complex
+modular capabilities on top of a resilient cyberinfrastructure
+foundation.
+
+\begin{figure}
+\centering
+\includegraphics{lib/diag/ClearSkies-Overview-notitle.excalidraw.png}
+\caption{Clear Skies Reference Architecture}
+\end{figure}
+
+\hypertarget{layer-0---hardware-hw}{%
+\subsection{Layer 0 - Hardware (HW)}\label{layer-0---hardware-hw}}
+
+The hardware selection can be based on 3 tiers to accommodate different
+cost, scalability, and resiliency needs.
+
+\hypertarget{tier-1---camp-site}{%
+\subsubsection{Tier 1 - Camp Site}\label{tier-1---camp-site}}
+
+\textbf{Purpose:} Portable or training-scale deployments for small teams
+and pilot projects.
+
+\begin{itemize}
+\tightlist
+\item
+  Commodity Grade Hardware
+\item
+  Low Cost of Entry and Maintenance
+\item
+  Portability
+\item
+  Limited Capacity
+\item
+  Basic Services
+\item
+  Limited Resiliency
+\item
+  Scales to 10's of People
+\end{itemize}
+
+\hypertarget{tier-2---village-site}{%
+\subsubsection{Tier 2 - Village Site}\label{tier-2---village-site}}
+
+\textbf{Purpose:} Fully featured, community-level cyberinfrastructure
+supporting daily operations.
+
+\begin{itemize}
+\tightlist
+\item
+  Commodity Grade Hardware
+\item
+  Low Cost of Entry and Maintenance
+\item
+  Full Stack Service Capabilities
+\item
+  Full Resiliency - Zero Single Points of Failure
+\item
+  Scales to 100's of People
+\end{itemize}
+
+\hypertarget{tier-3---regional-site}{%
+\subsubsection{Tier 3 - Regional Site}\label{tier-3---regional-site}}
+
+\textbf{Purpose:} High-capacity, multi-community or research hub
+supporting advanced services and federation.
+
+\begin{itemize}
+\tightlist
+\item
+  Enterprise Grade Hardware
+\item
+  Moderate Cost of Entry and Maintenance
+\item
+  Full Resiliency - Zero Single Points of Failure
+\item
+  Scales to 1000's of People
+\end{itemize}
+
+\hypertarget{layer-1---cyberinfrastructure-ci}{%
+\subsection{Layer 1 - Cyberinfrastructure
+(CI)}\label{layer-1---cyberinfrastructure-ci}}
+
+The Cyberinfrastructure (CI) Layer forms the digital powerhouse of a
+Clear Skies deployment.\\
+It establishes the \textbf{core network and compute services} that allow
+every community site --- from Camp Site to Regional Site --- to operate
+independently of outside cloud resources.
+
+The CI Layer is implemented as a \textbf{Software-Defined Data Center
+(SDDC)}(\protect\hyperlink{ref-SoftwaredefinedDataCenter2025}{{``Software-Defined
+Data Center''} 2025}): a cluster of virtualized servers that pool
+compute, storage, and networking into one resilient platform.\\
+This approach provides enterprise-grade reliability using open-source
+tools and commodity hardware, enabling small teams to manage complex
+infrastructure with minimal overhead.
+
+\hypertarget{networking-segmentation}{%
+\subsubsection{Networking \&
+Segmentation}\label{networking-segmentation}}
+
+\begin{itemize}
+\tightlist
+\item
+  VLAN-aware switching and software-defined routing using
+  \textbf{OPNsense} or similar open firewalls.
+\item
+  Segregated networks for Management, Operational Technology (OT), Data,
+  and DMZ zones.
+\item
+  Local DNS, DHCP, and NTP ensuring that critical systems function
+  offline.
+\end{itemize}
+
+\hypertarget{identity-trust}{%
+\subsubsection{Identity \& Trust}\label{identity-trust}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Keycloak} provides single sign-on and multi-factor
+  authentication.
+\item
+  \textbf{Smallstep CA} or similar certificate authority issues
+  short-lived internal certificates, enabling encrypted, trusted
+  communication between devices and services.
+\end{itemize}
+
+\hypertarget{storage-resiliency}{%
+\subsubsection{Storage \& Resiliency}\label{storage-resiliency}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Ceph} or \textbf{ZFS-based} distributed storage replicates
+  data across all nodes.
+\item
+  Snapshots and versioned backups protect against corruption or
+  accidental deletion.\\
+\item
+  Air-gap or offline backup options for disaster recovery.
+\end{itemize}
+
+\hypertarget{monitoring-automation}{%
+\subsubsection{Monitoring \& Automation}\label{monitoring-automation}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Prometheus + Grafana} for metrics, alerting, and visibility.
+\item
+  \textbf{Ansible} or \textbf{Chef} for configuration management and
+  repeatable deployments.
+\item
+  Logs aggregated locally via \textbf{Elastic / Wazuh / Loki} stacks.
+\end{itemize}
+
+\hypertarget{security-perimeter}{%
+\subsubsection{Security \& Perimeter}\label{security-perimeter}}
+
+\begin{itemize}
+\tightlist
+\item
+  Dual-node firewall pairs provide high-availability failover.
+\item
+  Intrusion detection (Zeek/Suricata) can run as virtual appliances
+  inside the same SDDC.
+\item
+  Role-based access control and network segmentation enforce the ``least
+  privilege'' model.
+\end{itemize}
+
+\hypertarget{data-backup-synchronization}{%
+\subsubsection{Data Backup \&
+Synchronization}\label{data-backup-synchronization}}
+
+\begin{itemize}
+\tightlist
+\item
+  Automated local backups using \textbf{Restic}, \textbf{Borg}, or
+  similar tools
+\item
+  Optional cross-site replication between Village and Regional Sites
+  when connectivity permits.\\
+\item
+  All data remains encrypted and community-owned.
+\end{itemize}
+
+\hypertarget{layer-2---local-services-loc}{%
+\subsection{Layer 2 - Local Services
+(LOC)}\label{layer-2---local-services-loc}}
+
+Layer 2 builds upon the Cyberinfrastructure (CI) foundation to deliver
+the mission-specific functions that keep a community operating,
+informed, and connected. These following modular service areas are
+locally hosted---able to run entirely within the community network---and
+can be added, removed, or upgraded without disrupting the lower layers.
+
+Each category reflects a practical application of the local-first
+philosophy: keeping critical data, control, and communication inside the
+community while remaining interoperable with regional and research
+partners.
+
+\hypertarget{operational-technology-ot-scada-ics}{%
+\subsubsection{Operational Technology (OT) / SCADA /
+ICS}\label{operational-technology-ot-scada-ics}}
+
+\textbf{Purpose:} maintain safe, efficient, and observable microgrid
+operations under all conditions.
+
+\begin{itemize}
+\tightlist
+\item
+  Supervisory control and monitoring for generation, distribution, and
+  storage systems.
+\item
+  Secure, segmented access for operators, engineers, and vendors.
+\item
+  Local data historians for real-time visibility even during WAN
+  outages.
+\item
+  Integration with open-source or vendor SCADA platforms (e.g., Rapid
+  SCADA, Ignition Edge, OpenPLC).
+\end{itemize}
+
+\hypertarget{industrial-internet-of-things-iiot-networks}{%
+\paragraph{Industrial Internet of Things (IIoT)
+Networks}\label{industrial-internet-of-things-iiot-networks}}
+
+\textbf{Purpose:} gather and use data from across the community---power,
+heat, water, environment---to inform decisions locally.
+
+\begin{itemize}
+\tightlist
+\item
+  LoRaWAN, Modbus TCP, and MQTT telemetry from sensors across the
+  community.
+\item
+  Local brokers and dashboards (Node-RED, Grafana) for low-bandwidth
+  visualization.
+\item
+  Edge analytics and rule-based automation without cloud dependence.
+\end{itemize}
+
+\hypertarget{emergency-communications}{%
+\subsubsection{Emergency
+Communications}\label{emergency-communications}}
+
+\textbf{Purpose:} ensure situational awareness and coordination during
+disasters or outages.
+
+\begin{itemize}
+\tightlist
+\item
+  Local voice, text, and alerting systems that function when commercial
+  networks fail.
+\item
+  Interoperable with radios, satellite links, or FirstNet gateways when
+  available.
+\item
+  Capable of community-wide paging, siren control, or automated
+  messaging through existing IoT endpoints.
+\end{itemize}
+
+\hypertarget{local-community-communications}{%
+\subsubsection{Local Community
+Communications}\label{local-community-communications}}
+
+\textbf{Purpose:} strengthen community cohesion and digital inclusion
+through local, private communication spaces.
+
+\begin{itemize}
+\tightlist
+\item
+  Locally hosted chat, video, and bulletin-board tools (Matrix, Jitsi,
+  etc).
+\item
+  Intranet portals for schools, clinics, and tribal councils.
+\item
+  Content caching and offline web access for education and information
+  sharing.
+\end{itemize}
+
+\hypertarget{additional-service-categories-expandable}{%
+\subsubsection{Additional Service Categories
+(Expandable)}\label{additional-service-categories-expandable}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Cybersecurity Operations:} IDS/IPS, log correlation,
+  vulnerability scanning, and SOC visualization.
+\item
+  \textbf{Education \& Research Sandboxes:} student training, network
+  simulation, or data-science environments.
+\item
+  \textbf{Local Data Services:} GIS, asset management, or archival
+  storage tied to community projects.
+\end{itemize}
+
+\hypertarget{outcome}{%
+\subsubsection{Outcome}\label{outcome}}
+
+Layer 2 turns Clear Skies from infrastructure into impact --- providing
+the tools that make a self-reliant community not only operationally
+resilient but also informed, connected, and empowered.
+
+\hypertarget{layer-3---community-connections-comm}{%
+\subsection{Layer 3 - Community Connections
+(COMM)}\label{layer-3---community-connections-comm}}
+
+Layer 3 extends Clear Skies beyond individual communities.\\
+It enables \textbf{secure collaboration, knowledge sharing, and regional
+coordination} between sites --- while preserving each community's
+digital sovereignty.\\
+These connections are intentional, encrypted, and always under local
+control. \#\#\# Secure Networking and Federation - \textbf{Tailscale /
+Headscale Zero-Trust Network Access (ZTNA) Bridges:} lightweight,
+encrypted overlays that connect Camp, Village, and Regional sites into a
+trusted mesh without public exposure. - \textbf{Cross-Site Data
+Sharing:} optional, policy-driven replication of telemetry, research,
+and analytics data between communities or partner institutions. -
+\textbf{Federated Identity and Trust:} local identity systems (Keycloak
+/ Smallstep CA) exchange only the credentials necessary for inter-site
+collaboration. - \textbf{Bandwidth-Aware Synchronization:} asynchronous,
+store-and-forward file and database replication designed for limited or
+intermittent connectivity.
+
+\hypertarget{collaborative-applications}{%
+\subsubsection{Collaborative
+Applications}\label{collaborative-applications}}
+
+\begin{itemize}
+\tightlist
+\item
+  Shared monitoring dashboards and situational-awareness maps.
+\item
+  Federated educational resources and research datasets.
+\item
+  Inter-community communication tools for regional operations centers or
+  cooperative utilities.
+\end{itemize}
+
+\textbf{Purpose:} build a network of sovereign digital islands --- each
+self-reliant, yet capable of cooperating across Alaska's vast geography
+through secure, transparent, and low-bandwidth bridges.
+
+\hypertarget{outcome-1}{%
+\subsubsection{Outcome}\label{outcome-1}}
+
+Layer 3 transforms Clear Skies from isolated local systems into a
+\textbf{distributed ecosystem of collaboration}.\\
+Communities retain full control of their data and infrastructure while
+participating in a resilient, Alaska-wide digital commons built on
+trust, openness, and shared stewardship.
+
+\hypertarget{technology-selection}{%
+\section{Technology Selection}\label{technology-selection}}
+
+\emph{Design and Implementation Blueprint for the Clear Skies
+Architecture}
+
+This section details the specific technologies, configurations, and
+open-source components recommended for each layer and tier of the Clear
+Skies architecture.\\
+Selections emphasize \textbf{resilience}, \textbf{local autonomy}, and
+\textbf{open interoperability} across all deployment scales.
+
+\hypertarget{layer-0-hardware-foundations}{%
+\subsection{Layer 0 --- Hardware
+Foundations}\label{layer-0-hardware-foundations}}
+
+All 3 tiers of hardware deployment can be built in a shipable rack mount
+container for easy setup and portability if desired.
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/portable_rack_2.jpg}
+\caption{Portable Rack}
+\end{figure}
+
+\hypertarget{tier-1-camp-site}{%
+\subsubsection{Tier 1 --- Camp Site}\label{tier-1-camp-site}}
+
+\emph{Portable / Training-Scale Deployment}
+
+\begin{itemize}
+\tightlist
+\item
+  Example hardware platforms (NUC, MiniPC, low-power servers)
+\item
+  Typical storage configuration (ZFS mirror, 1 GbE)
+\item
+  Lightweight Proxmox or single-node SDDC
+\item
+  Local UPS / Power considerations
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{lib/diag/Images/VP6600_front_1600x1600.jpg}
+\caption{Protectli-VP6600}
+\end{figure}
+
+\hypertarget{tier-2-village-site}{%
+\subsubsection{Tier 2 --- Village Site}\label{tier-2-village-site}}
+
+\emph{Community-Scale Deployment}
+
+\begin{itemize}
+\tightlist
+\item
+  Cluster of 3 × MiniPC/Protectli-class nodes
+\item
+  Ceph or ZFS-replicated storage
+\item
+  Dual OPNsense firewall HA pair
+\item
+  Local PoE switch with VLAN segmentation
+\item
+  External backup (USB or second site)
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{lib/diag/SDDC.excalidraw.png}
+\caption{Zero Single Point of Failure SDDC}
+\end{figure}
+
+\hypertarget{tier-3-regional-site}{%
+\subsubsection{Tier 3 --- Regional Site}\label{tier-3-regional-site}}
+
+\emph{Federated Multi-Community Hub}
+
+\begin{itemize}
+\tightlist
+\item
+  Enterprise-grade rackmount servers (ECC RAM, redundant PSU)
+\item
+  10 GbE backplane networking
+\item
+  Dedicated Ceph cluster
+\item
+  Multi-site replication and Tailscale/Headscale federation
+\end{itemize}
+
+\hypertarget{layer-1-cyberinfrastructure-ci}{%
+\subsection{Layer 1 --- Cyberinfrastructure
+(CI)}\label{layer-1-cyberinfrastructure-ci}}
+
+\begin{itemize}
+\tightlist
+\item
+  Virtualization Platform: \textbf{Proxmox VE / KVM}
+\item
+  Networking Stack: \textbf{OPNsense}, \textbf{FRR}, VLAN trunking
+\item
+  Storage: \textbf{Ceph}, \textbf{ZFS}, \textbf{Restic/Borg}
+\item
+  Identity: \textbf{Keycloak}, \textbf{Smallstep CA}
+\item
+  Monitoring: \textbf{Prometheus}, \textbf{Grafana}, \textbf{Loki},
+  \textbf{Wazuh}
+\item
+  Configuration: \textbf{Ansible} or \textbf{Chef}
+\end{itemize}
+
+\hypertarget{layer-2-local-services}{%
+\subsection{Layer 2 --- Local Services}\label{layer-2-local-services}}
+
+\begin{itemize}
+\tightlist
+\item
+  OT/SCADA: \textbf{Rapid SCADA}, \textbf{OpenPLC}, \textbf{Ignition
+  Edge}
+\item
+  IIoT: \textbf{Mosquitto (MQTT)}, \textbf{Node-RED}, \textbf{Grafana},
+  \textbf{LoRaWAN}
+\item
+  Comms: \textbf{Matrix (Synapse)}, \textbf{Jitsi}, \textbf{Rocket.Chat}
+\item
+  Cybersecurity: \textbf{Zeek}, \textbf{Suricata}, \textbf{Wazuh},
+  \textbf{Elastic}
+\item
+  Education / Research: \textbf{JupyterHub}, \textbf{Docker / LXC
+  Sandboxes}
+\item
+  Data: \textbf{PostgreSQL}, \textbf{GeoServer}, \textbf{Nextcloud}
+\end{itemize}
+
+\hypertarget{industrial-internet-of-thing-iiot}{%
+\subsubsection{Industrial Internet of Thing
+(IIoT)}\label{industrial-internet-of-thing-iiot}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/diag/IIoT_Architecture.excalidraw.png}
+\caption{IIoT}
+\end{figure}
+
+\hypertarget{layer-3-community-connections}{%
+\subsection{Layer 3 --- Community
+Connections}\label{layer-3-community-connections}}
+
+\begin{itemize}
+\tightlist
+\item
+  Secure Networking: \textbf{Tailscale / Headscale (ZTNA Mesh)}
+\item
+  Federation: \textbf{Keycloak Federation}, \textbf{Smallstep
+  cross-trust}
+\item
+  Data Sync: \textbf{Syncthing}, \textbf{rsync}, \textbf{MinIO Gateway}
+\item
+  Shared Visualization: \textbf{Grafana Federation}, \textbf{Kibana
+  Dashboards}
+\item
+  Optional: Integration with \textbf{FirstNet}, \textbf{Starlink}, or
+  terrestrial backhaul for redundancy
+\end{itemize}
+
+\hypertarget{hardware-specifications}{%
+\section{Hardware Specifications}\label{hardware-specifications}}
+
+\begin{dangerbox}[Vendor Agnostic]
+As it is a stated goal of the Clear Skies architecture to remain vendor
+agnostic the following vendor product highlights are for comparison
+purposes only and not recommendations or promotions an any specific
+vendor or products.
+\end{dangerbox}
+
+\hypertarget{sddc-servers}{%
+\subsection{SDDC Servers}\label{sddc-servers}}
+
+The following data compared serveral technical and capacity aspects of
+potential hardware solutions for a Software Defined Data Center (SDDC)
+ProxMox server / PVE node.
+
+\hypertarget{proxmox-ve-server-hardware-requirements}{%
+\subsubsection{Proxmox VE Server Hardware
+Requirements}\label{proxmox-ve-server-hardware-requirements}}
+
+\scriptsize
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1299}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2599}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3672}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Category}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Bare Minimum} (Lab/Test)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Standalone} (Edge)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Hyperconverged Node} (Cluster)
+\end{minipage} \\
+\midrule
+\endhead
+\textbf{CPU} & 1× Dual-Core (Intel/AMD, VT-x/AMD-V) & 1× Quad-Core
+(i5/i7, Xeon-E, Ryzen 5/7) & 1× 6--12 Core (Xeon-D, Xeon-Silver, Ryzen
+9, EPYC) \\
+\textbf{Architecture} & x86-64 & x86-64 & x86-64 (SR-IOV \& AES-NI
+support recommended) \\
+\textbf{RAM} & 8 GB minimum (test only) & 32--64 GB & 64--256 GB (ECC
+prefered) \\
+\textbf{Boot / OS Disk} & 64 GB SATA SSD & 128 GB SATA/NVMe SSD & 256 GB
+NVMe SSD (mirrored or ZFS mirror) \\
+\textbf{VM/CT Storage} & \textgreater\textasciitilde{} 250 GB SSD/HDD &
+\textgreater\textasciitilde{} 1 TB Single SSD/NVMe & 2+
+\textgreater\textasciitilde2 TB NVMe/SSD \\
+\textbf{Network Interfaces} & 2× 1 GbE & 3× 1/2.5 GbE (LAN, WAN, Mgmt) &
+4--6× 2.5/10 GbE (Mgmt, Ceph, VM LAN, Public, Storage) \\
+\textbf{Out-of-Band Mgmt} & Optional & Optional & Recommended (IPMI,
+iDRAC, Etc) \\
+\textbf{Power Supply} & Single PSU & Single PSU & Recommended Dual
+hot-swappable PSUs \\
+\textbf{TPM / Secure Boot} & Optional & Recommended & Required for
+Microsoft compliance (TPM 2.0) \\
+\textbf{BIOS / Firmware} & Legacy or UEFI & UEFI (coreboot OK) & UEFI \\
+\textbf{Cluster / Ceph Role} & N/A & Optional (single node) & Full
+cluster member (Ceph OSD + Monitor) \\
+\textbf{Performance Target} & Small lab / field site & Small-scale
+production workloads & Continuous 24×7 ops with fault tolerance \\
+\textbf{Approx Power Draw} & 25--40 W & 50--90 W & 80--200 W (depending
+on drives/NICs) \\
+\textbf{Example Platform} & Intel NUC, Protectli VP6630 & Minisforum
+MS-01, Protectli VP6650 & Supermicro E300, Xeon-D, or 3× Proxmox
+mini-cluster \\
+\textbf{Notes} & Not for production & Great for edge compute or small
+SDDC & Use 3 nodes + Ceph + replication; no single failure halts
+cluster \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{server-comparison}{%
+\subsection{Server Comparison}\label{server-comparison}}
+
+\scriptsize
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0833}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0833}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1111}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Product
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+CPU (Make + Cores)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+RAM (GB)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+OS Disk
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+VM Disk(s)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+1--2 Gb NICs
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+10 Gb NICs
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Rack (U)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Power (W max)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Price (USD)
+\end{minipage} \\
+\midrule
+\endhead
+Qotom Q30900GE S13 Series & Intel 8th/10th Gen (2C) & 32 & 2.5-inch SATA
+SSD/HDD 0 TB & Mini PCIe mSATA SSD x1 0 TB; M.2 Wi-Fi E-Key (2230) x1 0
+TB & 8 & 0 & 1U & 30 & \$489 \\
+MINIS FORUM MS-A2 & AMD Ryzen 9 9955HX (16C) & 96 & M.2 2280/U.2 NVMe
+SSD 2 TB & M.2 2280/22110 NVMe SSD x1 0 TB & 2 & 2 & 2U (approx.) & 130
+& \$1495.9 \\
+Protectli VP6630 & Intel Core i3 (4C) & 96 & NVMe SSD 4 TB & SATA SSD x1
+1 TB & 6 & 2 & 1U & 40 & \$1651 \\
+Protectli VP6650 & Intel Core i5 (4C) & 96 & NVMe SSD 4 TB & SATA SSD x1
+1 TB & 6 & 2 & 1U & 45 & \$1811 \\
+MINIS FORUM MS-S1 Max & AMD Ryzen (16C) & 128 & NVMe SSD 2 TB & -- & 0 &
+2 & 2U & 130 & \$2503.9 \\
+Lancelot 1199-SR & Intel Xeon (8C) & 128 & NVMe SSD 1 TB & SAS HDD x4 16
+TB & 2 & 4 & 1U & 250 & \$5199 \\
+ProLiant DL145 Gen11 & AMD EPYC 8124P (16C) & 128 & SATA SSD 0.96 TB &
+SATA SSD x1 3.84 TB & 2 & 0 & 1U & 350 & \$11250.0 \\
+Lancelot 1898-N12 & Intel Xeon Silver 4514Y (32C) & 256 & NVMe SSD 1.0
+TB & NVMe SSD x2 15.36 TB & 0 & 6 & 1U & 600 & \$11727.0 \\
+ProLiant DL325 Gen11 & AMD EPYC 9124 (16C) & 128 & SATA SSD 3.84 TB &
+SATA SSD x2 -- TB & 2 & 0 & 1U & 400 & \$16231.82 \\
+PowerEdge R6615 & AMD EPYC 9224 (24C) & 96 & SATA SSD 0.96 TB & SATA SSD
+x4 3.84 TB & 2 & 2 & 1U & 450 & \$19401.16 \\
+\bottomrule
+\end{longtable}
+
+\small
+
+\hypertarget{server-specifications}{%
+\subsection{Server Specifications}\label{server-specifications}}
+
+\hypertarget{qotom-q30900ge-s13-series}{%
+\subsubsection{Qotom Q30900GE S13
+Series}\label{qotom-q30900ge-s13-series}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/Qotom_Q30900se-s13.jpg}
+\caption{Qotom Q30900GE S13 Series}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Spec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule
+\endhead
+CPU & Intel 8th/10th Gen (2 cores, 4 threads) \\
+Memory & 32 GB DDR4 SO-DIMM 2133/2400 MHz \\
+OS Disk & 2.5-inch SATA SSD/HDD 0 TB \\
+VM Disk(s) & Mini PCIe mSATA SSD x1 0 TB; M.2 Wi-Fi E-Key (2230) x1 0
+TB \\
+1--2 Gb NICs & 8 \\
+10 Gb NICs & 0 \\
+Rack Units & 1U \\
+Dimensions (in) & \{`l': 7.7, `w': 4.8, `h': 1.9\} \\
+Power Draw (W) & Idle 10 / Max 30 \\
+Power Input & DC 12 V Jack (5.5 mm × 2.5 mm) \\
+Management & BMC: False, BIOS: UEFI \\
+Supported OS & Windows 10, Linux (Ubuntu 24.04 LTS, Proxmox VE,
+OPNsense) \\
+Price (USD) & \$489 \\
+Product Page &
+\href{https://www.qotom.net/product/MiniPC_Q30900SE_S13_Series.html}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{minis-forum-ms-a2}{%
+\subsubsection{MINIS FORUM MS-A2}\label{minis-forum-ms-a2}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/Minisforum_MS-A2.jpg}
+\caption{MINIS FORUM MS-A2}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Spec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule
+\endhead
+CPU & AMD Ryzen 9 9955HX (16 cores, 32 threads) \\
+Memory & 96 GB DDR5 SO-DIMM 5600 MHz \\
+OS Disk & M.2 2280/U.2 NVMe SSD 2 TB \\
+VM Disk(s) & M.2 2280/22110 NVMe SSD x1 0 TB \\
+1--2 Gb NICs & 2 \\
+10 Gb NICs & 2 \\
+Rack Units & 2U (approx.) \\
+Dimensions (in) & \{`l': 7.7, `w': 7.4, `h': 1.9\} \\
+Power Draw (W) & Idle 35 / Max 130 \\
+Power Input & DC 19V/12.63A Adapter \\
+Management & BMC: False, BIOS: UEFI Secure Boot \\
+Supported OS & Windows 11, Linux (Ubuntu 24.04 LTS, Proxmox VE) \\
+Price (USD) & \$1495.9 \\
+Product Page &
+\href{https://store.minisforum.com/products/minisforum-ms-a2?variant=46843404943605}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{protectli-vp6630}{%
+\subsubsection{Protectli VP6630}\label{protectli-vp6630}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/Protectli_VP6630.jpg}
+\caption{Protectli VP6630}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Spec & Value \\
+\midrule
+\endhead
+CPU & Intel Core i3 (4 cores, 8 threads) \\
+Memory & 96 GB 2x48GB DDR5-5600 SO-DIMM \\
+OS Disk & NVMe SSD 4 TB \\
+VM Disk(s) & SATA SSD x1 1 TB \\
+1--2 Gb NICs & 6 \\
+10 Gb NICs & 2 \\
+Rack Units & 1U \\
+Dimensions (in) & \{`l': 7.5, `w': 7.0, `h': 3.0\} \\
+Power Draw (W) & Idle 15 / Max 40 \\
+Power Input & DC 19.5V (IEC Type B) \\
+Management & BMC: False, BIOS: coreboot (Open Source) \\
+Supported OS & Proxmox VE, OPNsense, Ubuntu 24.04 LTS \\
+Price (USD) & \$1651 \\
+Product Page & \href{https://protectli.com/product/vp6630/}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{protectli-vp6650}{%
+\subsubsection{Protectli VP6650}\label{protectli-vp6650}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/Protectli_VP6650.jpg}
+\caption{Protectli VP6650}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Spec & Value \\
+\midrule
+\endhead
+CPU & Intel Core i5 (4 cores, 8 threads) \\
+Memory & 96 GB 2x48GB DDR5-5600 SO-DIMM \\
+OS Disk & NVMe SSD 4 TB \\
+VM Disk(s) & SATA SSD x1 1 TB \\
+1--2 Gb NICs & 6 \\
+10 Gb NICs & 2 \\
+Rack Units & 1U \\
+Dimensions (in) & \{`l': 7.5, `w': 7.0, `h': 3.0\} \\
+Power Draw (W) & Idle 15 / Max 45 \\
+Power Input & DC 19.5V (IEC Type B) \\
+Management & BMC: False, BIOS: coreboot \\
+Supported OS & Proxmox VE, OPNsense, Ubuntu 24.04 LTS \\
+Price (USD) & \$1811 \\
+Product Page & \href{https://protectli.com/product/vp6650/}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{minis-forum-ms-s1-max}{%
+\subsubsection{MINIS FORUM MS-S1 Max}\label{minis-forum-ms-s1-max}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/Minisforum_MS-S1-Max.jpg}
+\caption{MINIS FORUM MS-S1 Max}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Spec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule
+\endhead
+CPU & AMD Ryzen (16 cores, 32 threads) \\
+Memory & 128 GB LPDDR5x-8000 \\
+OS Disk & NVMe SSD 2 TB \\
+VM Disk(s) & -- \\
+1--2 Gb NICs & 0 \\
+10 Gb NICs & 2 \\
+Rack Units & 2U \\
+Dimensions (in) & \{`l': 8.7, `w': 8.1, `h': 3.0\} \\
+Power Draw (W) & Idle 35 / Max 130 \\
+Power Input & DC 12V/26.6A (320W adapter) \\
+Management & BMC: False, BIOS: UEFI Secure Boot \\
+Supported OS & Windows 11 Pro, Ubuntu 24.04 LTS, Proxmox VE \\
+Price (USD) & \$2503.9 \\
+Product Page &
+\href{https://store.minisforum.com/products/minisforum-ms-s1-max-mini-pc}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{lancelot-1199-sr}{%
+\subsubsection{Lancelot 1199-SR}\label{lancelot-1199-sr}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/ASL_Lancelot_1199SR.jpg}
+\caption{Lancelot 1199-SR}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Spec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule
+\endhead
+CPU & Intel Xeon (8 cores, 16 threads) \\
+Memory & 128 GB DDR5-4800 ECC RDIMM \\
+OS Disk & NVMe SSD 1 TB \\
+VM Disk(s) & SAS HDD x4 16 TB \\
+1--2 Gb NICs & 2 \\
+10 Gb NICs & 4 \\
+Rack Units & 1U \\
+Dimensions (in) & \{`l': 25.6, `w': 17.2, `h': 1.7\} \\
+Power Draw (W) & Idle 95 / Max 250 \\
+Power Input & AC 100--240V \\
+Management & BMC: True, BIOS: UEFI with BMC (AST2600) \\
+Supported OS & Proxmox VE, Ubuntu 24.04 LTS, Ceph \\
+Price (USD) & \$5199 \\
+Product Page &
+\href{https://www.aslab.com/products/rackmount/customize/lancelot1199sr.cgi}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{proliant-dl145-gen11}{%
+\subsubsection{ProLiant DL145 Gen11}\label{proliant-dl145-gen11}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/HP_ProLiant_DL145_Gen11.jpg}
+\caption{ProLiant DL145 Gen11}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Spec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule
+\endhead
+CPU & AMD EPYC 8124P (16 cores, 32 threads) \\
+Memory & 128 GB DDR5-4800 ECC Registered (HPE SmartMemory) \\
+OS Disk & SATA SSD 0.96 TB \\
+VM Disk(s) & SATA SSD x1 3.84 TB \\
+1--2 Gb NICs & 2 \\
+10 Gb NICs & 0 \\
+Rack Units & 1U \\
+Dimensions (in) & \{`l': 27.5, `w': 17.5, `h': 1.7\} \\
+Power Draw (W) & Idle 95 / Max 350 \\
+Power Input & AC 100--240V \\
+Management & BMC: True, BIOS: UEFI / iLO 6 \\
+Supported OS & Proxmox VE, Ubuntu 24.04 LTS, Red Hat Enterprise Linux 9,
+Windows Server 2025 \\
+Price (USD) & \$11250.0 \\
+Product Page &
+\href{https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl100-servers/proliant-dl145-server/hpe-proliant-dl145-gen11/p/1014845266}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{lancelot-1898-n12}{%
+\subsubsection{Lancelot 1898-N12}\label{lancelot-1898-n12}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/ASL_Lancelot_1898-N12.jpg}
+\caption{Lancelot 1898-N12}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Spec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule
+\endhead
+CPU & Intel Xeon Silver 4514Y (32 cores, 64 threads) \\
+Memory & 256 GB DDR5-4800 ECC Registered \\
+OS Disk & NVMe SSD 1.0 TB \\
+VM Disk(s) & NVMe SSD x2 15.36 TB \\
+1--2 Gb NICs & 0 \\
+10 Gb NICs & 6 \\
+Rack Units & 1U \\
+Dimensions (in) & \{`l': 28.0, `w': 17.6, `h': 3.4\} \\
+Power Draw (W) & Idle 180 / Max 600 \\
+Power Input & AC 100--240V \\
+Management & BMC: True, BIOS: UEFI / ASPEED AST2600 \\
+Supported OS & Rocky Linux 8.10, Red Hat Enterprise Linux 8.10, Ubuntu
+24.04 LTS, Proxmox VE 8 \\
+Price (USD) & \$11727.0 \\
+Product Page &
+\href{https://www.asus.com/Server-Workstation/Servers/1U-2U-Rack-Servers/RS700-E11-RS12U/}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{proliant-dl325-gen11}{%
+\subsubsection{ProLiant DL325 Gen11}\label{proliant-dl325-gen11}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/HP_ProLiant_DL235_Gen11.jpg}
+\caption{ProLiant DL325 Gen11}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Spec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule
+\endhead
+CPU & AMD EPYC 9124 (16 cores, 32 threads) \\
+Memory & 128 GB DDR5-4800 ECC Registered (HPE SmartMemory) \\
+OS Disk & SATA SSD 3.84 TB \\
+VM Disk(s) & SATA SSD x2 -- TB \\
+1--2 Gb NICs & 2 \\
+10 Gb NICs & 0 \\
+Rack Units & 1U \\
+Dimensions (in) & \{`l': 28.0, `w': 17.5, `h': 1.7\} \\
+Power Draw (W) & Idle 110 / Max 400 \\
+Power Input & AC 100--240V \\
+Management & BMC: True, BIOS: UEFI / iLO 6 \\
+Supported OS & Proxmox VE, Ubuntu 24.04 LTS, Red Hat Enterprise Linux 9,
+Windows Server 2025 \\
+Price (USD) & \$16231.82 \\
+Product Page &
+\href{https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl300-servers/proliant-dl325-server/hpe-proliant-dl325-gen11/p/1014689141}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{poweredge-r6615}{%
+\subsubsection{PowerEdge R6615}\label{poweredge-r6615}}
+
+\begin{figure}
+\centering
+\includegraphics{lib/img/Dell_PowerEdge_R6615.jpg}
+\caption{PowerEdge R6615}
+\end{figure}
+
+\textbf{Specifications}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Spec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule
+\endhead
+CPU & AMD EPYC 9224 (24 cores, 48 threads) \\
+Memory & 96 GB DDR5-5600 ECC RDIMM \\
+OS Disk & SATA SSD 0.96 TB \\
+VM Disk(s) & SATA SSD x4 3.84 TB \\
+1--2 Gb NICs & 2 \\
+10 Gb NICs & 2 \\
+Rack Units & 1U \\
+Dimensions (in) & \{`l': 28.0, `w': 17.1, `h': 1.7\} \\
+Power Draw (W) & Idle 120 / Max 450 \\
+Power Input & AC 100--240V \\
+Management & BMC: True, BIOS: UEFI / iDRAC9 Express 16G \\
+Supported OS & Proxmox VE, Ubuntu Server 24.04 LTS, Red Hat Enterprise
+Linux 9, Windows Server 2025 \\
+Price (USD) & \$19401.16 \\
+Product Page &
+\href{https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615/pe_r6615_tm_vi_vp_sb?configurationid=1759700b-2877-411f-bf22-461cea367d8e}{Link} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{terminology}{%
+\section{Terminology}\label{terminology}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1269}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2030}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6701}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Acronym
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Term
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule
+\endhead
+\textbf{AC} & Alternating Current & \textasciitilde60 Hz 120 Volt power
+with an oscillating voltage. \\
+\textbf{ACEP} & Alaska Center for Energy and Power & University of
+Alaska Fairbanks research center focused on applied energy systems and
+innovation in rural and microgrid environments. \\
+\textbf{CA} & Certificate Authority & Service that issues and manages
+digital certificates used to authenticate and encrypt communications. \\
+\textbf{Ceph} & --- & Open-source distributed storage system providing
+block, object, and file storage across clustered nodes. \\
+\textbf{CI} & Cyberinfrastructure & The foundational compute, storage,
+and network systems enabling digital services to operate locally and
+independently. \\
+\textbf{DC} & Direct Current & Contant Voltage Power Systems such as
+provided by batteries. \\
+\textbf{DMZ} & Demilitarized Zone & Network segment that isolates
+external-facing systems from internal critical infrastructure. \\
+\textbf{DNS} & Domain Name System & Converts human-readable hostnames
+into IP addresses. \\
+\textbf{DHCP} & Dynamic Host Configuration Protocol & Automatically
+assigns IP addresses to devices on a network. \\
+\textbf{HW} & Hardware & Physical computing, storage, and network
+devices forming the foundation of the infrastructure. \\
+\textbf{ICS} & Industrial Control System & Hardware and software used to
+monitor and control industrial processes such as generation and
+distribution. \\
+\textbf{IIoT} & Industrial Internet of Things & Networked sensors and
+devices that collect and exchange data for monitoring and automation in
+industrial settings. \\
+\textbf{LAN} & Local Area Network & Internal network connecting devices
+within a limited geographic area such as a facility or village. \\
+\textbf{LLM} & Large Language Model & AI model trained on vast text
+corpora to generate and analyze natural language. Used locally for
+automation and data analysis. \\
+\textbf{LOC} & Local Services Layer & Layer 2 in the Clear Skies
+architecture providing operational, communication, and data services
+within the community. \\
+\textbf{MQTT} & Message Queuing Telemetry Transport & Lightweight
+publish/subscribe messaging protocol optimized for low-bandwidth IIoT
+networks. \\
+\textbf{NTP} & Network Time Protocol & Synchronizes system clocks across
+devices on a network. \\
+\textbf{OPNsense} & --- & Open-source firewall and routing platform
+providing VLAN segmentation, VPNs, and intrusion detection. \\
+\textbf{OT} & Operational Technology & Systems that monitor and control
+physical devices, processes, and infrastructure. \\
+\textbf{PLC} & Programmable Logic Controller & Industrial computer used
+to automate electromechanical processes. \\
+\textbf{PVE} & ProxMox Virtual Environment & Open-source virtualization
+environment used to create Software-Defined Data Centers (SDDC). \\
+\textbf{PSU} & Power Supply Unit & A hot swapable power supply in a rack
+mount server or other equipment. \\
+\textbf{SCADA} & Supervisory Control and Data Acquisition & System for
+remote monitoring and control of industrial and utility operations. \\
+\textbf{SDDC} & Software-Defined Data Center & Virtualized data center
+architecture where compute, storage, and networking are abstracted from
+hardware. \\
+\textbf{SDN} & Software-Defined Networking & Network architecture
+enabling centralized, programmable control of traffic and
+segmentation. \\
+\textbf{SOC} & Security Operations Center & Centralized facility or
+function for monitoring, detecting, and responding to cybersecurity
+threats. \\
+\textbf{Tailscale / Headscale} & --- & Zero-trust networking tools that
+establish secure, peer-to-peer mesh connectivity across sites. \\
+\textbf{UPS} & Uninterruptable Power Supply & A batter backup DC to AC
+inverter system to provide AC power during intermittent short duration
+power outages. \\
+\textbf{ZTNA} & Zero Trust Network Access & Security framework that
+assumes no implicit trust and enforces strict identity-based access
+controls for every connection. \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{citations}{%
+\section*{Citations}\label{citations}}
+\addcontentsline{toc}{section}{Citations}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-AlaskaRailbeltReliability2025}{}}%
+{``Alaska {Railbelt Reliability Council}.''} 2025. \emph{RRC Local}.
+https://www.akrrc.org/.
+
+\leavevmode\vadjust pre{\hypertarget{ref-CIPCriticalInfrastructure2025}{}}%
+{``({CIP}) {Critical Infrastructure Protection}.''} 2025. \emph{RRC
+Local}.
+https://www.akrrc.org/matters/category/cip-critical-infrastructure-protection.
+
+\leavevmode\vadjust pre{\hypertarget{ref-HomePageFederal}{}}%
+{``Home {Page} \textbar{} {Federal Energy Regulatory Commission}.''}
+n.d. https://www.ferc.gov/. Accessed November 7, 2025.
+
+\leavevmode\vadjust pre{\hypertarget{ref-KesslerSyndrome2025}{}}%
+{``Kessler Syndrome.''} 2025. \emph{Wikipedia}, October.
+
+\leavevmode\vadjust pre{\hypertarget{ref-LowEarthOrbit2025}{}}%
+{``Low {Earth} Orbit.''} 2025. \emph{Wikipedia}, October.
+
+\leavevmode\vadjust pre{\hypertarget{ref-NERC}{}}%
+{``{NERC}.''} n.d. https://www.nerc.com/Pages/default.aspx. Accessed
+November 7, 2025.
+
+\leavevmode\vadjust pre{\hypertarget{ref-RegulatoryCommissionAlaska}{}}%
+{``Regulatory {Commission} of {Alaska}.''} n.d.
+https://rca.alaska.gov/RCAWeb/home.aspx. Accessed November 7, 2025.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ReliabilityStandards}{}}%
+{``Reliability {Standards}.''} n.d.
+https://www.nerc.com/pa/Stand/Pages/ReliabilityStandards.aspx. Accessed
+November 7, 2025.
+
+\leavevmode\vadjust pre{\hypertarget{ref-SoftwaredefinedDataCenter2025}{}}%
+{``Software-Defined Data Center.''} 2025. \emph{Wikipedia}, September.
+
+\end{CSLReferences}
+
+\end{document}

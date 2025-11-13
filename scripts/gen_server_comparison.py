@@ -4,8 +4,19 @@ import json, pathlib
 SRC = pathlib.Path("data/servers")
 OUT = pathlib.Path("lib/md/server_comparison.md")
 
+# -------------------------------
+# Utility helpers
+# -------------------------------
+
 def safe(v):
     return str(v) if v not in (None, "", [], {}) else "–"
+
+def safe_price(v):
+    """Return numeric price for sorting; non-numeric sorts last."""
+    try:
+        return float(str(v).replace("$", "").replace(",", "").strip())
+    except Exception:
+        return float("inf")
 
 def get_storage_summary(storage):
     """Split storage into OS and VM disks."""
@@ -40,6 +51,10 @@ def get_nic_counts(nics):
             ten += count
     return (gbit, ten)
 
+# -------------------------------
+# Load server JSON files
+# -------------------------------
+
 def load_servers():
     servers = []
     for f in sorted(SRC.glob("*.json")):
@@ -53,11 +68,18 @@ def load_servers():
             print(f"⚠️  Skipping {f.name}: {e}")
     return servers
 
+# -------------------------------
+# Markdown generation
+# -------------------------------
+
 def make_summary_table(servers):
+    """Generate the summary comparison table with fenced div and LaTeX sizing."""
     header = (
-        "| Product | CPU (Make + Cores) | RAM (GB) | OS Disk | VM Disk(s) | 1–2 Gb NICs | 10 Gb NICs | Rack (U) | Power (W max) | Price (USD) |\n"
+        "| Product | CPU (Make + Cores) | RAM (GB) | OS Disk | VM Disk(s) | "
+        "1–2 Gb NICs | 10 Gb NICs | Rack (U) | Power (W max) | Price (USD) |\n"
         "|:--|:--|:--:|:--|:--|:--:|:--:|:--:|:--:|:--:|\n"
     )
+
     rows = []
     for _, s in servers:
         sp = s.get("specs", {})
@@ -70,7 +92,14 @@ def make_summary_table(servers):
 
         osdisk, vmdisk = get_storage_summary(storage)
         gbit, ten = get_nic_counts(nics)
-        cpu_str = f"{safe(cpu.get('model'))} ({safe(cpu.get('cores'))} C)"
+        cpu_str = f"{safe(cpu.get('model'))} ({safe(cpu.get('cores'))}C)"
+
+        price_val = s.get("price_usd")
+        if price_val in (None, "", "–"):
+            price_str = "–"
+        else:
+            price_str = f"${price_val}"
+
 
         row = "| " + " | ".join([
             safe(s.get("product")),
@@ -82,13 +111,21 @@ def make_summary_table(servers):
             str(ten),
             safe(chassis.get("rack_units")),
             safe(power.get("draw_w", {}).get("max")),
-            safe(s.get("price_usd"))
+            price_str
         ]) + " |"
         rows.append(row)
-    return "# Server Comparison\n\n" + header + "\n".join(rows) + "\n"
+
+    return (
+        "## Server Comparison\n\n"
+        "::: {.table-scriptsize}\n"
+        "\\scriptsize\n"
+        + header
+        + "\n".join(rows)
+        + "\n:::\n\\small\n"
+    )
 
 def make_detail_section(filename_stem, server):
-    """Generate detailed per-product markdown."""
+    """Generate detailed per-product markdown with link inside table."""
     s = server
     sp = s.get("specs", {})
     cpu = sp.get("cpu", {})
@@ -103,9 +140,10 @@ def make_detail_section(filename_stem, server):
     img_name = f"{filename_stem}.jpg"
 
     lines = []
-    lines.append(f"## {safe(s.get('product'))}\n")
+    lines.append(f"### {safe(s.get('product'))}\n")
     lines.append(f"![{s.get('product')}](lib/img/{img_name})\n")
-    lines.append(f"[Product Page]({safe(s.get('url'))})\n")
+
+    # Start the specifications table
     lines.append("\n**Specifications**\n")
     lines.append("| Spec | Value |")
     lines.append("|:--|:--|")
@@ -121,9 +159,20 @@ def make_detail_section(filename_stem, server):
     lines.append(f"| Power Input | {safe(pw.get('input_type'))} |")
     lines.append(f"| Management | BMC: {safe(mgmt.get('bmc'))}, BIOS: {safe(mgmt.get('bios'))} |")
     lines.append(f"| Supported OS | {os_support} |")
-    lines.append(f"| Price (USD) | {safe(s.get('price_usd'))} |")
-    lines.append("\n---\n")
+    lines.append(f"| Price (USD) | ${safe(s.get('price_usd'))} |")
+
+    # ✅ Add Product Page as final table row
+    url = s.get("url")
+    if url and url != "–":
+        lines.append(f"| Product Page | [Link]({url}) |")
+
+    lines.append("\n\n")
     return "\n".join(lines)
+
+
+# -------------------------------
+# Main
+# -------------------------------
 
 def main():
     servers = load_servers()
@@ -131,12 +180,13 @@ def main():
         print("No servers found.")
         return
 
-    order = {"edge":0, "industrial":1, "midrange":2, "enterprise":3}
-    servers.sort(key=lambda x: (order.get(x[1].get("tier",""),99), x[1].get("price_usd") or 0))
+    # Sort purely by numeric price
+    servers.sort(key=lambda x: safe_price(x[1].get("price_usd")))
 
     md_parts = [make_summary_table(servers)]
+    md_parts.append("\n## Server Specifications\n")
     for fname, s in servers:
-        md_parts.append(make_detail_section(fname, s))
+        md_parts.append("\n" + make_detail_section(fname, s))
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("\n".join(md_parts))

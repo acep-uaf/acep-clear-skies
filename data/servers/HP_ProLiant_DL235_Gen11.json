@@ -1,44 +1,101 @@
 {
-  "product": "ProLiant DL235 Gen11",
+  "product": "ProLiant DL325 Gen11",
   "make": "HPE",
-  "model": "DL235 Gen11",
+  "model": "DL325 Gen11",
   "url": "https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl300-servers/proliant-dl325-server/hpe-proliant-dl325-gen11/p/1014689141",
   "category": "server",
   "tier": "enterprise",
-  "price_usd": null,
-  "quote": { "quote_number": "", "quote_date": "" },
+  "price_usd": 16231.82,
+  "quote": {
+    "quote_number": "0b07761d3e97bb0",
+    "quote_date": "2025-11-06"
+  },
   "warranty": "3-Year Foundation Care",
-  "comments": "1U AMD EPYC 9004 single-socket server optimized for virtualization.",
+  "comments": "1U single-socket AMD EPYC 9004-series virtualization and compute node with redundant PSUs, SmartMemory DDR5 ECC, Smart Array RAID, and iLO Advanced management.",
   "specs": {
     "cpu": {
-      "model": "AMD EPYC 9004",
-      "architecture": "x86_64",
+      "model": "AMD EPYC 9124",
+      "architecture": "Zen 4 (9004 Series)",
       "socket": "SP5",
-      "cores": null,
-      "threads": null,
-      "tdp_w": null
+      "cores": 16,
+      "threads": 32,
+      "base_clock_ghz": 3.0,
+      "boost_clock_ghz": null,
+      "tdp_w": 200
     },
-    "memory": { "capacity_gb": null, "slots": 12, "type": "DDR5 SmartMemory", "ecc": true },
-    "storage": [],
-    "network": [],
-    "expansion": { "pcie_slots": 2, "m2_slots": 2, "usb_ports": { "usb2": 0, "usb3": 2, "usb4": 0 }, "serial_ports": 1 },
+    "memory": {
+      "capacity_gb": 128,
+      "modules": 4,
+      "slots": 12,
+      "type": "DDR5-4800 ECC Registered (HPE SmartMemory)",
+      "ecc": true
+    },
+    "storage": [
+      {
+        "type": "SATA SSD",
+        "count": 4,
+        "capacity_each_tb": 3.84,
+        "interface": "SATA 6 Gbps",
+        "model": "HPE 3.84TB SATA 6G Read Intensive SFF BC SSD"
+      },
+      {
+        "type": "SATA SSD",
+        "count": 2,
+        "capacity_each_gb": 480,
+        "interface": "SATA 6 Gbps",
+        "model": "HPE 480GB SATA SSD (Boot Drives)"
+      }
+    ],
+    "raid": {
+      "controller": "HPE Smart Array MR408i-o",
+      "configuration": "RAID Capable – Supports SATA/SAS/NVMe"
+    },
+    "network": [
+      {
+        "type": "RJ45",
+        "speed_gbps": 1,
+        "count": 2,
+        "chipset": "Broadcom 5720"
+      }
+    ],
+    "expansion": {
+      "pcie_slots": 2,
+      "m2_slots": 2,
+      "usb_ports": { "usb2": 0, "usb3": 2, "usb4": 0 },
+      "serial_ports": 1
+    },
     "power": {
       "input_type": "AC 100–240V",
       "redundant": true,
       "psu_count": 2,
-      "psu_rating_w": null,
+      "psu_rating_w": 500,
       "efficiency": "Platinum",
-      "draw_w": { "idle": null, "max": null }
+      "draw_w": { "idle": 110, "max": 400 }
     },
-    "thermal": { "cooling": "Active", "operating_temp_c": "10–35" },
+    "thermal": {
+      "cooling": "Active Fan System",
+      "operating_temp_c": "10–35"
+    },
     "chassis": {
       "form_factor": "Rackmount",
       "rack_units": "1U",
       "material": "Steel",
       "dimensions_in": { "l": 28.0, "w": 17.5, "h": 1.7 },
-      "weight_kg": null
+      "weight_kg": 16.5,
+      "drive_bays": "Front 8 × SFF (2.5 in) SAS/SATA"
     },
-    "management": { "bmc": true, "ipmi": true, "bios": "UEFI / iLO 6", "tpm": "2.0" },
-    "os_support": ["Proxmox VE", "Ubuntu 24.04 LTS", "RHEL 9"]
+    "management": {
+      "bmc": true,
+      "ipmi": true,
+      "bios": "UEFI / iLO 6",
+      "ilo_license": "iLO Advanced Electronic License (3yr Support)",
+      "tpm": "2.0"
+    },
+    "os_support": [
+      "Proxmox VE",
+      "Ubuntu 24.04 LTS",
+      "Red Hat Enterprise Linux 9",
+      "Windows Server 2025"
+    ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "product": "MINISFORUM MS-S1 Max",
+  "product": "MINIS FORUM MS-S1 Max",
   "make": "Minisforum",
   "model": "MS-S1 Max",
   "url": "https://store.minisforum.com/products/minisforum-ms-s1-max-mini-pc",
@@ -11,7 +11,7 @@
   "comments": "Ryzen AI Max+ workstation-class mini with dual 10GbE and PCIe x16 expansion.",
   "specs": {
     "cpu": {
-      "model": "AMD Ryzen AI Max+ 395",
+      "model": "AMD Ryzen",
       "architecture": "x86_64",
       "socket": "",
       "cores": 16,

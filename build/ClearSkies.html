@@ -156,24 +156,29 @@ Thing (IIoT)</a></li>
 <li><a href="#layer-3-community-connections">Layer 3 — Community
 Connections</a></li>
 </ul></li>
-<li><a href="#hardware-specifications">Hardware Specifications</a></li>
+<li><a href="#hardware-specifications">Hardware Specifications</a>
+<ul>
 <li><a href="#sddc-servers">SDDC Servers</a>
 <ul>
 <li><a href="#proxmox-ve-server-hardware-requirements">Proxmox VE Server
 Hardware Requirements</a></li>
 </ul></li>
-<li><a href="#server-comparison">Server Comparison</a>
+<li><a href="#server-comparison">Server Comparison</a></li>
+<li><a href="#server-specifications">Server Specifications</a>
 <ul>
+<li><a href="#qotom-q30900ge-s13-series">Qotom Q30900GE S13
+Series</a></li>
+<li><a href="#minis-forum-ms-a2">MINIS FORUM MS-A2</a></li>
 <li><a href="#protectli-vp6630">Protectli VP6630</a></li>
 <li><a href="#protectli-vp6650">Protectli VP6650</a></li>
-<li><a href="#qotom-q30921se-s13">Qotom Q30921SE S13</a></li>
-<li><a href="#minisforum-ms-s1-max">MINISFORUM MS-S1 Max</a></li>
-<li><a href="#poweredge-r6615">PowerEdge R6615</a></li>
-<li><a href="#proliant-dl145-gen11">ProLiant DL145 Gen11</a></li>
-<li><a href="#proliant-dl235-gen11">ProLiant DL235 Gen11</a></li>
+<li><a href="#minis-forum-ms-s1-max">MINIS FORUM MS-S1 Max</a></li>
 <li><a href="#lancelot-1199-sr">Lancelot 1199-SR</a></li>
+<li><a href="#proliant-dl145-gen11">ProLiant DL145 Gen11</a></li>
+<li><a href="#lancelot-1898-n12">Lancelot 1898-N12</a></li>
+<li><a href="#proliant-dl325-gen11">ProLiant DL325 Gen11</a></li>
+<li><a href="#poweredge-r6615">PowerEdge R6615</a></li>
 </ul></li>
-<li><a href="#switches">Switches</a></li>
+</ul></li>
 <li><a href="#terminology">Terminology</a></li>
 <li><a href="#citations">Citations</a></li>
 </ul>
@@ -553,7 +558,6 @@ Skies architecture.<br />
 Selections emphasize <strong>resilience</strong>, <strong>local
 autonomy</strong>, and <strong>open interoperability</strong> across all
 deployment scales.</p>
-<hr />
 <h2 id="layer-0-hardware-foundations">Layer 0 — Hardware
 Foundations</h2>
 <p>All 3 tiers of hardware deployment can be built in a shipable rack
@@ -571,7 +575,7 @@ mount container for easy setup and portability if desired.</p>
 <li>Local UPS / Power considerations</li>
 </ul>
 <figure>
-<img src="lib/diag/Images/VP6600_front_1600x1600.jpg" width="400"
+<img src="lib/diag/Images/VP6600_front_1600x1600.jpg"
 alt="Protectli-VP6600" />
 <figcaption aria-hidden="true">Protectli-VP6600</figcaption>
 </figure>
@@ -598,7 +602,6 @@ SDDC</figcaption>
 <li>Dedicated Ceph cluster</li>
 <li>Multi-site replication and Tailscale/Headscale federation</li>
 </ul>
-<hr />
 <h2 id="layer-1-cyberinfrastructure-ci">Layer 1 — Cyberinfrastructure
 (CI)</h2>
 <ul>
@@ -614,7 +617,6 @@ CA</strong></li>
 <li>Configuration: <strong>Ansible</strong> or
 <strong>Chef</strong></li>
 </ul>
-<hr />
 <h2 id="layer-2-local-services">Layer 2 — Local Services</h2>
 <ul>
 <li>OT/SCADA: <strong>Rapid SCADA</strong>, <strong>OpenPLC</strong>,
@@ -636,7 +638,6 @@ LXC Sandboxes</strong></li>
 <img src="lib/diag/IIoT_Architecture.excalidraw.png" alt="IIoT" />
 <figcaption aria-hidden="true">IIoT</figcaption>
 </figure>
-<hr />
 <h2 id="layer-3-community-connections">Layer 3 — Community
 Connections</h2>
 <ul>
@@ -659,12 +660,12 @@ vendor agnostic the following vendor product highlights are for
 comparison purposes only and not recommendations or promotions an any
 specific vendor or products.</p>
 </div>
-<h1 id="sddc-servers">SDDC Servers</h1>
+<h2 id="sddc-servers">SDDC Servers</h2>
 <p>The following data compared serveral technical and capacity aspects
 of potential hardware solutions for a Software Defined Data Center
 (SDDC) ProxMox server / PVE node.</p>
-<h2 id="proxmox-ve-server-hardware-requirements">Proxmox VE Server
-Hardware Requirements</h2>
+<h3 id="proxmox-ve-server-hardware-requirements">Proxmox VE Server
+Hardware Requirements</h3>
 <div class="table-scriptsize">
 <table>
 <colgroup>
@@ -776,7 +777,7 @@ cluster</td>
 </tbody>
 </table>
 </div>
-<h1 id="server-comparison">Server Comparison</h1>
+<h2 id="server-comparison">Server Comparison</h2>
 <div class="table-scriptsize">
 <table style="width:100%;">
 <colgroup>
@@ -807,18 +808,31 @@ cluster</td>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Qotom Q30921SE S13</td>
-<td style="text-align: left;">Intel Celeron 4305U (2C)</td>
+<td style="text-align: left;">Qotom Q30900GE S13 Series</td>
+<td style="text-align: left;">Intel 8th/10th Gen (2C)</td>
 <td style="text-align: center;">32</td>
-<td style="text-align: left;">M.2 SSD 0 TB</td>
-<td style="text-align: left;">SATA SSD/HDD x1 0 TB</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">–</td>
+<td style="text-align: left;">2.5-inch SATA SSD/HDD 0 TB</td>
+<td style="text-align: left;">Mini PCIe mSATA SSD x1 0 TB; M.2 Wi-Fi
+E-Key (2230) x1 0 TB</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1U</td>
 <td style="text-align: center;">30</td>
 <td style="text-align: center;">$489</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">MINIS FORUM MS-A2</td>
+<td style="text-align: left;">AMD Ryzen 9 9955HX (16C)</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: left;">M.2 2280/U.2 NVMe SSD 2 TB</td>
+<td style="text-align: left;">M.2 2280/22110 NVMe SSD x1 0 TB</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2U (approx.)</td>
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">$1495.9</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Protectli VP6630</td>
 <td style="text-align: left;">Intel Core i3 (4C)</td>
 <td style="text-align: center;">96</td>
@@ -830,7 +844,7 @@ cluster</td>
 <td style="text-align: center;">40</td>
 <td style="text-align: center;">$1651</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Protectli VP6650</td>
 <td style="text-align: left;">Intel Core i5 (4C)</td>
 <td style="text-align: center;">96</td>
@@ -842,9 +856,9 @@ cluster</td>
 <td style="text-align: center;">45</td>
 <td style="text-align: center;">$1811</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">MINISFORUM MS-S1 Max</td>
-<td style="text-align: left;">AMD Ryzen AI Max+ 395 (16 C)</td>
+<tr class="odd">
+<td style="text-align: left;">MINIS FORUM MS-S1 Max</td>
+<td style="text-align: left;">AMD Ryzen (16C)</td>
 <td style="text-align: center;">128</td>
 <td style="text-align: left;">NVMe SSD 2 TB</td>
 <td style="text-align: left;">–</td>
@@ -854,9 +868,9 @@ cluster</td>
 <td style="text-align: center;">130</td>
 <td style="text-align: center;">$2503.9</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Lancelot 1199-SR</td>
-<td style="text-align: left;">Intel Xeon E-2478 (8C)</td>
+<td style="text-align: left;">Intel Xeon (8C)</td>
 <td style="text-align: center;">128</td>
 <td style="text-align: left;">NVMe SSD 1 TB</td>
 <td style="text-align: left;">SAS HDD x4 16 TB</td>
@@ -866,51 +880,223 @@ cluster</td>
 <td style="text-align: center;">250</td>
 <td style="text-align: center;">$5199</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">ProLiant DL145 Gen11</td>
-<td style="text-align: left;">AMD EPYC 8004 series (–C)</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2U</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">PowerEdge R6615</td>
-<td style="text-align: left;">AMD EPYC 9004 series (–C)</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: left;">–</td>
+<td style="text-align: left;">ProLiant DL145 Gen11</td>
+<td style="text-align: left;">AMD EPYC 8124P (16C)</td>
+<td style="text-align: center;">128</td>
+<td style="text-align: left;">SATA SSD 0.96 TB</td>
+<td style="text-align: left;">SATA SSD x1 3.84 TB</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">1U</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
+<td style="text-align: center;">350</td>
+<td style="text-align: center;">$11250.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">ProLiant DL235 Gen11</td>
-<td style="text-align: left;">AMD EPYC 9004 (–C)</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: left;">–</td>
-<td style="text-align: left;">–</td>
+<td style="text-align: left;">Lancelot 1898-N12</td>
+<td style="text-align: left;">Intel Xeon Silver 4514Y (32C)</td>
+<td style="text-align: center;">256</td>
+<td style="text-align: left;">NVMe SSD 1.0 TB</td>
+<td style="text-align: left;">NVMe SSD x2 15.36 TB</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1U</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">$11727.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ProLiant DL325 Gen11</td>
+<td style="text-align: left;">AMD EPYC 9124 (16C)</td>
+<td style="text-align: center;">128</td>
+<td style="text-align: left;">SATA SSD 3.84 TB</td>
+<td style="text-align: left;">SATA SSD x2 – TB</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">1U</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">$16231.82</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PowerEdge R6615</td>
+<td style="text-align: left;">AMD EPYC 9224 (24C)</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: left;">SATA SSD 0.96 TB</td>
+<td style="text-align: left;">SATA SSD x4 3.84 TB</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1U</td>
+<td style="text-align: center;">450</td>
+<td style="text-align: center;">$19401.16</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="protectli-vp6630">Protectli VP6630</h2>
+<h2 id="server-specifications">Server Specifications</h2>
+<h3 id="qotom-q30900ge-s13-series">Qotom Q30900GE S13 Series</h3>
+<figure>
+<img src="lib/img/Qotom_Q30900se-s13.jpg"
+alt="Qotom Q30900GE S13 Series" />
+<figcaption aria-hidden="true">Qotom Q30900GE S13 Series</figcaption>
+</figure>
+<p><strong>Specifications</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spec</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CPU</td>
+<td style="text-align: left;">Intel 8th/10th Gen (2 cores, 4
+threads)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Memory</td>
+<td style="text-align: left;">32 GB DDR4 SO-DIMM 2133/2400 MHz</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OS Disk</td>
+<td style="text-align: left;">2.5-inch SATA SSD/HDD 0 TB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VM Disk(s)</td>
+<td style="text-align: left;">Mini PCIe mSATA SSD x1 0 TB; M.2 Wi-Fi
+E-Key (2230) x1 0 TB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1–2 Gb NICs</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10 Gb NICs</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rack Units</td>
+<td style="text-align: left;">1U</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dimensions (in)</td>
+<td style="text-align: left;">{‘l’: 7.7, ‘w’: 4.8, ‘h’: 1.9}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Power Draw (W)</td>
+<td style="text-align: left;">Idle 10 / Max 30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power Input</td>
+<td style="text-align: left;">DC 12 V Jack (5.5 mm × 2.5 mm)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Management</td>
+<td style="text-align: left;">BMC: False, BIOS: UEFI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Supported OS</td>
+<td style="text-align: left;">Windows 10, Linux (Ubuntu 24.04 LTS,
+Proxmox VE, OPNsense)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Price (USD)</td>
+<td style="text-align: left;">$489</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://www.qotom.net/product/MiniPC_Q30900SE_S13_Series.html">Link</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="minis-forum-ms-a2">MINIS FORUM MS-A2</h3>
+<figure>
+<img src="lib/img/Minisforum_MS-A2.jpg" alt="MINIS FORUM MS-A2" />
+<figcaption aria-hidden="true">MINIS FORUM MS-A2</figcaption>
+</figure>
+<p><strong>Specifications</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spec</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CPU</td>
+<td style="text-align: left;">AMD Ryzen 9 9955HX (16 cores, 32
+threads)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Memory</td>
+<td style="text-align: left;">96 GB DDR5 SO-DIMM 5600 MHz</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OS Disk</td>
+<td style="text-align: left;">M.2 2280/U.2 NVMe SSD 2 TB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VM Disk(s)</td>
+<td style="text-align: left;">M.2 2280/22110 NVMe SSD x1 0 TB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1–2 Gb NICs</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10 Gb NICs</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rack Units</td>
+<td style="text-align: left;">2U (approx.)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dimensions (in)</td>
+<td style="text-align: left;">{‘l’: 7.7, ‘w’: 7.4, ‘h’: 1.9}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Power Draw (W)</td>
+<td style="text-align: left;">Idle 35 / Max 130</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power Input</td>
+<td style="text-align: left;">DC 19V/12.63A Adapter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Management</td>
+<td style="text-align: left;">BMC: False, BIOS: UEFI Secure Boot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Supported OS</td>
+<td style="text-align: left;">Windows 11, Linux (Ubuntu 24.04 LTS,
+Proxmox VE)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Price (USD)</td>
+<td style="text-align: left;">$1495.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://store.minisforum.com/products/minisforum-ms-a2?variant=46843404943605">Link</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="protectli-vp6630">Protectli VP6630</h3>
 <figure>
 <img src="lib/img/Protectli_VP6630.jpg" alt="Protectli VP6630" />
 <figcaption aria-hidden="true">Protectli VP6630</figcaption>
 </figure>
-<p><a href="https://protectli.com/product/vp6630/">Product Page</a></p>
 <p><strong>Specifications</strong></p>
 <table>
 <thead>
@@ -922,8 +1108,7 @@ cluster</td>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">CPU</td>
-<td style="text-align: left;">Intel Core i3 (6-Port Model) (4 cores, 8
-threads)</td>
+<td style="text-align: left;">Intel Core i3 (4 cores, 8 threads)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Memory</td>
@@ -973,16 +1158,20 @@ LTS</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Price (USD)</td>
-<td style="text-align: left;">1651</td>
+<td style="text-align: left;">$1651</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://protectli.com/product/vp6630/">Link</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="protectli-vp6650">Protectli VP6650</h2>
+<h3 id="protectli-vp6650">Protectli VP6650</h3>
 <figure>
 <img src="lib/img/Protectli_VP6650.jpg" alt="Protectli VP6650" />
 <figcaption aria-hidden="true">Protectli VP6650</figcaption>
 </figure>
-<p><a href="https://protectli.com/product/vp6650/">Product Page</a></p>
 <p><strong>Specifications</strong></p>
 <table>
 <thead>
@@ -994,8 +1183,7 @@ LTS</td>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">CPU</td>
-<td style="text-align: left;">Intel Core i5 (6-Port Model) (4 cores, 8
-threads)</td>
+<td style="text-align: left;">Intel Core i5 (4 cores, 8 threads)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Memory</td>
@@ -1044,18 +1232,21 @@ LTS</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Price (USD)</td>
-<td style="text-align: left;">1811</td>
+<td style="text-align: left;">$1811</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://protectli.com/product/vp6650/">Link</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="qotom-q30921se-s13">Qotom Q30921SE S13</h2>
+<h3 id="minis-forum-ms-s1-max">MINIS FORUM MS-S1 Max</h3>
 <figure>
-<img src="lib/img/Qotom_Q30921SE-S13.jpg" alt="Qotom Q30921SE S13" />
-<figcaption aria-hidden="true">Qotom Q30921SE S13</figcaption>
+<img src="lib/img/Minisforum_MS-S1-Max.jpg"
+alt="MINIS FORUM MS-S1 Max" />
+<figcaption aria-hidden="true">MINIS FORUM MS-S1 Max</figcaption>
 </figure>
-<p><a
-href="https://www.qotom.net/mini-pc/q30900se-s13-series.html">Product
-Page</a></p>
 <p><strong>Specifications</strong></p>
 <table>
 <colgroup>
@@ -1071,82 +1262,7 @@ Page</a></p>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">CPU</td>
-<td style="text-align: left;">Intel Celeron 4305U or Core (8th–10th Gen)
-(2 cores, 2 threads)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Memory</td>
-<td style="text-align: left;">32 GB DDR4 SO-DIMM 2133/2400MHz</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">OS Disk</td>
-<td style="text-align: left;">M.2 SSD 0 TB</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">VM Disk(s)</td>
-<td style="text-align: left;">SATA SSD/HDD x1 0 TB</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">1–2 Gb NICs</td>
-<td style="text-align: left;">6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10 Gb NICs</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Rack Units</td>
-<td style="text-align: left;">–</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Dimensions (in)</td>
-<td style="text-align: left;">{‘l’: 7.7, ‘w’: 4.8, ‘h’: 1.9}</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Power Draw (W)</td>
-<td style="text-align: left;">Idle 10 / Max 30</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Power Input</td>
-<td style="text-align: left;">DC 12V Jack</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Management</td>
-<td style="text-align: left;">BMC: False, BIOS: UEFI</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Supported OS</td>
-<td style="text-align: left;">OPNsense, Proxmox VE, Ubuntu 24.04
-LTS</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Price (USD)</td>
-<td style="text-align: left;">489</td>
-</tr>
-</tbody>
-</table>
-<h2 id="minisforum-ms-s1-max">MINISFORUM MS-S1 Max</h2>
-<figure>
-<img src="lib/img/Minisforum_MS-S1-Max.jpg"
-alt="MINISFORUM MS-S1 Max" />
-<figcaption aria-hidden="true">MINISFORUM MS-S1 Max</figcaption>
-</figure>
-<p><a
-href="https://store.minisforum.com/products/minisforum-ms-s1-max-mini-pc">Product
-Page</a></p>
-<p><strong>Specifications</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Spec</th>
-<th style="text-align: left;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">CPU</td>
-<td style="text-align: left;">AMD Ryzen AI Max+ 395 (16 cores, 32
-threads)</td>
+<td style="text-align: left;">AMD Ryzen (16 cores, 32 threads)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Memory</td>
@@ -1195,237 +1311,26 @@ VE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Price (USD)</td>
-<td style="text-align: left;">2503.9</td>
+<td style="text-align: left;">$2503.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://store.minisforum.com/products/minisforum-ms-s1-max-mini-pc">Link</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="poweredge-r6615">PowerEdge R6615</h2>
-<figure>
-<img src="lib/img/Dell_PowerEdge_R6615.jpg" alt="PowerEdge R6615" />
-<figcaption aria-hidden="true">PowerEdge R6615</figcaption>
-</figure>
-<p><a
-href="https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615">Product
-Page</a></p>
-<p><strong>Specifications</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Spec</th>
-<th style="text-align: left;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">CPU</td>
-<td style="text-align: left;">AMD EPYC 9004 series (– cores, –
-threads)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Memory</td>
-<td style="text-align: left;">– GB DDR5 4800 ECC RDIMM</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">OS Disk</td>
-<td style="text-align: left;">–</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">VM Disk(s)</td>
-<td style="text-align: left;">–</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">1–2 Gb NICs</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10 Gb NICs</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Rack Units</td>
-<td style="text-align: left;">1U</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Dimensions (in)</td>
-<td style="text-align: left;">{‘l’: 28.0, ‘w’: 17.1, ‘h’: 1.7}</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Power Draw (W)</td>
-<td style="text-align: left;">Idle – / Max –</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Power Input</td>
-<td style="text-align: left;">AC 100–240V</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Management</td>
-<td style="text-align: left;">BMC: True, BIOS: UEFI / iDRAC9</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Supported OS</td>
-<td style="text-align: left;">Proxmox VE, Ubuntu 24.04 LTS, RHEL 9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Price (USD)</td>
-<td style="text-align: left;">–</td>
-</tr>
-</tbody>
-</table>
-<h2 id="proliant-dl145-gen11">ProLiant DL145 Gen11</h2>
-<figure>
-<img src="lib/img/HP_ProLiant_DL145_Gen11.jpg"
-alt="ProLiant DL145 Gen11" />
-<figcaption aria-hidden="true">ProLiant DL145 Gen11</figcaption>
-</figure>
-<p><a
-href="https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl100-servers/proliant-dl145-gen11/p/1014845266">Product
-Page</a></p>
-<p><strong>Specifications</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Spec</th>
-<th style="text-align: left;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">CPU</td>
-<td style="text-align: left;">AMD EPYC 8004 series (Zen4c) (– cores, –
-threads)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Memory</td>
-<td style="text-align: left;">– GB DDR5 ECC RDIMM</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">OS Disk</td>
-<td style="text-align: left;">–</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">VM Disk(s)</td>
-<td style="text-align: left;">–</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">1–2 Gb NICs</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10 Gb NICs</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Rack Units</td>
-<td style="text-align: left;">2U</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Dimensions (in)</td>
-<td style="text-align: left;">{‘l’: 28.0, ‘w’: 17.5, ‘h’: 3.4}</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Power Draw (W)</td>
-<td style="text-align: left;">Idle – / Max –</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Power Input</td>
-<td style="text-align: left;">AC 100–240V</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Management</td>
-<td style="text-align: left;">BMC: True, BIOS: UEFI / iLO 6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Supported OS</td>
-<td style="text-align: left;">Proxmox VE, Ubuntu 24.04 LTS, RHEL 9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Price (USD)</td>
-<td style="text-align: left;">–</td>
-</tr>
-</tbody>
-</table>
-<h2 id="proliant-dl235-gen11">ProLiant DL235 Gen11</h2>
-<figure>
-<img src="lib/img/HP_ProLiant_DL235_Gen11.jpg"
-alt="ProLiant DL235 Gen11" />
-<figcaption aria-hidden="true">ProLiant DL235 Gen11</figcaption>
-</figure>
-<p><a
-href="https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl300-servers/proliant-dl325-server/hpe-proliant-dl325-gen11/p/1014689141">Product
-Page</a></p>
-<p><strong>Specifications</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Spec</th>
-<th style="text-align: left;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">CPU</td>
-<td style="text-align: left;">AMD EPYC 9004 (– cores, – threads)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Memory</td>
-<td style="text-align: left;">– GB DDR5 SmartMemory</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">OS Disk</td>
-<td style="text-align: left;">–</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">VM Disk(s)</td>
-<td style="text-align: left;">–</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">1–2 Gb NICs</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10 Gb NICs</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Rack Units</td>
-<td style="text-align: left;">1U</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Dimensions (in)</td>
-<td style="text-align: left;">{‘l’: 28.0, ‘w’: 17.5, ‘h’: 1.7}</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Power Draw (W)</td>
-<td style="text-align: left;">Idle – / Max –</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Power Input</td>
-<td style="text-align: left;">AC 100–240V</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Management</td>
-<td style="text-align: left;">BMC: True, BIOS: UEFI / iLO 6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Supported OS</td>
-<td style="text-align: left;">Proxmox VE, Ubuntu 24.04 LTS, RHEL 9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Price (USD)</td>
-<td style="text-align: left;">–</td>
-</tr>
-</tbody>
-</table>
-<h2 id="lancelot-1199-sr">Lancelot 1199-SR</h2>
+<h3 id="lancelot-1199-sr">Lancelot 1199-SR</h3>
 <figure>
 <img src="lib/img/ASL_Lancelot_1199SR.jpg" alt="Lancelot 1199-SR" />
 <figcaption aria-hidden="true">Lancelot 1199-SR</figcaption>
 </figure>
-<p><a
-href="https://www.aslab.com/products/rackmount/customize/lancelot1199sr.cgi">Product
-Page</a></p>
 <p><strong>Specifications</strong></p>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Spec</th>
@@ -1435,8 +1340,7 @@ Page</a></p>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">CPU</td>
-<td style="text-align: left;">Intel Xeon E-2478 (8 cores, 16
-threads)</td>
+<td style="text-align: left;">Intel Xeon (8 cores, 16 threads)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Memory</td>
@@ -1485,11 +1389,334 @@ threads)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Price (USD)</td>
-<td style="text-align: left;">5199</td>
+<td style="text-align: left;">$5199</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://www.aslab.com/products/rackmount/customize/lancelot1199sr.cgi">Link</a></td>
 </tr>
 </tbody>
 </table>
-<h1 id="switches">Switches</h1>
+<h3 id="proliant-dl145-gen11">ProLiant DL145 Gen11</h3>
+<figure>
+<img src="lib/img/HP_ProLiant_DL145_Gen11.jpg"
+alt="ProLiant DL145 Gen11" />
+<figcaption aria-hidden="true">ProLiant DL145 Gen11</figcaption>
+</figure>
+<p><strong>Specifications</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spec</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CPU</td>
+<td style="text-align: left;">AMD EPYC 8124P (16 cores, 32 threads)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Memory</td>
+<td style="text-align: left;">128 GB DDR5-4800 ECC Registered (HPE
+SmartMemory)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OS Disk</td>
+<td style="text-align: left;">SATA SSD 0.96 TB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VM Disk(s)</td>
+<td style="text-align: left;">SATA SSD x1 3.84 TB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1–2 Gb NICs</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10 Gb NICs</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rack Units</td>
+<td style="text-align: left;">1U</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dimensions (in)</td>
+<td style="text-align: left;">{‘l’: 27.5, ‘w’: 17.5, ‘h’: 1.7}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Power Draw (W)</td>
+<td style="text-align: left;">Idle 95 / Max 350</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power Input</td>
+<td style="text-align: left;">AC 100–240V</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Management</td>
+<td style="text-align: left;">BMC: True, BIOS: UEFI / iLO 6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Supported OS</td>
+<td style="text-align: left;">Proxmox VE, Ubuntu 24.04 LTS, Red Hat
+Enterprise Linux 9, Windows Server 2025</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Price (USD)</td>
+<td style="text-align: left;">$11250.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl100-servers/proliant-dl145-server/hpe-proliant-dl145-gen11/p/1014845266">Link</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="lancelot-1898-n12">Lancelot 1898-N12</h3>
+<figure>
+<img src="lib/img/ASL_Lancelot_1898-N12.jpg" alt="Lancelot 1898-N12" />
+<figcaption aria-hidden="true">Lancelot 1898-N12</figcaption>
+</figure>
+<p><strong>Specifications</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spec</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CPU</td>
+<td style="text-align: left;">Intel Xeon Silver 4514Y (32 cores, 64
+threads)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Memory</td>
+<td style="text-align: left;">256 GB DDR5-4800 ECC Registered</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OS Disk</td>
+<td style="text-align: left;">NVMe SSD 1.0 TB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VM Disk(s)</td>
+<td style="text-align: left;">NVMe SSD x2 15.36 TB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1–2 Gb NICs</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10 Gb NICs</td>
+<td style="text-align: left;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rack Units</td>
+<td style="text-align: left;">1U</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dimensions (in)</td>
+<td style="text-align: left;">{‘l’: 28.0, ‘w’: 17.6, ‘h’: 3.4}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Power Draw (W)</td>
+<td style="text-align: left;">Idle 180 / Max 600</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power Input</td>
+<td style="text-align: left;">AC 100–240V</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Management</td>
+<td style="text-align: left;">BMC: True, BIOS: UEFI / ASPEED
+AST2600</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Supported OS</td>
+<td style="text-align: left;">Rocky Linux 8.10, Red Hat Enterprise Linux
+8.10, Ubuntu 24.04 LTS, Proxmox VE 8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Price (USD)</td>
+<td style="text-align: left;">$11727.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://www.asus.com/Server-Workstation/Servers/1U-2U-Rack-Servers/RS700-E11-RS12U/">Link</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="proliant-dl325-gen11">ProLiant DL325 Gen11</h3>
+<figure>
+<img src="lib/img/HP_ProLiant_DL235_Gen11.jpg"
+alt="ProLiant DL325 Gen11" />
+<figcaption aria-hidden="true">ProLiant DL325 Gen11</figcaption>
+</figure>
+<p><strong>Specifications</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spec</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CPU</td>
+<td style="text-align: left;">AMD EPYC 9124 (16 cores, 32 threads)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Memory</td>
+<td style="text-align: left;">128 GB DDR5-4800 ECC Registered (HPE
+SmartMemory)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OS Disk</td>
+<td style="text-align: left;">SATA SSD 3.84 TB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VM Disk(s)</td>
+<td style="text-align: left;">SATA SSD x2 – TB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1–2 Gb NICs</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10 Gb NICs</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rack Units</td>
+<td style="text-align: left;">1U</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dimensions (in)</td>
+<td style="text-align: left;">{‘l’: 28.0, ‘w’: 17.5, ‘h’: 1.7}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Power Draw (W)</td>
+<td style="text-align: left;">Idle 110 / Max 400</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power Input</td>
+<td style="text-align: left;">AC 100–240V</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Management</td>
+<td style="text-align: left;">BMC: True, BIOS: UEFI / iLO 6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Supported OS</td>
+<td style="text-align: left;">Proxmox VE, Ubuntu 24.04 LTS, Red Hat
+Enterprise Linux 9, Windows Server 2025</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Price (USD)</td>
+<td style="text-align: left;">$16231.82</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://buy.hpe.com/us/en/compute/rack-servers/proliant-dl300-servers/proliant-dl325-server/hpe-proliant-dl325-gen11/p/1014689141">Link</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="poweredge-r6615">PowerEdge R6615</h3>
+<figure>
+<img src="lib/img/Dell_PowerEdge_R6615.jpg" alt="PowerEdge R6615" />
+<figcaption aria-hidden="true">PowerEdge R6615</figcaption>
+</figure>
+<p><strong>Specifications</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spec</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CPU</td>
+<td style="text-align: left;">AMD EPYC 9224 (24 cores, 48 threads)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Memory</td>
+<td style="text-align: left;">96 GB DDR5-5600 ECC RDIMM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OS Disk</td>
+<td style="text-align: left;">SATA SSD 0.96 TB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VM Disk(s)</td>
+<td style="text-align: left;">SATA SSD x4 3.84 TB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1–2 Gb NICs</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10 Gb NICs</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rack Units</td>
+<td style="text-align: left;">1U</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dimensions (in)</td>
+<td style="text-align: left;">{‘l’: 28.0, ‘w’: 17.1, ‘h’: 1.7}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Power Draw (W)</td>
+<td style="text-align: left;">Idle 120 / Max 450</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power Input</td>
+<td style="text-align: left;">AC 100–240V</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Management</td>
+<td style="text-align: left;">BMC: True, BIOS: UEFI / iDRAC9 Express
+16G</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Supported OS</td>
+<td style="text-align: left;">Proxmox VE, Ubuntu Server 24.04 LTS, Red
+Hat Enterprise Linux 9, Windows Server 2025</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Price (USD)</td>
+<td style="text-align: left;">$19401.16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Product Page</td>
+<td style="text-align: left;"><a
+href="https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6615/pe_r6615_tm_vi_vp_sb?configurationid=1759700b-2877-411f-bf22-461cea367d8e">Link</a></td>
+</tr>
+</tbody>
+</table>
 <h1 id="terminology">Terminology</h1>
 <table>
 <colgroup>

@@ -15,6 +15,16 @@
 \definecolor{speculativeback}{RGB}{247,232,255}  % #f7e8ff
 \definecolor{speculativeframe}{RGB}{139,43,226}  % #8b2be2
 
+% --- Left-align all Pandoc tables ---
+\usepackage{longtable}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\par\raggedright}{}{}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\makeatother
+
+
 % Helper to show a blank title if empty
 \newcommand{\blanktitle}{\mbox{}}
 
