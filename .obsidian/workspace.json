@@ -11,12 +11,14 @@
             "id": "a921d7a2ad32327b",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "lib/diag/ClearSkies-SDDC-PVE-Cluster.png"
+                "file": "chapters/01_Introduction.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "ClearSkies-SDDC-PVE-Cluster"
+              "icon": "lucide-file",
+              "title": "01_Introduction"
             }
           },
           {
@@ -33,8 +35,7 @@
               "title": "02_StategicArchitecture"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -271,8 +272,17 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "df477dc0d863528d",
+  "active": "a921d7a2ad32327b",
   "lastOpenFiles": [
+    "chapters/00_ExecutiveSummary.md",
+    "lib/diag/ClearSkies-SDDC-PVE-Cluster.png",
+    "chapters/02_StategicArchitecture.md",
+    "lib/diag/SDDC.excalidraw.png",
+    "lib/diag/SDDC.excalidraw.md",
+    "lib/diag/SDDC Diagram.excalidraw.md",
+    "lib/diag/IIoT Architecture.excalidraw.md",
+    "lib/diag/ClearSkies-Overview.excalidraw.md",
+    "lib/diag/ClearSkies-Overview-notitle.excalidraw.md",
     "conf/sedxfgdwa",
     "conf/sed9JX3QQ",
     "conf/sedNvVezJ",
@@ -283,10 +293,8 @@
     "conf/sed4b0GXX",
     "build/lib/diag/ClearSkies-SDDC-PVE-Cluster.png",
     "build/lib/diag/ClearSkies-SDDC-PVE-Cluster.md",
-    "lib/diag/ClearSkies-SDDC-PVE-Cluster.png",
     "chapters/Terminology.md",
     "chapters/03_TechnologySelection.md",
-    "chapters/02_StategicArchitecture.md",
     "lib/diag/ClearSkies-SDDC-PVE-Node.excalidraw.md",
     "lib/diag/ClearSkies-SDDC-PVE-Cluster.md",
     "conf/sed7sQURd",
@@ -296,14 +304,11 @@
     "build/lib/diag/ClearSkies-SDDC-PVE-Node.excalidraw.md",
     "chapters/01_Introduction.md",
     "lib/diag/ClearSkies-SDDC-PVE-Node.excalidraw.png",
-    "chapters/00_ExecutiveSummary.md",
     "build/lib/img/ASRock_Jupiter-X600.jpg",
     "build/lib/img/ASRock_Jupiter-X600.png",
     "lib/img/ASRock_Jupiter-X600.jpg",
     "lib/img/ASRock_Jupiter-X600.png",
-    "data/servers/ASRock_Jupiter-X600.json",
     "lib/md/server_comparison.md",
-    "build/lib/img/ASL_Lancelot_1898-N12.jpg",
     "chapters/04_Hardware.md",
     "chapters/04_Hardware.base.md",
     "chapters/04_Hardware-manualedit.md",
@@ -313,11 +318,6 @@
     "build/lib/diag/ClearSkies-Overview.excalidraw.md",
     "build/lib/diag/ClearSkies-Overview-notitle.excalidraw.md",
     "templates/frontmatter_epub.md",
-    "lib/diag/IIoT Architecture.excalidraw.md",
-    "build/lib/diag/IIoT Architecture.excalidraw.md",
-    "build/lib/diag/SDDC.excalidraw.md",
-    "build/lib/diag/Images/Untitled 2.md",
-    "build/lib/diag/SDDC Diagram.excalidraw.md",
-    "lib/diag.md"
+    "build/lib/diag/IIoT Architecture.excalidraw.md"
   ]
 }
